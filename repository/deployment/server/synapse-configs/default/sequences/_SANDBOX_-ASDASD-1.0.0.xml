@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence xmlns="http://ws.apache.org/ns/synapse" name="_SANDBOX_-ASDASD-1.0.0">
+   <property name="OUT_ONLY" value="true"/>
+   <send>
+      <endpoint>
+         <address uri="http://apserver/resource"/>
+      </endpoint>
+   </send>
+</sequence>

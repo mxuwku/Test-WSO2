@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="WSO2AM--Ext--Out" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log level="custom">
+    <property name="MESSAGE_STATUS" value="RECEIVED_BACKEND_ANSWER"/>
+    <property expression="get-property('CORRELATION_ID')" name="CORRELATION_ID"/>
+  </log>
+
+
+
+  	<header expression="get-property('CORRELATION_ID')" name="X-Correlation-ID" scope="transport"/>
+
+
+  <!--filter xpath="boolean($trp:X-Correlation-ID)">
+    <then>
+        <header expression="get-property('$trp:X-Correlation-ID')" name="CORRELATION_ID" scope="default" type="STRING"/>
+    </then>
+    <else>
+  	<header expression="get-property('MessageID')" name="X-Correlation-ID" scope="transport"/>
+    </else>
+  </filter-->
+
+</sequence>
+

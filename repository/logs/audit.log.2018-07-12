@@ -1,0 +1,40 @@
+[2018-07-12 16:56:45,455]  INFO -  Initiator : wso2.system.user | Action : Add Role | Target : Internal/publisher | Data : { Users : [admin] Permissions : [{resourceId='/permission/admin/login', action='ui.execute'}, {resourceId='/permission/admin/manage/api/publish', action='ui.execute'}] } | Result : Success  
+[2018-07-12 16:56:45,494]  INFO -  Initiator : wso2.system.user | Action : Add Role | Target : Internal/creator | Data : { Users : [admin] Permissions : [{resourceId='/permission/admin/login', action='ui.execute'}, {resourceId='/permission/admin/manage/api/create', action='ui.execute'}, {resourceId='/permission/admin/configure/governance', action='ui.execute'}, {resourceId='/permission/admin/manage/resources/govern', action='ui.execute'}] } | Result : Success  
+[2018-07-12 16:56:45,563]  INFO -  Initiator : wso2.system.user | Action : Add Role | Target : Internal/subscriber | Data : { Users : [admin] Permissions : [{resourceId='/permission/admin/login', action='ui.execute'}, {resourceId='/permission/admin/manage/api/subscribe', action='ui.execute'}] } | Result : Success  
+[2018-07-12 17:16:43,926]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 17:16:43,922+0530] 
+[2018-07-12 17:17:00,596]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 17:17:00,584+0530] 
+[2018-07-12 17:17:42,375]  INFO -  {"performedBy":"admin","action":"created","type":"API","info":"{\"provider\":\"admin\",\"name\":\"aa\",\"context\":\"\\\/bb\\\/2\",\"version\":\"2\"}"} 
+[2018-07-12 17:17:49,566]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 17:17:49,539+0530] 
+[2018-07-12 17:17:50,121]  INFO -  {"performedBy":"admin","action":"updated","type":"API","info":"{\"provider\":\"admin\",\"name\":\"aa\",\"context\":\"\\\/bb\\\/2\",\"version\":\"2\",\"API Info: \":\"{\\\"scopes=\\\":[],\\\"api- is default version=\\\":false,\\\"api level policy=\\\":null}\"}"} 
+[2018-07-12 17:17:54,686]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 17:17:54,680+0530] 
+[2018-07-12 20:31:03,111]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:31:03,108+0530] 
+[2018-07-12 20:31:57,704]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:31:57,673+0530] 
+[2018-07-12 20:32:57,951]  INFO -  {"performedBy":"admin","action":"created","type":"API","info":"{\"provider\":\"admin\",\"name\":\"Test_new\",\"context\":\"\\\/new\\\/v1\",\"version\":\"v1\"}"} 
+[2018-07-12 20:32:58,873]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:32:58,859+0530] 
+[2018-07-12 20:33:02,758]  INFO -  {"performedBy":"admin","action":"updated","type":"API","info":"{\"provider\":\"admin\",\"name\":\"Test_new\",\"context\":\"\\\/new\\\/v1\",\"version\":\"v1\",\"API Info: \":\"{\\\"scopes=\\\":[],\\\"api- is default version=\\\":false,\\\"api level policy=\\\":null}\"}"} 
+[2018-07-12 20:33:03,117]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:33:03,105+0530] 
+[2018-07-12 20:33:27,205]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:33:27,202+0530] 
+[2018-07-12 20:33:27,554]  INFO -  {"performedBy":"admin","action":"updated","type":"API","info":"{\"provider\":\"admin\",\"name\":\"Test_new\",\"context\":\"\\\/new\\\/v1\",\"version\":\"v1\",\"API Info: \":\"{\\\"scopes=\\\":[],\\\"api- is default version=\\\":false,\\\"api level policy=\\\":null}\"}"} 
+[2018-07-12 20:33:27,853]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:33:27,848+0530] 
+[2018-07-12 20:33:35,809]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:33:35,789+0530] 
+[2018-07-12 20:33:36,054]  INFO -  {"performedBy":"admin","action":"updated","type":"API","info":"{\"provider\":\"admin\",\"name\":\"Test_new\",\"context\":\"\\\/new\\\/v1\",\"version\":\"v1\",\"API Info: \":\"{\\\"scopes=\\\":[],\\\"api- is default version=\\\":false,\\\"api level policy=\\\":null}\"}"} 
+[2018-07-12 20:33:36,295]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:33:36,295+0530] 
+[2018-07-12 20:33:36,771]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:33:36,760+0530] 
+[2018-07-12 20:33:37,146]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:33:37,133+0530] 
+[2018-07-12 20:33:37,876]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:33:37,856+0530] 
+[2018-07-12 20:33:38,469]  INFO -  {"performedBy":"admin","action":"updated","type":"API","info":"{\"provider\":\"admin\",\"name\":\"Test_new\",\"New life cycle status\":\"Published\",\"version\":\"v1\"}"} 
+[2018-07-12 20:34:25,810]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:34:25,793+0530] 
+[2018-07-12 20:34:48,119]  INFO -  {"performedBy":"admin","action":"created","type":"Application","info":"{\"tier\":\"Unlimited\",\"name\":\"test_appl\",\"callbackURL\":null}"} 
+[2018-07-12 20:34:57,377]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:34:57,369+0530] 
+[2018-07-12 20:34:57,410]  INFO -  Initiator : admin@carbon.super | Action : Add Role | Target : Application/admin_test_appl_PRODUCTION | Data : { Users : [admin] Permissions : [] } | Result : Success  
+[2018-07-12 20:34:57,443]  INFO -  Initiator : admin | Action : create | Target : 0 | Data : { admin_test_appl_PRODUCTION } | Result : Success  
+[2018-07-12 20:34:57,457]  INFO -  Initiator : admin | Action : update | Target : 1 | Data : { admin_test_appl_PRODUCTION } | Result : Success  
+[2018-07-12 20:34:57,498]  INFO -  Initiator : admin | Action : update | Target : 1 | Data : { admin_test_appl_PRODUCTION } | Result : Success  
+[2018-07-12 20:34:58,253]  INFO -  {"performedBy":"admin","action":"updated","type":"Application","info":"{\"Generated keys for application\":\"test_appl\"}"} 
+[2018-07-12 20:35:04,958]  INFO -  {"performedBy":"admin","action":"updated","type":"Application","info":"{\"Re-Generated Keys for application with client Id\":\"aEPbLVhUpfjYORSJla7xbXUGnuca\"}"} 
+[2018-07-12 20:35:07,090]  INFO -  {"performedBy":"admin","action":"updated","type":"Application","info":"{\"Re-Generated Keys for application with client Id\":\"aEPbLVhUpfjYORSJla7xbXUGnuca\"}"} 
+[2018-07-12 20:35:21,078]  INFO -  {"performedBy":"admin","action":"created","type":"Subscription","info":"{\"application_name\":\"test_appl\",\"tier\":\"Unlimited\",\"provider\":\"admin\",\"api_name\":\"Test_new\",\"application_id\":2}"} 
+[2018-07-12 20:35:21,182]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:35:21,178+0530] 
+[2018-07-12 20:35:30,694]  INFO -  {"performedBy":"admin","action":"updated","type":"Application","info":"{\"Re-Generated Keys for application with client Id\":\"aEPbLVhUpfjYORSJla7xbXUGnuca\"}"} 
+[2018-07-12 20:36:24,237]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:36:24,235+0530] from IP address  
+[2018-07-12 20:46:21,138]  INFO -  'admin@carbon.super [-1234]' logged in at [2018-07-12 20:46:21,136+0530] 

@@ -1,0 +1,113 @@
+<% jagg.template("page/base", function(inputs, outputs, jagg) {
+  var i18n = require("i18n");
+  var localeResourcesBasePath="/site/conf/locales/jaggery/";
+  i18n.init(request,localeResourcesBasePath);
+
+  var tenant=request_tenant;
+  var urlPrefix;
+  var fullUrl = null;
+  var site = require("/site/conf/site.json");
+  var currentURL = jagg.getAbsoluteUrl('/');
+  urlPrefix = jagg.getTenantURLPrefix();
+  fullUrl = request.getRequestURI();
+  if(request.getQueryString() != null){
+      fullUrl += '?'+request.getQueryString();
+  }
+%>
+<!--
+~   Copyright (c) WSO2 Inc. (http://wso2.com) All Rights Reserved.
+~
+~   Licensed under the Apache License, Version 2.0 (the "License");
+~   you may not use this file except in compliance with the License.
+~   You may obtain a copy of the License at
+~
+~        http://www.apache.org/licenses/LICENSE-2.0
+~
+~   Unless required by applicable law or agreed to in writing, software
+~   distributed under the License is distributed on an "AS IS" BASIS,
+~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~   See the License for the specific language governing permissions and
+~   limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <meta name="description" content=""/>
+
+    <title>Scania <%=outputs.title%></title>
+
+     <script>
+        var requestURL = '<%= currentURL%>';
+        var ssoEnabled = '<%=site.ssoConfiguration.enabled%>';
+        var oidcEnabled = '<%=site.oidcConfiguration.enabled%>';
+        var tenant = '<%=tenant%>';
+        var urlPrefix = '<%=urlPrefix%>';
+        var siteContext = '<%=jagg.getSiteContext()%>';
+    </script>
+
+    <!-- Le fav and touch icons - Favicon is loaded in Corporate UI
+    <link rel="shortcut icon" href="<%=jagg.getAbsoluteUrl(jagg.getThemeFile("images/favicon-store.png"))%>">-->
+    <script src="https://static.scania.com/build/global/2.5.0/js/corporate-ui.js"></script>
+
+ <%
+    var data = jagg.data();
+    if(data.header) {
+      jagg.printData(data.header.css);
+      jagg.printData(data.header.js);
+      jagg.printData(data.header.code);
+    }
+    %>
+
+    <script>
+        var siteRoot = '<%=jagg.getAbsoluteUrl("/site/themes/"+jagg.getUserTheme().base)%>';
+//SHOULD BE MOVED!!!
+        $(function(){
+          $('td span.label').text('Active').addClass('label-success')
+        });
+    </script>
+
+
+</head>
+<body class="scania app sticky-footer">
+<!--  Added by Jesper -->
+<%jagg.includeBlock("menu/header", {"pagePath":outputs.pagePath,"tenant":tenant});%>
+
+<c-main-content>
+  <section>
+<style>
+  .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+    padding: 12px 12px;
+  }
+.form-group .bootstrap-select.btn-group {
+  background-color: #fff;
+}
+</style>
+
+  <div class="container-fluid">
+<% jagg.includeBlocks(outputs.body); %>
+
+<% jagg.includeBlock("ui/dialogs", {}); %>
+</section>
+</c-main-content>
+<%
+if(data.footer) {
+    jagg.printData(data.footer.js);
+    jagg.printData(data.footer.css);
+    jagg.printData(data.footer.code);
+}
+%>
+    <!-- footer -->
+    <c-corporate-footer>
+        <p>Scania API Manager 2.1.0 | &copy; <script>document.write(new Date().getFullYear());</script> 
+        <a title="ScaniaOne" href="http://scaniaone.com" target="_blank"><i class="icon fw fw-wso2"></i></a>.
+        </p>
+    </c-corporate-footer>
+
+</body>
+</html>
+<% }); %>

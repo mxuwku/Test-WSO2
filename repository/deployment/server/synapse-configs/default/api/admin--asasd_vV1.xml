@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse"
+     name="admin--asasd"
+     context="/asasdddd/V1"
+     version="V1"
+     version-type="context">
+   <resource methods="GET" url-mapping="/oper1" faultSequence="fault">
+      <inSequence>
+         <property name="HTTP_SC" value="501" scope="axis2"/>
+         <property name="NO_ENTITY_BODY" scope="axis2" action="remove"/>
+         <respond/>
+      </inSequence>
+      <outSequence>
+         <send/>
+      </outSequence>
+   </resource>
+   <handlers>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.common.APIMgtLatencyStatsHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.security.CORSRequestHandler">
+         <property name="apiImplementationType" value="INLINE"/>
+      </handler>
+   </handlers>
+</api>

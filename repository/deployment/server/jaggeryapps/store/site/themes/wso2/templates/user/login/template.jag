@@ -1,0 +1,213 @@
+<% jagg.template("user/login", function(inputs, outputs, jagg) { %>
+
+  <!-- <script src="https://static.scania.com/build/global/2.4.1/js/corporate-ui.js"></script> --> <!-- TBRLO 1 line of code -->
+<script>
+//Switch form
+  function step(step) {
+    var stepContainer = $('.steps');
+    stepContainer
+      .attr('class', stepContainer.attr('class').split('s-')[0])
+      .addClass('s-' + step);
+  }
+
+  $(function() {
+    $('.sign-up-link').on('click',    function() { step(2) })
+    $('.reg-form-submit').on('click', function() { step(3) })
+    $('.reg-go-signin').on('click',   function() { step(4) })
+    $('.login-link').on('click',      function() { step(1) })
+  });
+// Show password
+$(document).ready(function(){
+  $.toggleShowPassword = function (options) {
+    var settings = $.extend({
+      field: "#password-login, ",
+      control: "#toggle_show_password",
+    }, options);
+
+    var control = $(settings.control);
+    var field = $(settings.field);
+
+  };
+
+  $.toggleShowPassword({
+    field: '#password-field',
+    control: '#show-hide-login'
+  });
+
+  $('form').on('submit', function(event) {
+    event.preventDefault();
+  });
+
+$('[name=show-hide]').on('click', function() {
+  var formGroup = $(this).parent();
+  var mode = $('input', formGroup).attr('type')
+  $('i', this).toggleClass('icon-eye-close icon-eye-open')
+  $('input', formGroup).attr('type', mode == 'text' ? 'password' : 'text');
+})
+});
+
+$("#show-hide").click(function(){
+  console.log('test');
+});
+
+/*$('button[type=submit]').on('click', function(event) {
+  event.preventDefault();
+})*/
+</script>
+<style>
+.steps .step {
+  display: none;
+}
+.steps.s-1 .login-form,
+.steps.s-2 .signup-form,
+.steps.s-3 .regconf-form,
+.steps.s-4 .regver-form { display: block; }
+
+a {
+  font-size:14px;
+  text-transform: none;
+}
+.btn-link.btn-info {
+  font-size: 14px;
+  outline: none;
+}
+
+.content {
+  flex-grow: 1;
+  background: #fff;
+  display: flex;
+  color: #53565a;
+  padding: 0px;
+  background-color: #fff !important;
+}
+.columns{
+  display: flex;
+  flex-grow: 1;
+}
+.sideimage {
+  background-image: url('/store/site/themes/wso2/images/login-image.jpg');
+  flex-grow: 1;
+  background-position: center;
+  background-size: cover;
+}
+.sidebar {
+  width: 445px;
+  background: #fff;
+  padding: 30px;
+}
+.app c-main-content > section, c-main-content.app > section {
+  padding: 0px;
+}
+c-main-content {
+display: flex !important;
+flex-direction: column;
+}
+@media only screen and (max-width: 992px) {
+.sidebar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+}
+.app h2, .app h3, .app h4, .app h5, .app h6, .app legend {
+  font-family: "Scania Sans Semi Condensed";
+}
+section {
+  flex-grow: 1;
+  flex: 1;
+  display: flex;
+}
+.container-fluid {
+  padding: 0px;
+  flex-grow: 1;
+  flex-direction: column;
+  display: flex;
+}
+</style>
+
+
+  <!-- TBRLO 3 lines of code -->
+ <!--  <c-corporate-header site-name="Login" site-url="https://www.scania.com">
+    <nav-item location="https://www.scaniaone.com/">Scania One</nav-item>
+    <nav-item location="https://github.com/scania/corporate-ui">GitHub</nav-item>
+  </c-corporate-header> -->
+
+<!-- TBRLO 3 lines of code -->
+<!-- <c-main-content class="light">
+<section class="light">
+  <div class="container-fluid"> -->
+
+
+<section class="content steps s-1">
+    <div class="login-form sidebar step">
+       <h2 class="text-center">Log in to Scania API Store</h2>
+        <div class="data-container">
+            <form id="mainLoginForm" autocomplete="off">
+                <div class="alert alert-danger" role="alert" id="loginErrorMsg" style="display:none">
+                </div>
+                <div class="form-group">
+                  <label class="btn-block">Username
+                    <input type="text" id="username" autofocus name="name" tabindex="0" title="<%=i18n.localize("Username")%>" class="form-control"/>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <button type="button" id="show-hide-verified" name="show-hide" tabindex="1" class=" btn-link btn-info pull-right">Show
+                  <i id="show-hide-icon"class="icon-eye-open"></i>
+                  </button>
+                  <label class="btn-block">Password
+                  <input type="password"  autocomplete="off" id="password" name="pass" title="<%=i18n.localize("Password")%>" class="form-control"/>
+                </label>
+                </div>
+                <input type="hidden" id="tenant" name="tenant" value="<%=request_tenant%>">
+                <div class="form-group">
+                <button type="button" id="loginBtn" onclick="login()" class="btn btn-success btn-lg btn-block"><%=i18n.localize("Sign In")%>
+                </button>
+                <p class="text-center mt-5">Have you <a href="https://fmpnextgen-opt.scania.com/#/request-new-password" target="_blank" class="btn-link btn-info">forgotten your password?
+                </a>
+                </p>
+                </div>
+            </form>
+            <p class="help-block text-center mt-5">This portal uses cookies. By logging in, you are allowing cookies to be saved on your computer.</p>
+          </div>
+        </div>
+       <aside class="sideimage hidden-xs hidden-sm"></aside>
+</section>
+<!-- TBRLO 7 lines of code  -->
+
+ <div class="modal fade" id="modal-change-password" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"
+        aria-hidden="true" onclick="$('#modal-change-password').show()">×
+      </button>
+      <h2 class="modal-title">Forgot Password</h2>
+    </div>
+    <div class="modal-body">
+      <div class="portlet-application">
+        <div class="portlet-application">
+          <div class="scania-account">
+            <p>To reset or change your Scania One/FMP account password, please use the <u><a
+              class="reset-password"
+              href="javascript:void window.open(' https://fmpnextgen-opt.scania.com/#/request-new-password', 'PUMwin','location=1,resizable=1,status=1,scrollbars=1,width=1024,height=768')">Password
+            Self Service</a></u>.</p>
+            <p>The online reset password functionality is only available for Scania One/FMP accounts. If you are an employee or internal consultant using a Global (Scania Corporate) account, please contact Scania service desk or access user self service to reset your password.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+
+<!-- </c-main-content>
+    <c-corporate-footer>
+        <p>Scania API Manager 2.1.0 | &copy; <script>document.write(new Date().getFullYear());</script> 
+        <a title="WSO2" href="http://wso2.com/" target="_blank"><i class="icon fw fw-wso2"></i> Inc</a>.
+        </p>
+ </c-corporate-footer> -->
+
+<%}); %>

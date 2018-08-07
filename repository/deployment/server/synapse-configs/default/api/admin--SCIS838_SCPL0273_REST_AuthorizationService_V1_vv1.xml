@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse"
+     name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1"
+     context="/SCIS838/sales/authorizationservice/v1"
+     version="v1"
+     version-type="context">
+   <resource methods="GET" url-mapping="/whoami/userid" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIproductionEndpoint_0">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIsandboxEndpoint_0">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="GET"
+             url-mapping="/armor/system/1/useraccessauthorization"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIproductionEndpoint_1">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIsandboxEndpoint_1">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="GET"
+             uri-template="/armor/system/{systemId}/accesssummary?groupId={groupId}"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIproductionEndpoint_2">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIsandboxEndpoint_2">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="DELETE"
+             uri-template="/systemtables/SisidMapping/parameters/{mappingId}"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIproductionEndpoint_3">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIsandboxEndpoint_3">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="GET"
+             uri-template="/armor/system/{systemId}/orgaccesssummary"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIproductionEndpoint_4">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIsandboxEndpoint_4">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST GET"
+             url-mapping="/systemtables/SisidMapping/parameters"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIproductionEndpoint_5">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIsandboxEndpoint_5">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="GET"
+             uri-template="/armor/system/{systemId}/roles"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIproductionEndpoint_6">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIsandboxEndpoint_6">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="GET"
+             uri-template="/armor/system/{systemId}/useraccess/assignee/{assignee}"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIproductionEndpoint_7">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIsandboxEndpoint_7">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="GET"
+             url-mapping="/armor/organizationsummary"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIproductionEndpoint_8">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIsandboxEndpoint_8">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="GET"
+             uri-template="/customers?organizationId={organizationId}"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIproductionEndpoint_9">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNpYW1pcHhtbGd3OmY1d3IqZGVzRTNhcHImdmFoQA==')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS838_SCPL0273_REST_AuthorizationService_V1_APIsandboxEndpoint_9">
+                     <http uri-template="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://acc1-spservices.scania.com/spservices/SPAuthorizationService/AuthorizationService.svc"/>
+                  </endpoint>
+               </send>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <handlers>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.common.APIMgtLatencyStatsHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.security.CORSRequestHandler">
+         <property name="apiImplementationType" value="ENDPOINT"/>
+      </handler>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.security.APIAuthenticationHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.throttling.ThrottleHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtUsageHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtGoogleAnalyticsTrackingHandler">
+         <property name="configKey" value="gov:/apimgt/statistics/ga-config.xml"/>
+      </handler>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.ext.APIManagerExtensionHandler"/>
+   </handlers>
+</api>

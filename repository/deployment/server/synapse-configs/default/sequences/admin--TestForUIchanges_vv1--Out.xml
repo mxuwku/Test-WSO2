@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence xmlns="http://ws.apache.org/ns/synapse"
+          name="admin--TestForUIchanges:vv1--Out">
+   <property name="messageType" value="application/xml" scope="axis2"/>
+</sequence>

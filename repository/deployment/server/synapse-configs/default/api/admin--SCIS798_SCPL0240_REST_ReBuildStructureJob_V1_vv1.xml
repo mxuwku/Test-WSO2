@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse"
+     name="admin--SCIS798_SCPL0240_REST_ReBuildStructureJob_V1"
+     context="/SCIS798/aftersales/rebuildstructurejob/v1"
+     version="v1"
+     version-type="context">
+   <resource methods="POST" url-mapping="/*" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNlaXB0ZXN0dXNlcjpNdS1odTZhQiFmcmFxdXRSVWI=')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS798_SCPL0240_REST_ReBuildStructureJob_V1_APIproductionEndpoint_0">
+                     <http uri-template="https://l1079t.sss.se.scania.com:18443/rest/v1/jobs/ReBuildStructure_v1"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://l1079t.sss.se.scania.com:18443/rest/v1/jobs/ReBuildStructure_v1"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <property name="Authorization"
+                         expression="fn:concat('Basic ', 'c2VydmljZXNlaXB0ZXN0dXNlcjpNdS1odTZhQiFmcmFxdXRSVWI=')"
+                         scope="transport"/>
+               <send>
+                  <endpoint name="admin--SCIS798_SCPL0240_REST_ReBuildStructureJob_V1_APIsandboxEndpoint_0">
+                     <http uri-template="https://l1079t.sss.se.scania.com:18443/rest/v1/jobs/ReBuildStructure_v1"/>
+                     <property name="ENDPOINT_ADDRESS"
+                               value="https://l1079t.sss.se.scania.com:18443/rest/v1/jobs/ReBuildStructure_v1"/>
+                  </endpoint>
+               </send>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <handlers>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.common.APIMgtLatencyStatsHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.security.CORSRequestHandler">
+         <property name="apiImplementationType" value="ENDPOINT"/>
+      </handler>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.security.APIAuthenticationHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.throttling.ThrottleHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtUsageHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtGoogleAnalyticsTrackingHandler">
+         <property name="configKey" value="gov:/apimgt/statistics/ga-config.xml"/>
+      </handler>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.ext.APIManagerExtensionHandler"/>
+   </handlers>
+</api>

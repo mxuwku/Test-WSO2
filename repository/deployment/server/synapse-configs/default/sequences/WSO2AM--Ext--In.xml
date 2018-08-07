@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="WSO2AM--Ext--In" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log level="custom">
+    <property expression="$ctx:SYNAPSE_REST_API" name="CALLING_BACKEND_FOR_API"/>
+    <property name="MESSAGE_STATUS" value="SENDING"/>
+    <property expression="get-property('MessageID')" name="CORRELATION_ID"/>
+    <property expression="$trp:X-Correlation-ID" name="CORRELATION_ID_HEADER"/>
+	
+  </log>
+  <filter xpath="boolean($trp:X-Correlation-ID)">
+    <then>
+   	  <property expression="$trp:X-Correlation-ID" name="CORRELATION_ID" scope="default" type="STRING"/>
+    </then>
+    <else>
+  	  <property expression="get-property('MessageID')" name="CORRELATION_ID" scope="default" type="STRING"/>
+      <header expression="get-property('MessageID')" name="X-Correlation-ID" scope="transport"/>  
+    </else>
+  </filter>
+    
+  <header expression="get-property('APPLICATION_NAME')" name="X-AppName" scope="transport"/>
+</sequence>

@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse"
+     name="SCANIA/bjxt3u--MessageValidationTestSuite"
+     context="/validate/1.0.0"
+     version="1.0.0"
+     version-type="context">
+   <resource methods="POST"
+             url-mapping="/patternSubstring"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_0">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="GET"
+             uri-template="/pathParamValidation/{foo}"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_1">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST"
+             url-mapping="/exclusiveMaximum3"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_2">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST" url-mapping="/uniqueObjects" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_3">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST" url-mapping="/maxItems" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_4">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST GET"
+             url-mapping="/queryParamValidation"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_5">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="GET"
+             uri-template="/pathParamValidation/{foo}/sample/{bar}"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_6">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST" url-mapping="/multipleOfSmall" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_7">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST" url-mapping="/maximum3" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_8">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST"
+             url-mapping="/exclusiveMinimum1Point1"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_9">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST" url-mapping="/minLength2" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_10">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST" url-mapping="/pattern" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_11">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST" url-mapping="/minItems" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_12">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="GET" url-mapping="/headerValidation" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_13">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST" url-mapping="/minimum1Point1" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_14">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST" url-mapping="/uniqueItems" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_15">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST" url-mapping="/schemaLess" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_16">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST" url-mapping="/maxLength2" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_17">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST"
+             url-mapping="/multipleOf1Point5"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_18">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST" url-mapping="/multipleOf2" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_19">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST PATCH PUT"
+             uri-template="/fullValidation/{integer}"
+             faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <filter source="$ctx:AM_KEY_TYPE" regex="PRODUCTION">
+            <then>
+               <send>
+                  <endpoint name="SCANIA/bjxt3u--MessageValidationTestSuite_APIproductionEndpoint_20">
+                     <http uri-template="http://l5018t.sss.se.scania.com:8888"/>
+                     <property name="ENDPOINT_ADDRESS" value="http://l5018t.sss.se.scania.com:8888"/>
+                  </endpoint>
+               </send>
+            </then>
+            <else>
+               <sequence key="_sandbox_key_error_"/>
+            </else>
+         </filter>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <handlers>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.common.APIMgtLatencyStatsHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.security.CORSRequestHandler">
+         <property name="apiImplementationType" value="ENDPOINT"/>
+      </handler>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.security.APIAuthenticationHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.throttling.ThrottleHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtUsageHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtGoogleAnalyticsTrackingHandler">
+         <property name="configKey" value="gov:/apimgt/statistics/ga-config.xml"/>
+      </handler>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.ext.APIManagerExtensionHandler"/>
+   </handlers>
+</api>

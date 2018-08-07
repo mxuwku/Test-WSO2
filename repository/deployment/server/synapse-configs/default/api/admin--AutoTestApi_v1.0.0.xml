@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse"
+     name="admin--AutoTestApi"
+     context="/autotest/1.0.0"
+     version="1.0.0"
+     version-type="context">
+   <resource methods="GET" url-mapping="/menu" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <property name="Authorization"
+                   expression="fn:concat('Basic ', 'dXNlcjpwYXNz')"
+                   scope="transport"/>
+         <send>
+            <endpoint name="admin--AutoTestApi_APIproductionEndpoint_0">
+               <http uri-template="https://sample.com/test/"/>
+               <property name="ENDPOINT_ADDRESS" value="https://sample.com/test/"/>
+            </endpoint>
+         </send>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <resource methods="POST" url-mapping="/order" faultSequence="fault">
+      <inSequence>
+         <property name="api.ut.backendRequestTime"
+                   expression="get-property('SYSTEM_TIME')"/>
+         <property name="Authorization"
+                   expression="fn:concat('Basic ', 'dXNlcjpwYXNz')"
+                   scope="transport"/>
+         <send>
+            <endpoint name="admin--AutoTestApi_APIproductionEndpoint_1">
+               <http uri-template="https://sample.com/test/"/>
+               <property name="ENDPOINT_ADDRESS" value="https://sample.com/test/"/>
+            </endpoint>
+         </send>
+      </inSequence>
+      <outSequence>
+         <class name="org.wso2.carbon.apimgt.gateway.handlers.analytics.APIMgtResponseHandler"/>
+         <send/>
+      </outSequence>
+   </resource>
+   <handlers>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.common.APIMgtLatencyStatsHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.security.CORSRequestHandler">
+         <property name="apiImplementationType" value="ENDPOINT"/>
+      </handler>
+   </handlers>
+</api>

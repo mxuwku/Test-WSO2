@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence xmlns="http://ws.apache.org/ns/synapse" name="_SANDBOX_-ForTesting-1.0.0">
+   <property name="OUT_ONLY" value="true"/>
+   <send>
+      <endpoint>
+         <address uri="http://appserver/resource"/>
+      </endpoint>
+   </send>
+</sequence>

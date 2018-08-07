@@ -1,0 +1,226 @@
+<% jagg.template("user/sign-up", function(inputs, outputs, jagg) { %>
+<%
+		var fields = outputs.fields, length = fields.length;
+        var user = session.get("logged.user");
+        var mod = jagg.module("manager");
+        var httpsUrl= mod.getHTTPsURL();
+        if(user){ %>
+<script>
+  location.href = "<%= jagg.getSiteContext()%>";
+</script>
+<% } %>
+<script>
+  var context= "<%=jagg.getSiteContext()%>";
+</script>
+
+<script>
+$(document).ready(function(){
+  $.toggleShowPassword = function (options) {
+    var settings = $.extend({
+      field: "#password-login, ",
+      control: "#toggle_show_password",
+    }, options);
+
+    var control = $(settings.control);
+    var field = $(settings.field);
+
+    /*control.bind('click', function () {
+      if(field.attr('type') == "password") {
+        field.attr('type', 'text');
+        $(".show-hide-icon").removeClass('icon-eye-open');
+         $(".show-hide-icon").addClass('icon-eye-close');
+      }else {
+         field.attr('type', 'password');
+          $(".show-hide-icon").removeClass('icon-eye-close');
+         $(".show-hide-icon").addClass('icon-eye-open');
+      }
+    })*/
+  // };
+
+  // $.toggleShowPassword({
+  //   field: '#password-field',
+  //   control: '#show-hide-login'
+  // });
+
+  // $('form').on('submit', function(event) {
+  //   event.preventDefault();
+  // });
+
+$('[name=show-hide]').on('click', function() {
+  var formGroup = $(this).parent();
+  var mode = $('input', formGroup).attr('type')
+  $('i', this).toggleClass('icon-eye-close icon-eye-open')
+  $('input', formGroup).attr('type', mode == 'text' ? 'password' : 'text');
+})
+});
+
+$("#show-hide").click(function(){
+  console.log('test');
+});
+
+/*$('button[type=submit]').on('click', function(event) {
+  event.preventDefault();
+})*/
+
+</script>
+<style>
+  .steps .step {
+    display: none;
+  }
+  .steps.s-1 .login-form,
+  .steps.s-2 .signup-form,
+  .steps.s-3 .regconf-form,
+  .steps.s-4 .regver-form { display: block; }
+}
+  a {
+    font-size:14px;
+    text-transform: none;
+  }
+.btn-link.btn-info {
+  font-size: 14px;
+  outline: none;
+}
+.row {
+  margin-left: -30px;
+  margin-right: -30px;
+}
+
+[class*=col-] > .apa {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -75px;
+}
+section {
+  padding: 0px !important;
+}
+</style>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2 col-lg-3 col-lg-offset-0 step left-menu">
+  <h2 class="text-center">Create your Account</h2>
+  <p class="text-center mt-4">Once the account has been created and verified, you will be able to access all Scania's API.</p>
+  <form>
+   <div class="form-group col-sm-12">
+            <label class="btn-block control-label"><%=i18n.localize("Username")%>*
+             <input type="text" class="form-control" autofocus id="newUsername" name="newUsername" title="<%=i18n.localize("Please enter at lease 5 characters")%>" minlength="5" maxlength="30" type="text" class="required validName noSpace form-control">
+            </label>
+            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+              <label class="control-label">&nbsp;</label>
+            </div>
+            </div>
+
+  <div class="form-group col-sm-12">
+    <!-- <button type="button" name="show-hide" class=" btn-link btn-info pull-right">
+      Show
+      <i id="show-hide-icon" class="icon-eye-open"></i>
+    </button> -->
+    <label class="btn-block control-label"><%=i18n.localize("Password")%>*
+    <input id="newPassword" type="password"  autocomplete="off" class="form-control password validPassword" name="newPassword" title="<%=i18n.localize("Enter a more secure password")%>">
+    </label>
+  </div>
+
+  <div class="form-group col-sm-12">
+    <!-- <button type="button" name="show-hide" class=" btn-link btn-info pull-right">
+      Show
+      <i id="show-hide-icon" class="icon-eye-open"></i>
+    </button> -->
+    <label class="btn-block control-label"><%=i18n.localize("Re-type Password")%>*</label>
+      <input id="newPasswordConfirm" title="<%=i18n.localize("Confirm Password")%>" type="password" class="form-control matchPasswords"  autocomplete="off" >
+  </div>
+                     <div class="col-sm-12">
+        <label class="control-label">&nbsp;</label>
+    </div>
+                  <div class="help-block" id="password-help" style="display:none">
+    <%=i18n.localize("For a more secure password:")%>
+              <ul>
+                  <li><%=i18n.localize("Use 6 to 30 characters")%></li>
+                  <li><%=i18n.localize("Use both letters and numbers")%></li>
+                  <li><%=i18n.localize("Add special characters (such as @, ?, #)")%></li>
+                  <li><%=i18n.localize("Mix uppercase and lowercase letters")%></li>
+              </ul>
+          </div>
+          <input id="hiddenTenantDomain" type="hidden" value="<%=request_tenant%>"> 
+                <%
+      var i, field, inputClass;
+      for(i = 0; i < length; i++) {
+          field = fields[i];
+          var required = field.required;
+          var claimUri = field.claimUri;
+          if (required == true) {
+          	inputClass = "required";
+          } else {
+          	inputClass = "";
+          }
+          if (claimUri.indexOf("name") !== -1) {
+          	inputClass = "required validName noSpace";
+          } else if (claimUri.indexOf("email") !== -1) {
+          	inputClass = "required validEmail noSpace";
+          }
+  %>
+<%if (required == true) {%>
+	  <div class="form-group col-sm-12">
+           <label class="btn-block control-label"><%=i18n.localize(field.name, field.name)%>*</label>
+    <% if(field.name == "Email") {%>
+                    <input type="text" id="<%=i%>cliamUri" name="<%=i18n.localize("Please enter a valid email.")%>" class="<%=inputClass%> form-control">
+                <%} else {%>
+                    <input type="text" id="<%=i%>cliamUri" name="<%=i%>cliamUri" class="<%=inputClass%> form-control">
+                <%}%>
+    </div>
+    <%} %>
+  <% } %>
+                <button type="button" class="btn btn-link sign-up-additional" title="<%= i18n.localize("View Additional Details")%>"><%= i18n.localize("View Additional Details")%></button>
+  <div class="extended-form col-sm-12">
+
+                	<%
+	for(i = 0; i < length; i++) {
+          		field = fields[i];
+          		var required = field.required;
+          		var claimUri = field.claimUri;
+		if(field.name == "Home Phone" || field.name == "Telephone") {
+			field.name = "Land Phone";
+		} else if (field.name == "Mobile") {
+			field.name = "Mobile Phone";
+		}
+		if (claimUri.indexOf("address") !== -1) {
+			inputClass = "input-address";
+          		} else if (claimUri.indexOf("country") !== -1) {
+			inputClass = "input-medium";
+    		} else if (claimUri.indexOf("role") !== -1) {
+			inputClass = "input-small";
+    		} else {
+			inputClass = "input-large";
+		}
+	%>
+		<%if (required != true) {%>
+			<div class="form-group">
+          <label class="control-label"><%=i18n.localize(field.name, field.name)%> </label>
+              <input type="text" id="<%=i%>cliamUri" title="<%=i%>cliamUri" name="<%=i%>cliamUri" class="<%=inputClass%> form-control">
+        </div>
+ 		<%} %>
+	<% } %>
+  </div>
+        <input type="hidden" id="fieldCount" name="fieldCount" value="<%=length%>"/>
+          <button type="submit" class="btn btn-primary btn-block btn-lg add-margin-right-2x mt-5"><%=i18n.localize("Sign Up")%></button>
+          <button type="button" id="goBackBtn" class="btn btn-default btn-block btn-lg add-margin-right-2x"><%=i18n.localize("Cancel")%></button>
+          </form>
+<p class="text-center mt-5">By signing up you agree to
+        <a href="#" class="regconf-form-link btn-link btn-info">terms and conditions.</label></a>
+      </p>
+      </div>
+        <div class="col-lg-9 hidden-md hidden-sm hidden-xs">
+          <div class="apa">
+            <img class="img-responsive" src="\store\site\themes\wso2\images\placeholder-img.jpg" alt="login-image">
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<form id="signUpRedirectForm" method="post" action="<%=jagg.getAbsoluteUrl(jagg.getThemeFile("templates/user/sign-up/redirector.jag"))%>">
+  <input type="hidden" name="redirectToHome" id="redirectToHome" value="<%= jagg.getSiteContext() %>" />
+  <input type="hidden" name="tenant" id="tenant" value="<%=jagg.getTenantDomain()%>" />
+</form>
+
+
+<% }); %>

@@ -1,0 +1,102 @@
+<% jagg.template("menu/header", function(inputs, outputs, jagg) { %>
+<% 
+var user = outputs.user; 
+var i18n = require("i18n");var publisherUrl;
+var localeResourcesBasePath="/site/conf/locales/jaggery/";
+i18n.init(request,localeResourcesBasePath);
+
+var mod = jagg.module("manager");
+var isSelfSignupEnabled = mod.isSelfSignupEnabledForTenantUser(request_tenant);
+var tenantDomains = mod.getActiveTenantDomains().tenantDomains;
+
+var currentURL = request.getRequestURI();
+if(request.getQueryString()){
+    currentURL += "?" + request.getQueryString();
+}
+
+var isSuperTenant, tenantDomain;
+var tenant = request_tenant;
+if (jagg.getUser() != null) {
+  isSuperTenant = jagg.getUser().isSuperTenant;
+var MultitenantUtils = Packages.org.wso2.carbon.utils.multitenancy.MultitenantUtils;
+  tenantDomain = MultitenantUtils.getTenantDomain(jagg.getUser().username);
+}
+
+%>
+
+<!-- header -->
+
+<!--  Rearranged by Jesper -->
+
+<c-corporate-header site-name="<%=i18n.localize("API Store")%>" site-url="/store/">
+
+<% if(user){ %>
+  <nav-item >
+<ul class="nav float-remove-xs text-center-xs">
+<%if (tenant == null && isSuperTenant != null && !isSuperTenant && site.showPublicStoreURL) {%>
+<li class="visible-inline-block">
+<a id="register-link" title="APIStore" href="<%=jagg.getAbsoluteUrl("/")%><%="?tenant=" + tenantDomain%>">
+  <span class="hidden-xs"> <%=i18n.localize("Go to")%> <%=tenantDomain%><%=i18n.localize("'s API Store")%></span>
+</a>
+</li>
+<%} else if ((tenant != null) && site.showPublicStoreURL && (tenantDomains != null && tenantDomains.length  > 0)){%>
+<li class="visible-inline-block">
+<a id="register-link" title="<%=i18n.localize("Public API Store")%>" href="<%=jagg.getAbsoluteUrl("/")%>">
+  <span class="hidden-xs"> <%=i18n.localize("Go to")%> <%=i18n.localize("Public API Store")%></span>
+</a>
+</li>
+<%}%>
+
+
+<li class="visible-inline-block">
+<a title="user account" href="#" class="dropdown" data-toggle="dropdown">
+<span class="hidden-xs"><%=user.username%><span class="caret"></span></span>
+</a>
+<ul class="dropdown-menu dropdown-menu-right float-remove-xs position-static-xs text-center-xs remove-margin-xs slideInDown" role="menu">
+<li class="dropdown-header visible-xs"><%=user.username%> <span class="caret"></span></li>
+<% if(isSelfSignupEnabled && isSuperTenant) { %>
+<li><a title="<%=i18n.localize("My Account","My Account")%>" href="<%= jagg.urlTenanted('/site/pages/user-info.jag')%>"><i class="fw fw-settings"></i><%=i18n.localize("My Account","My Account")%></a></li>
+<% } %>
+<li class="divider visible-xs"></li>
+<li><a title="<%=i18n.localize("Sign Out")%>" href="#" id="logout-link"><i class="fw fw-sign-out"></i><%=i18n.localize("Sign Out")%></a></li>
+</ul>
+</li>
+</ul>
+</nav-item>
+
+<% }  else { %>
+  <nav-item >
+    <ul class="nav float-remove-xs text-center-xs">
+        <%if (tenant == null && isSuperTenant != null && !isSuperTenant && site.showPublicStoreURL) {%>
+            <li class="visible-inline-block">
+                      <a title="<%=i18n.localize("s API Store")%>" id="register-link" href="<%=jagg.getAbsoluteUrl("/")%><%="?tenant=" + tenantDomain%>">
+                          <span class="hidden-xs"> <%=i18n.localize("Go to")%> <%=tenantDomain%><%=i18n.localize("s API Store")%></span>
+                      </a>
+                  </li>
+        <%} else if ((tenant != null) && site.showPublicStoreURL){%>
+            <li class="visible-inline-block">
+                      <a title="<%=i18n.localize("Go to")%> <%=i18n.localize("Public API Store")%>" id="register-link" href="<%=jagg.getAbsoluteUrl("/")%>">
+                          <span class="hidden-xs"> <%=i18n.localize("Go to")%> <%=i18n.localize("Public API Store")%></span>
+                      </a>
+                  </li>
+        <%}%>
+
+      <%if(isSelfSignupEnabled){%>
+              <li class="visible-inline-block">
+                  <a title="<%=i18n.localize("Sign-up")%>" id="register-link1" href="<%= jagg.urlTenanted('/site/pages/sign-up.jag')%>">
+                      <span class="hidden-xs"> <%=i18n.localize("Sign-up")%></span>
+                  </a>
+              </li>
+            <% } %>
+              <li class="visible-inline-block">
+                  <a id="btn-login" class="need-login" href="<%= jagg.urlTenanted('/')%>">
+                      <span class="hidden-xs"><%=i18n.localize("Sign In")%></span>
+                  </a>
+              </li>
+        </ul>
+</nav-item >
+<% } %>
+
+</c-corporate-header>
+
+<% }); %>
