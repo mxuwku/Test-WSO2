@@ -94,7 +94,7 @@
 
 		<% jagg.includeBlock("paginator", {currentPage:currentPage,numberOfPages:numberOfPages}); %>
 		<%} else { %>
-			<div class="message message-info">
+			<div class="alert alert-info">
 				<h4><i class="icon fw fw-info" title="No Stats"></i><%=i18n.localize("No Data Available.")%></h4>
 			</div>
 		<%} %>

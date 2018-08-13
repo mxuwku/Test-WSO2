@@ -54,9 +54,9 @@ input.ep-field{
     font-weight: 400;
     margin-left:2px;
 }
-.api-search .input-group-btn button{
+/*.api-search .input-group-btn button{
     line-height:31px;
-}
+}*/
 #resource_details .editableform .control-group{
     margin:0px;
 }
@@ -193,4 +193,46 @@ input.ep-field{
 .stats-badge{
     margin-bottom: 3px;
     padding: 6px 12px;
+}
+
+
+/*Addition from Scania*/
+
+.navbar-default .navbar-header .navbar-nav a:hover span {
+    text-decoration: none;
+  }
+
+/*.api-wrapper .app-data h4, h5, p, a {
+    text-align: center !important;
+}*/
+.app-data {
+    background-color: #fff;
+}
+
+.api-wrapper {
+    border: 1px solid #e2e2e2;
+}
+.api-wrapper .app-data > * {
+    text-align: center !important;
+}
+.api-wrapper .app-data a:hover {
+    text-decoration: none;
+    color: #04559c;
+}
+
+/*.form-control {
+    background-color: #fff;
+}*/
+
+.input-group a span {
+    text-decoration: none !important;
+}
+
+.body-wrapper {
+    padding: 30px 0px 60px 0px;
+}
+
+.radio-inline + .radio-inline, .checkbox-inline + .checkbox-inline {
+    margin-top: 0;
+    margin-left: 15px;
 }

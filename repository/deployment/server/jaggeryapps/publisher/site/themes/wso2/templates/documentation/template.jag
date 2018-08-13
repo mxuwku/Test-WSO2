@@ -151,7 +151,7 @@
                                  <p id="fileDoc_help" class="hide"><%=i18n.localize("Upload a documentation file")%></p>
 		                    </label>
 		                    <div id="fileNameDiv" style="display:none;"></div>
-		                    	<button type="button" class="btn btn-secondary" id="toggleFileDoc" style="display:none;" onclick="javascript:$('#sourceFile').toggle('slow')">Change File</button>
+		                    	<button type="button" class="btn btn-default" id="toggleFileDoc" style="display:none;" onclick="javascript:$('#sourceFile').toggle('slow')">Change File</button>
 								<div id="sourceFile" style="display:none;">
 									<div  class="input-group input-wrap file-upload-control">
 										<input type="text" id="fileName" class="form-control" placeholder="Click Browse to add a file" readonly>
@@ -176,7 +176,7 @@
 		    <div class="col-sm-12">
 		        <div class="form-group">
 		            <button type="button" class="btn btn-primary" id="saveDocBtn" onclick='saveDoc()'><%=i18n.localize("Add Document")%></button>
-		            <button type="button" class="btn btn-secondary" onclick='clearDocs()'><%=i18n.localize("Cancel")%></button>
+		            <button type="button" class="btn btn-default" onclick='clearDocs()'><%=i18n.localize("Cancel")%></button>
 		        </div>
 		    </div>
 
@@ -270,7 +270,7 @@
                 </tbody>
             </table>
             <%} else { %>
-             	<div class="message message-info">
+             	<div class="alert alert-info">
                     <h4><i class="icon fw fw-info"></i><%=i18n.localize("No documentation associated with the API")%></h4>
                     <p><%=i18n.localize("There is no documentation created for this API. You can add new documentation to this API by clicking the \"Add New Document\" button.") %></p>
                 </div>

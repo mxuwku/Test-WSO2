@@ -11,6 +11,24 @@
     });
 </script>
 
+<style>
+  .panel-group .panel-title  {
+    display: inline-block;
+    padding-left: 20px;
+    vertical-align: middle;
+  }
+
+  .panel-group .panel-heading .panel-title .heading {
+    display: block;
+  }
+  .panel-group .panel-heading .panel-title .description {
+    display: block;
+    font-weight: normal
+  }
+</style>
+
+
+<div class="white-wrapper">
  <div class="page-header">
      <h2><%=i18n.localize("Let's get started!")%></h2>
 	<p class="lead"><%=i18n.localize("Add New API")%></p>
@@ -19,18 +37,12 @@
 	<div class="panel-group accordion" role="tablist" aria-multiselectable="true">
 		<div class="panel panel-default">
 			<div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent=".accordion" href="#accordion1-collapse1" aria-expanded="true" aria-controls="accordion1-collapse1">
-				<h4 class="panel-title">
-					<label class="radio">
-						<input class="create-api" type="radio" name="create-api" />
-						<span class="helper"></span>
-                    </label>
-                    <div>
+				<div class="status btn btn-lg pr-5">
+          <i class="icon-caret-down icon-large "></i>
+        </div>
+                <h4 class="panel-title">
                    		<div class="heading"><%=i18n.localize("I Have an Existing API")%></div>
                         <div class="description truncate" title="<%=i18n.localize("Use an existing API's endpoint or the API Swagger definition to create an API.")%>"><%=i18n.localize("Use an existing API's endpoint or the API Swagger definition to create an API.")%></div>
-                        <div class="status">
-                        	<i class="fw fw-down"></i>
-                        </div>
-                    </div>
                     <div class="clearfix"></div>
 				</h4>
 			</div>
@@ -39,10 +51,15 @@
 					 <form class="form-horizontal" id="startFromExistingAPI-form" enctype="multipart/form-data" action="<%= jagg.url("/site/blocks/item-design/ajax/add.jag") %>">
 						<div class="form-group">
 							<div class="col-sm-12 toggleRadios">
-								<label class="radio sub-labels"> <input type="radio"
-									name="import-definition" id="" value="swagger-file"> <span class="helper"><%=i18n.localize("Swagger File")%></span>
-								</label> <label class="radio sub-labels urlSelect-label"> <input type="radio"
-									name="import-definition" value="swagger-url"> <span class="helper"><%=i18n.localize("Swagger URL")%></span>
+								<label class="radio-inline sub-labels">
+                                    <input type="radio"	name="import-definition" id="" value="swagger-file">                                
+                                    <span class="helper"></span>
+                                    <%=i18n.localize("Swagger File")%>
+								</label> 
+                                <label class="radio-inline sub-labels urlSelect-label"> 
+                                    <input type="radio"	name="import-definition" value="swagger-url">
+                                    <span class="helper"></span>
+                                    <%=i18n.localize("Swagger URL")%>
 								</label>
 							</div>
 						</div>
@@ -67,7 +84,7 @@
 									<label for="swagger-url" class="error swaggerUrlError" style="display:none"><%=i18n.localize("Please use a valid swagger url")%></label>
 								</div>
 							</div>
-						</div>					
+						</div>
 			          <input name="action" value="start" type="hidden"/>
 			          <input name="type" value="rest" type="hidden"/>
 			          <button id="startFromExistingAPI" class="btn btn-primary has-spinner" type="button"><%=i18n.localize("Start Creating")%></button>
@@ -77,20 +94,15 @@
 		</div>
 		<div class="panel panel-default">
 			<div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent=".accordion" href="#accordion1-collapse2" aria-expanded="true" aria-controls="accordion1-collapse2">
-				<h4 class="panel-title">
-					<label class="radio">
-                                    <input class="create-api" type="radio" name="create-api" />
-                                    <span class="helper"></span>
-                    </label>
-                    <div>
-                   		<div class="heading"><%=i18n.localize("I Have a SOAP Endpoint")%></div>
-                        <div class="description truncate" title="<%=i18n.localize("Use an existing SOAP endpoint to create a managed API. Import the WSDL of the SOAP service.")%>"><%=i18n.localize("Use an existing SOAP endpoint to create a managed API. Import the WSDL of the SOAP service.")%></div>
-                        <div class="status">
-                        	<i class="fw fw-down"></i>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-				</h4>
+			  <div class="status btn btn-lg pr-5">
+          <i class="icon-caret-down icon-large "></i>
+        </div>
+        <h4 class="panel-title">
+       		<div class="heading"><%=i18n.localize("I Have a SOAP Endpoint")%></div>
+          <div class="description truncate" title="<%=i18n.localize("Use an existing SOAP endpoint to create a managed API. Import the WSDL of the SOAP service.")%>"><%=i18n.localize("Use an existing SOAP endpoint to create a managed API. Import the WSDL of the SOAP service.")%>
+          </div>
+        <div class="clearfix"></div>
+        </h4>
 			</div>
 			<div id="accordion1-collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 				<div class="panel-body">
@@ -111,18 +123,13 @@
 		</div>
 		<div class="panel panel-default">
 			<div class="panel-heading" role="tab" id="headingThree" data-toggle="collapse" data-parent=".accordion" href="#accordion1-collapse3" aria-expanded="true" aria-controls="accordion1-collapse3">
-				<h4 class="panel-title">
-					<label class="radio" id="create-new-api">
-                                    <input class="create-api" type="radio" name="create-api" />
-                                    <span class="helper"></span>
-                    </label>
-                    <div>
+				
+					<div class="status btn btn-lg pr-5">
+          <i class="icon-caret-down icon-large "></i>
+        </div>
+        <h4 class="panel-title">
                    		<div class="heading"><%=i18n.localize("Design a New REST API")%></div>
                         <div class="description truncate" title="<%=i18n.localize("Design and prototype a new REST API.")%>"><%=i18n.localize("Design and prototype a new REST API.")%></div>
-                        <div class="status">
-                        	<i class="fw fw-down"></i>
-                        </div>
-                    </div>
                     <div class="clearfix"></div>
 				</h4>
 			</div>
@@ -138,18 +145,13 @@
 		</div>
 		<div class="panel panel-default">
 			<div class="panel-heading" role="tab" id="headingFour" data-toggle="collapse" data-parent=".accordion" href="#accordion1-collapse4" aria-expanded="true" aria-controls="accordion1-collapse3">
-				<h4 class="panel-title">
-					<label class="radio">
-                                    <input class="create-api" type="radio" name="create-api" />
-                                    <span class="helper"></span>
-                    </label>
-                    <div>
-                   		<div class="heading"><%=i18n.localize("Design a New Websocket API")%></div>
-                        <div class="description truncate" title="<%=i18n.localize("Design and prototype a new Websocket API.")%>"><%=i18n.localize("Design and prototype a new Websocket API.")%></div>
-                        <div class="status">
-                        	<i class="fw fw-down"></i>
+				
+					<div class="status btn btn-lg pr-5">
+          <i class="icon-caret-down icon-large "></i>
+        </div>
+                  <h4 class="panel-title">                   		<div class="heading"><%=i18n.localize("Design a New Websocket API")%></div>
+                        <div class="description truncate" title="<%=i18n.localize("Design and prototype a new Websocket API.")%>"><%=i18n.localize("Design and prototype a new Websocket API.")%>
                         </div>
-                    </div>
                     <div class="clearfix"></div>
 				</h4>
 			</div>
@@ -165,4 +167,5 @@
 		</div>
         </div>	
 	</div>
+</div>
 <% }); %>

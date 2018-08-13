@@ -1,5 +1,5 @@
 <% jagg.template("listing", function(inputs, outputs, jagg) { %>
-    <div id="listing">
+    <div id="listing" class="white-wrapper">
         <div id="listing-title" class="page-header">
              <h2><%=i18n.localize("All APIs")%></h2>
  	</div>
@@ -82,7 +82,7 @@
                     isEnjoyHintEnabledWithMenu = true;
                 }
                 if (null != isEnjoyHintEnabledWithMenu && isEnjoyHintEnabledWithMenu == true) {
-                    localStorage.setItem("interactiveTutorialEnabled", true);
+                    localStorage.setItem("interactiveTutorialEnabled", false);
                     // Check whether the WorldBank api exists already
                     localStorage.setItem("worldBankApiExist", false);
                     for (var i = 0; i < apiCount; i++) {
@@ -117,7 +117,7 @@
            </div>
        </div>
 
-        <span class="loading"></span>
+        
         <div class="page-content">
         <div class="row">
 		<%
@@ -283,18 +283,20 @@
                                     </p>
                                     <h5><%=api.status%></h5>
 		                            <%if(outputs.isCreatePermitted){ %>
+                               <div class="app-data"> 
 			                            <a href="<%=jagg.url("/design")%>?<%= apiUrlId %>" title="<%=i18n.localize("Edit")%>">
-				                         <span class="fw-stack" style="font-size:10px" >
+				                         <span class="fw-stack" style="font-size:14px" >
 				                                <i class="fw fw-circle-outline fw-stack-2x" title="<%=i18n.localize("Edit")%>"></i>
 				                                <i class="fw fw-edit fw-stack-1x" title="<%=i18n.localize("Edit")%>"></i>
 				                            </span>
 			                            </a>
 			                            <a onClick="removeAPI('<%=api.name%>','<%=api.version%>','<%=api.provider%>',this);return false;" title="<%=i18n.localize("DELETE")%>">
-				                           <span class="fw-stack" style="font-size:10px">
+				                           <span class="fw-stack" style="font-size:14px">
 				                                <i class="fw fw-circle-outline fw-stack-2x" title="<%=i18n.localize("DELETE")%>" ></i>
 				                                <i class="fw fw-delete fw-stack-1x" title="<%=i18n.localize("DELETE")%>"></i>
 				                            </span>
 			                            </a>
+                                </div>
 			                       <%} %>
                                 </div>
                             </div>
@@ -318,14 +320,14 @@
                 </div>
     <%}else{%>
     	<%if(outputs.isCreatePermitted){ %>
-    	        <div class="message message-info">
+    	        <div class="alert alert-info">
                     <h4><i class="icon fw fw-info"></i><%=i18n.localize("No APIs created yet.")%></h4>
                     <p><%=i18n.localize("Click the button below to get started.")%></p>
                 </div>
                 <div style="display: inline"><a title="<%=i18n.localize("Add New API")%>" class="btn btn-primary" id="btn-add-new-api"  href="<%=jagg.getMappedUrl("/add")%>" onclick="jagg.sessionAwareJS({redirect:'<%=jagg.getMappedUrl("/add")%><%=urlPrefix%>',e:event})" ><%=i18n.localize("New API...")%></a></div>
         		<div style="display: inline"><a title="<%=i18n.localize("Deploy Sample API")%>" class="btn btn-primary" href="#" id="deploy_sample1" onclick="deploySampleApi('<%=gatewayURL%>')" ><%=i18n.localize("Deploy Sample API")%></a></div>
         <%}else{%>
-        		<div class="message message-info">
+        		<div class="alert alert-info">
                     <h4><i class="icon fw fw-info"></i><%=i18n.localize("No APIs created yet.")%></h4>
                     <p><%=i18n.localize("Click the button below to get started.")%></p>
                 </div>

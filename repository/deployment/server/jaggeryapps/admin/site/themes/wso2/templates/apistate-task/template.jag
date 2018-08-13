@@ -33,7 +33,7 @@ if(tasks!=null){
     to=0;
     }
 if(tasks.length==0){%>
-<div class="message message-info">
+<div class="alert alert-info">
     <h4><i class="icon fw fw-info"></i><%=i18n.localize("No tasks assigned to the signed-in user or no connectivity with the BPS engine.")%></h4>
 </div>
 <%}
@@ -107,7 +107,7 @@ else{
                 </tbody>
             </table>
             <%}}else{%>
-            	<div class="message message-info">
+            	<div class="alert alert-info">
 					<h4><i class="icon fw fw-info"></i><%=i18n.localize("No tasks assigned to the login user or no connectivity with BPS engine.")%></h4>
 				</div> 
             <%}%>

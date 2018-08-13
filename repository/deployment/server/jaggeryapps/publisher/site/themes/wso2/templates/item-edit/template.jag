@@ -51,6 +51,7 @@ var outSequencesLoaded = false;
 var faultSequencesLoaded = false;
 
 </script>
+<div class="white-wrapper">
 <div class="alert alert-error" id="editAPIError" style="display:none">
 <span id="editErrorSpan"></span>
 </div>
@@ -60,6 +61,7 @@ var faultSequencesLoaded = false;
 <br/>
 <%=i18n.localize("API Definition for Swagger will not be overridden with the changes you do to the API.")%>
 </span>
+</div>
 </div>
 <script type="text/javascript">
     var subs = "<%=api.subs%>";
@@ -149,7 +151,7 @@ var faultSequencesLoaded = false;
                 <div class="control-group">
                     <label class="control-label" for="responseCache"><%=i18n.localize("Response Caching")%>:</label>
                       <div class="controls"> 
-                       <select class="select required" id="responseCache" name="responseCache" onchange="showCacheTimeout()">
+                       <select class="custom-select required" id="responseCache" name="responseCache" onchange="showCacheTimeout()">
 			                <option value="disabled" <%if(api.responseCache != "Enabled"){%> selected="selected" <%}%>><%=i18n.localize("Disabled")%></option>
 			                <option value="enabled" <%if(api.responseCache=="Enabled"){%> selected="selected" <%}%>><%=i18n.localize("Enabled")%></option>
 		                </select>                                
@@ -169,7 +171,7 @@ var faultSequencesLoaded = false;
                    <label class="control-label" for="access-control"><%=i18n.localize("Access-Control")%>:<span
                    class="requiredAstrix">*</span></label>
                    <div class="controls">
-                       <select class="select required" id="access-control" name="accessControl"
+                       <select class="custom-select required" id="access-control" name="accessControl"
                        onchange="showHidePublisherAccessControlRoles()">
                            <option value="none" <%if(api.accessControl!="restricted"){%> selected="selected" <%}%>>
                            <%=i18n.localize("None")%></option>
@@ -199,7 +201,7 @@ var faultSequencesLoaded = false;
                <label class="control-label" for="visibility"><%=i18n.localize("Visibility on Store")%>:<span
                class="requiredAstrix">*</span></label>
                <div class="controls">
-                   <select class="select required" id="visibility" name="visibility" onchange="showHideRoles()">
+                   <select class="custom-select required" id="visibility" name="visibility" onchange="showHideRoles()">
                        <option value="public" <%if(api.visibility=="public"){%> selected="selected" <%}%>><%=i18n
                        .localize("Public")%></option>
                        <option value="private" <%if(api.visibility=="private"){%> selected="selected" <%}%>><%=i18n
@@ -314,7 +316,7 @@ var faultSequencesLoaded = false;
                <div class="control-group">
                    <label class="control-label" for="endpoint_type"><%=i18n.localize("Endpoint Type:")%><span class="requiredAstrix">*</span></label>
                        <div class="controls">
-                           <select class="select required" id="endpoint_type" name="endpoint_type">
+                           <select class="custom-select required" id="endpoint_type" name="endpoint_type">
                                <option value="http"><%=i18n.localize("HTTP Endpoint")%></option>
                                <option value="address"><%=i18n.localize("Address Endpoint")%></option>
                                <option value="wsdl"><%=i18n.localize("WSDL Endpoint")%></option>
@@ -352,7 +354,7 @@ var faultSequencesLoaded = false;
                 <div class="control-group">
                     <label class="control-label" for="endpointType"><%=i18n.localize("Endpoint Security Scheme")%>:<span class="requiredAstrix">*</span></label>
                     <div class="controls">
-                    <select class="select required" id="endpointType" name="endpointType" onchange="showUTProductionURL()">
+                    <select class="custom-select required" id="endpointType" name="endpointType" onchange="showUTProductionURL()">
                         <option value="nonsecured" <%if(api.endpointTypeSecured=="false"){%> selected="selected" <%}%>><%=i18n.localize("Non Secured")%></option>
                         <option value="secured" <%if(api.endpointTypeSecured=="true"){%> selected="selected" <%}%>><%=i18n.localize("Secured")%></option>
                     </select>
@@ -363,7 +365,7 @@ var faultSequencesLoaded = false;
                 <div class="control-group" id="endpointAuthType" <%if(api.endpointTypeSecured=="false"){%>style="display: none;"<%}%>>
                     <label class="control-label" for="endpointAuthType"><%=i18n.localize("Endpoint Auth Type")%>:<span class="requiredAstrix">*</span></label>
                     <div class="controls">
-                    <select class="select required" id="endpointAuthType" name="endpointAuthType" >
+                    <select class="custom-select required" id="endpointAuthType" name="endpointAuthType" >
                         <option value="basicAuth" <%if( api.endpointAuthTypeDigest=="false"){%> selected="selected" <%}%>><%=i18n.localize("Basic Auth")%></option>
                         <option value="digestAuth" <%if(api.endpointAuthTypeDigest=="true"){%> selected="selected" <%}%>><%=i18n.localize("Digest Auth")%></option>
                     </select>
@@ -405,7 +407,7 @@ var faultSequencesLoaded = false;
                 <div class="control-group">
                     <label class="control-label" for="destinationStats"><%=i18n.localize("Destination-Based Usage Tracking")%>:</label>
                       <div class="controls">
-                       <select class="select required" id="destinationStats" name="destinationStats">
+                       <select class="custom-select required" id="destinationStats" name="destinationStats">
 			                <option value="disabled" <%if(api.destinationStats != "Enabled"){%> selected="selected" <%}%>><%=i18n.localize("Disabled")%></option>
 			                <option value="enabled" <%if(api.destinationStats == "Enabled"){%> selected="selected" <%}%>><%=i18n.localize("Enabled")%></option>
 		                </select>
@@ -455,7 +457,7 @@ var faultSequencesLoaded = false;
 	                	<label class="control-label" for="subscriptions"><%=i18n.localize("Subscriptions")%>:</label>
 	                			
 						<div class="controls">
-		                	<select class="select required" id="subscriptions" name="subscriptions" onchange="showHideTenants()">
+		                	<select class="custom-select required" id="subscriptions" name="subscriptions" onchange="showHideTenants()">
 			                	<option value="current_tenant" <%if(api.subscriptionAvailability=="current_tenant"){%> selected="selected" <%}%> ><%=i18n.localize("Available to current tenant only")%></option>
 			                	<option value="all_tenants" <%if(api.subscriptionAvailability=="all_tenants"){%> selected="selected" <%}%> ><%=i18n.localize("Available to all the tenants")%></option>
 			                	<option value="specific_tenants" <%if(api.subscriptionAvailability=="specific_tenants"){%> selected="selected" <%}%> ><%=i18n.localize("Available to specific tenants")%></option>
@@ -528,7 +530,7 @@ var faultSequencesLoaded = false;
 
                             </ul>
                         </div>
-                            <button class="btn btn-secondary" type="button" id="add_resource" style="margin:0 0 10px 10px;"><i class="icon-plus-sign"></i>&nbsp;<%=i18n.localize("Add Resource")%></button>
+                            <button class="btn btn-default" type="button" id="add_resource" style="margin:0 0 10px 10px;"><i class="icon-plus-sign"></i>&nbsp;<%=i18n.localize("Add Resource")%></button>
                         </div>
 
                 <div id="resource_view"></div>
@@ -557,7 +559,7 @@ var faultSequencesLoaded = false;
              </div>
             <div class="form-actions" id="saveButtons">
                 <input type="submit" id="updateButton" class="btn btn-primary" value="<%=i18n.localize("Save")%>"/>
-                <input type="reset" id="cancelEdit" class="btn btn-secondary" value="<%=i18n.localize("Cancel")%>">
+                <input type="reset" id="cancelEdit" class="btn btn-default" value="<%=i18n.localize("Cancel")%>">
             </div>
 
         </form>
@@ -574,7 +576,7 @@ var faultSequencesLoaded = false;
                          <div id="res" class="hide" style="color:red;float:left"></div>
                          <a href="#" class="btn btn-primary" id="advance_ep_submit" title="<%=i18n.localize("Save")
                          %>"><%=i18n.localize("Save changes")%></a>
-                         <a href="#" class="btn btn-secondary" data-dismiss="modal" title="<%=i18n.localize("Close")
+                         <a href="#" class="btn btn-default" data-dismiss="modal" title="<%=i18n.localize("Close")
                          %>"><%=i18n.localize("Close")%></a>
                          </div>
                     </div>
@@ -615,7 +617,7 @@ var faultSequencesLoaded = false;
                 <div class="modal-footer">
                 <div id="res" class="hide" style="color:red;float:left"></div>
                 <a class="btn btn-primary" id="scope_submit" title="<%=i18n.localize("Add Scopes")%>"><%=i18n.localize("Add Scopes")%></a>
-                <a class="btn btn-secondary" data-dismiss="modal" title="<%=i18n.localize("Close")%>"><%=i18n.localize("Close")%></a>
+                <a class="btn btn-default" data-dismiss="modal" title="<%=i18n.localize("Close")%>"><%=i18n.localize("Close")%></a>
                 </div>
            </div>
     </div>

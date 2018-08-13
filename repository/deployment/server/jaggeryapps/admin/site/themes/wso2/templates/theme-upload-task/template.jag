@@ -7,7 +7,7 @@
   
 
         <% if(outputs.error != false){ %>
-        	 <div class="message message-danger">
+        	 <div class="alert alert-danger">
                     <h4><i class="icon fw fw-error"></i><%=i18n.localize("Error!")%></h4>
                     <p><%=i18n.localize(outputs.error,outputs.error)%></p>
              </div>
@@ -23,12 +23,12 @@
                 </button>
             </div>
         <% }else if(outputs.warning != ""){ %>
-        	 <div class="message message-danger">
+        	 <div class="alert alert-danger">
                     <h4><i class="icon fw fw-warning"></i><%=i18n.localize("Warning!")%></h4>
                     <p><%=i18n.localize(outputs.warning,outputs.warning)%></p>
              </div>
        <% } else{ %>
-       	  <div class="message message-info">
+       	  <div class="alert alert-info">
                     <h4><i class="icon fw fw-success"></i><%=i18n.localize("Info")%></h4>
                     <p><%=i18n.localize("The theme should be a zip file containing css and images compliant with the API Manager theme format")%></p>
            </div> 

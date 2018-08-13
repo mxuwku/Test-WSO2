@@ -55,7 +55,7 @@
     %>
 </table>
 <%} else { %>
-	<div class="message message-info">
+	<div class="alert alert-info">
 			<h4><i class="icon fw fw-info"></i><%=i18n.localize("Custom Rules are not defined")%></h4>
 			<p><%=i18n.localize("Custom Rules are not defined")%></p>
 		</div>

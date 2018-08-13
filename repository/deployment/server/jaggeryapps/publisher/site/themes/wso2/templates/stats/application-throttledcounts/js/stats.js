@@ -118,7 +118,7 @@ var populateAppList = function() {
                     .trigger('change');
             } else {
                 $('#chartContainer').html('');
-                $('#noData').append($('<div class="center-wrapper"><div class="col-sm-4"/><div class="col-sm-4 message message-info"><h4><i class="icon fw fw-info" title="' + i18n.t('No Stats')+ '"></i>' + i18n.t('No Data Available')+ '.</h4></div></div>'));
+                $('#noData').append($('<div class="center-wrapper"><div class="col-sm-4"/><div class="col-sm-4 alert alert-info"><h4><i class="icon fw fw-info" title="' + i18n.t('No Stats')+ '"></i>' + i18n.t('No Data Available')+ '.</h4></div></div>'));
                 if (json.message == "AuthenticateError") {
                     jagg.showLogin();
                 } else {
@@ -196,11 +196,11 @@ var drawThrottledTimeGraph = function (fromDate, toDate) {
 
                     }else if(length == 0) {
                         $('#chartContainer').html('');
-                        $('#chartContainer').append($('<div class="center-wrapper"><div class="col-sm-4"/><div class="col-sm-4 message message-info"><h4><i class="icon fw fw-info" title="'+i18n.t('No-Stats')+'"></i>'+i18n.t('No Data Available')+'.</h4></div></div>'));
+                        $('#chartContainer').append($('<div class="center-wrapper"><div class="col-sm-4"/><div class="col-sm-4 alert alert-info"><h4><i class="icon fw fw-info" title="'+i18n.t('No-Stats')+'"></i>'+i18n.t('No Data Available')+'.</h4></div></div>'));
                     }
             } else {
                 $('#chartContainer').html('');
-                $('#chartContainer').append($('<div class="center-wrapper"><div class="col-sm-4"/><div class="col-sm-4 message message-info"><h4><i class="icon fw fw-info" title="'+i18n.t('No-Stats')+'"></i>'+i18n.t('No Data Available')+'.</h4></div></div>'));
+                $('#chartContainer').append($('<div class="center-wrapper"><div class="col-sm-4"/><div class="col-sm-4 alert alert-info"><h4><i class="icon fw fw-info" title="'+i18n.t('No-Stats')+'"></i>'+i18n.t('No Data Available')+'.</h4></div></div>'));
                 if (json.message == "AuthenticateError") {
                     jagg.showLogin();
                 } else {

@@ -494,3 +494,17 @@ updates/summary/update-summary-wso2am-2.1.0-1518025166509.pdf
 updates/summary/update-summary-wso2am-2.1.0-1516470910911.pdf
 updates/summary-2017-06-21T16-21-54/update-summary-1494916575168.pdf
 lib/runtimes/cxf/commons-logging-1.1.1.jar
+*.log
+repository/components/default/configuration/org.eclipse.core.runtime/.extraData.14
+repository/components/default/configuration/org.eclipse.core.runtime/.contributors.14
+repository/components/default/configuration/org.eclipse.core.runtime/.contributions.14
+repository/components/default/configuration/org.eclipse.osgi/bundles/7/1/.cp/andes-client-3.1.6.jar
+repository/components/default/configuration/org.eclipse.core.runtime/.table.14
+repository/components/default/configuration/org.eclipse.core.runtime/.orphans.14
+repository/components/default/configuration/org.eclipse.core.runtime/.namespaces.14
+repository/components/default/configuration/org.eclipse.core.runtime/.manager/.fileTable.21
+repository/components/default/configuration/org.eclipse.core.runtime/.manager/.fileTable.20
+repository/components/default/configuration/org.eclipse.core.runtime/.mainData.14
+repository/logs/
+solr/
+tmp/

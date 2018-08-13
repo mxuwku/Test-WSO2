@@ -7431,12 +7431,12 @@ body.inverse .fade-edge:after {
   padding: 0;
   margin: 0;
 }
-.navbar .container-fluid > .navbar-collapse .icon,
+/*.navbar .container-fluid > .navbar-collapse .icon,
 .navbar .container-fluid > .navbar-header .icon,
 .navbar .container > .navbar-collapse .icon,
 .navbar .container > .navbar-header .icon {
   margin-bottom: 4px;
-}
+}*/
 
 .navbar-nav {
   margin: 7.5px 0;
@@ -9981,4 +9981,5 @@ a.list-group-item:hover {
   background-color: #ffffff;
   position: relative;
   border: 1px solid #e2e2e2;
+  padding: 60px;
 }

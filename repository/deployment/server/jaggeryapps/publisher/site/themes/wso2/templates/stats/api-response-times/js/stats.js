@@ -316,7 +316,7 @@ var drawProviderAPIServiceTime = function (from, to) {
                         $('#chartContainer').hide();
                         $('#tableContainer').hide();
                         $('#noData').html('');
-                        $('#noData').append($('<div class="center-wrapper"><div class="col-sm-4"/><div class="col-sm-4 message message-info"><h4><i class="icon fw fw-info" title="' + i18n.t("No Stats")+ '"></i>'+ i18n.t("No Data Available")+'.</h4></div></div>'));
+                        $('#noData').append($('<div class="center-wrapper"><div class="col-sm-4"/><div class="col-sm-4 alert alert-info"><h4><i class="icon fw fw-info" title="' + i18n.t("No Stats")+ '"></i>'+ i18n.t("No Data Available")+'.</h4></div></div>'));
                     }
             } else {
                 if (json.message == "AuthenticateError") {

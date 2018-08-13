@@ -79,7 +79,7 @@
 									<input type="hidden" id="default_version_checked_cp" name="default_version_checked_cp" value="" />
 								</div>
 							</div>
-							<div class="message message-info">
+							<div class="alert alert-info">
 								<h4><i class="icon fw fw-info"></i><%=i18n.localize("Info!")%></h4>
 								<p>
 								<%if(api.hasDefaultVersion){%>
@@ -91,7 +91,7 @@
 							</div>
 							<div class="copy-buttons" id="saveButtons">
 								<button type="submit" class="btn btn-primary copy-button"><%=i18n.localize("Done")%></button>
-								<button type="button" class="btn btn-secondary cancel-button"
+								<button type="button" class="btn btn-default cancel-button"
 									onclick="location.href='<%=jagg.url("/info")%>?<%=apiUrlId%>'"><%=i18n.localize("Cancel")%></button>
 							</div>
 

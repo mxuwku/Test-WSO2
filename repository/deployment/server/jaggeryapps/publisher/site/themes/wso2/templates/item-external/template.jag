@@ -65,7 +65,7 @@ var faultSequencesLoaded = false;
             <br class="spacer"/>
             <div class="form-actions" id="saveButtons">
                 <input type="button" id="updateButtonExt" class="btn btn-primary" onclick='publishToExternalStores()' value="<%=i18n.localize("Save")%>"/>
-                <input type="reset" id="cancelEditExt" class="btn btn-secondary" value="<%=i18n.localize("Cancel")%>">
+                <input type="reset" id="cancelEditExt" class="btn btn-default" value="<%=i18n.localize("Cancel")%>">
             </div>
 
         </form>

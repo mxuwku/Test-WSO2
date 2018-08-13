@@ -176,19 +176,19 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right arrow alerts arrow-top-right dark add-margin-top-2x" role="menu">
                                 <ul class="sidebar-messages">
-                                    <li class="message message-success">
+                                    <li class="alert alert-success">
                                         <h4><i class="icon fw fw-success"></i>Minor Information Message</h4>
                                         <p>Alerts don't have default classes, only base and modifier classes.</p>
                                     </li>
-                                    <li class="message message-info">
+                                    <li class="alert alert-info">
                                         <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
                                         <p>Alerts don't have default classes, only base and modifier classes.</p>
                                     </li>
-                                    <li class="message message-warning">
+                                    <li class="alert alert-warning">
                                         <h4><i class="icon fw fw-warning"></i>Major Information Message</h4>
                                         <p>Alerts don't have default classes, only base and modifier classes.</p>
                                     </li>
-                                    <li class="message message-danger">
+                                    <li class="alert alert-danger">
                                         <h4><i class="icon fw fw-error"></i>Critical Information Message</h4>
                                         <p>Alerts don't have default classes, only base and modifier classes.</p>
                                     </li>

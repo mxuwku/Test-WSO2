@@ -47,7 +47,7 @@
                 var page = request.getParameter("page");
             %>
 	    <div class="breadcrumb-wrapper">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb" style="background-color: #fff; border-bottom: 1px solid #e2e2e2;">
 				<li>
 					<a href="<%=listUrl%>" title="<%=i18n.localize("Home")%>" onclick="jagg.sessionAwareJS({redirect:'<%=listUrl%>',e:event})"><i class="icon fw fw-home"></i> <span class="hidden-xs"><%=i18n.localize("Home")%></span></a>
 				</li>

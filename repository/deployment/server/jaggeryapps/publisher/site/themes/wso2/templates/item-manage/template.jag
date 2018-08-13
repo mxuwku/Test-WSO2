@@ -95,7 +95,7 @@
 	        <span id="addErrorSpan"></span>
 	    </div>
 		<% if(api != null && api.subs > 0){%>
-		    <div class="message message-warning">
+		    <div class="alert alert-warning">
                 <h4><i class="icon fw fw-warning"></i><%=i18n.localize("Warning!")%></h4>
                 <p><%=i18n.localize("You are editing an API with active subscribers. Tier Availability changes will not be reflected on active subscriptions.")%></p>
             </div>
@@ -183,11 +183,13 @@
                                         <div class="controls col-sm-8">
                                                 <label class="checkbox">
                                                         <input type="checkbox" id="transport_https" name="transport_https"  value="https" <%if(api.transport_https=="checked"){%>checked<%}%>/>
-                                                        <span class="helper"><%=i18n.localize("HTTPS")%></span>
+                                                        <span class="helper"></span>
+                                                        <%=i18n.localize("HTTPS")%>
                                                 </label>
                                                 <label class="checkbox">
                                                         <input type="checkbox" id="transport_http" name="transport_http"  value="http" <%if(api.transport_http=="checked"){%>checked<%}%>/>
-                                                        <span class="helper"><%=i18n.localize("HTTP")%></span>
+                                                        <span class="helper"></span>
+                                                        <%=i18n.localize("HTTP")%>
                                                 </label>
                                                 <label id="transport_error" class="error hide" style="display: block;"><%=i18n.localize("Please select at least one transport.")%></label>
                                             </div>
@@ -205,7 +207,7 @@
                                                     <p id="cache_help" class="hide"><%=i18n.localize("This option determines whether to cache the response messages of the API. Caching improves performance because the backend server does not have to process the same data multiple times. To offset the risk of stale data in the cache, set an appropriate timeout period when prompted.")%></p>
                                                 </label>
                                                   <div class="col-sm-4 responseCacheSelect">
-                                                   <select class="select required form-control" id="responseCache" name="responseCache">
+                                                   <select class="custom-select required form-control" id="responseCache" name="responseCache">
                                                         <option value="disabled" <%if(api.responseCache != "Enabled"){%> selected="selected" <%}%>><%=i18n.localize("Disabled")%></option>
                                                         <option value="enabled" <%if(api.responseCache=="Enabled"){%> selected="selected" <%}%>><%=i18n.localize("Enabled")%></option>
                                                     </select>
@@ -235,11 +237,11 @@
                                                         </label>
                                                         <div class="col-sm-4">
                                                             <% if(api.visibility!="public") {%>
-                                                            <select class="select required form-control" id="subscriptions" name="subscriptions" >
+                                                            <select class="custom-select required form-control" id="subscriptions" name="subscriptions" >
                                                                 <option value="current_tenant"  selected="selected"><%=i18n.localize("Available to current tenant only")%></option>
                                                             </select>
                                                             <%} else {%>
-                                                                <select class="select required form-control" id="subscriptions" name="subscriptions" >
+                                                                <select class="custom-select required form-control" id="subscriptions" name="subscriptions" >
                                                                 <option value="current_tenant" <%if(api.subscriptionAvailability=="current_tenant"){%> selected="selected" <%}%> ><%=i18n.localize("Available to current tenant only")%></option>
                                                                 <option value="all_tenants" <%if(api.subscriptionAvailability=="all_tenants"){%> selected="selected" <%}%> ><%=i18n.localize("Available to all the tenants")%></option>
                                                                     <% if(!(enableSelectedTenantSubscription == 'false')) {%>
@@ -323,11 +325,11 @@
                         </label>
                         <div class="col-sm-4">
                             <% if(api.visibility!="public") {%>
-                            <select class="select required form-control" id="subscriptions" name="subscriptions" >
+                            <select class="custom-select required form-control" id="subscriptions" name="subscriptions" >
                                 <option value="current_tenant"  selected="selected"><%=i18n.localize("Available to current tenant only")%></option>
                             </select>
                             <%} else {%>
-                            <select class="select required form-control" id="subscriptions" name="subscriptions" >
+                            <select class="custom-select required form-control" id="subscriptions" name="subscriptions" >
                                 <option value="current_tenant" <%if(api.subscriptionAvailability=="current_tenant"){%> selected="selected" <%}%> ><%=i18n.localize("Available to current tenant only")%></option>
                                 <option value="all_tenants" <%if(api.subscriptionAvailability=="all_tenants"){%> selected="selected" <%}%> ><%=i18n.localize("Available to all the tenants")%></option>
                                 <% if(!(enableSelectedTenantSubscription == 'false')) {%>
@@ -374,15 +376,18 @@
 
                                                         </label>
                                                         <div class="col-sm-8">
-                                                            <label class="radio">
+                                                            <label class="radio-inline">
                                                                 <input type="radio" class="backend_tps" id ="backend_tps_unlimited" name="backend_tps" <%if( api.productionTps == "" && api.sandboxTps == "" ){ %>
                                                                 checked="checked"<%}%> value="unlimited">
-                                                                <span class="helper"><%=i18n.localize("Unlimited")%></span>
+                                                                <span class="helper"></span>
+                                                                <%=i18n.localize("Unlimited")%>
                                                             </label>
-                                                            <label class="radio">
+
+                                                            <label class="radio-inline">
                                                                 <input type="radio" class="backend_tps" id ="backend_tps_specify" name="backend_tps" <%if(api.productionTps != "" || api.sandboxTps != ""){ %>
                                                                 checked="checked"<%}%> value="specify">
-                                                                <span class="helper"><%=i18n.localize("Specify")%></span>
+                                                                <span class="helper"></span>
+                                                                <%=i18n.localize("Specify")%>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -424,7 +429,8 @@
                                                         %>
                                                         <label id="<%=tiers[i].tierName%>" class="tier_checkbox_label checkbox add-padding-bottom-1x">
                                                                 <input type="checkbox" class="tier_check" name="tier" value="<%= encode.forHtmlAttribute(String(tiers[i].tierName))%>" <%if(isSelected){%>checked<%}%>>
-                                                                <span class="helper"><strong><%= encode.forHtml(String(tiers[i].tierDisplayName)) %></strong> : <%= encode.forHtml(String(tiers[i].tierDescription)) %></span>
+                                                                <span class="helper"></span>
+                                                                <strong><%= encode.forHtml(String(tiers[i].tierDisplayName)) %></strong> : <%= encode.forHtml(String(tiers[i].tierDescription)) %>
                                                         </label>
                                                         <%
                                                         }
@@ -448,13 +454,15 @@
                                                     <p id="api_policy_help" class="hide"><%=i18n.localize("Enabling an API-level policy will apply the selected policy across all resources of the API. The resources level tier selection will be disabled and will not be taken into consideration within a handler if the API-level policy is available")%></p>
                                                 </label>
                                                 <div class="controls col-sm-8">
-                                                    <label class="radio">
+                                                    <label class="radio-inline">
                                                             <input type="radio" id="api_level_policy" class="api_level_policy" name="api_level_policy" value="api_level_policy" <%if(api.apiLevelPolicy != null && api.apiLevelPolicy != ""){%>checked<%}%>>
-                                                            <span class="helper"><%=i18n.localize("Apply to API")%></span>
+                                                            <span class="helper"></span>
+                                                            <%=i18n.localize("Apply to API")%>
                                                     </label>
-                                                    <label class="radio">
+                                                    <label class="radio-inline">
                                                             <input type="radio" id="api_level_policy" class="api_level_policy" name="api_level_policy" value="resource_level" <%if(api.apiLevelPolicy == null || api.apiLevelPolicy == ""){%>checked<%}%>>
-                                                            <span class="helper"><%=i18n.localize("Apply per Resource")%></span>
+                                                            <span class="helper"></span>
+                                                            <%=i18n.localize("Apply per Resource")%>
                                                     </label>
                                                 </div><%}else{%>
                                                         <a class="help_popup" help_data="api_policy_help" title="api_policy_help" data-trigger="hover" data-placement="bottom">
@@ -505,7 +513,7 @@
                                                          <%if(!isWSAPI){%>
                                                 <div id="resource-policy-select" class="col-sm-4 <%if(api.apiLevelPolicy != null && api.apiLevelPolicy != ""){%>hide<%}%>"  >
                                                     <script id="resource-policy-ui-template" language="text/x-handlebars-template">
-                                                        <a class="select_adv_policy_for_resource btn btn-secondary"><%=i18n.localize("Select Policy per Resource")%></a>
+                                                        <a class="select_adv_policy_for_resource btn btn-default"><%=i18n.localize("Select Policy per Resource")%></a>
                                                         <div id="resource_policy_modal" class="modal fade">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content">
@@ -567,7 +575,7 @@
 
                                             <div id="resource-policy-select" class="controls col-sm-4">
                                                     <script id="resource-policy-ui-template" language="text/x-handlebars-template">
-                                                        <a class="select_adv_policy_for_resource btn btn-secondary"><%=i18n.localize("Select Policy per Resource")%></a>
+                                                        <a class="select_adv_policy_for_resource btn btn-default"><%=i18n.localize("Select Policy per Resource")%></a>
                                                         <div id="resource_policy_modal" class="modal fade">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content">
@@ -814,7 +822,7 @@
                             </div>
                             <div class="form-actions" id="saveButtons">
 
-                                <button class="btn btn-secondary has-spinner" id="save_api"><%=i18n.localize("Save")%></button>
+                                <button class="btn btn-default has-spinner" id="save_api"><%=i18n.localize("Save")%></button>
                                 <% if(outputs.isPermitted) {
                                    var status=outputs.lcStatus;
                                    var wfStatus = "";
@@ -829,7 +837,7 @@
                                      <%}%>
                                 <%}%>
 
-                                <input type="reset" class="btn btn-secondary" value="<%=i18n.localize("Cancel")%>" onclick="javascript:window.location.href='./'" />
+                                <input type="reset" class="btn btn-default" value="<%=i18n.localize("Cancel")%>" onclick="javascript:window.location.href='./'" />
                                 <label id="gateway_error" class="bg-warning hide" style="display: block;padding:
                                 10px; border-radius: 5px;margin-top:10px;"><%=i18n
                                 .localize("Some of the gateway environments are not selected.")%></label>
@@ -856,8 +864,8 @@
               </div>
               <div class="modal-footer successMsgFooter">
                 <div class="pull-right">
-                <button id="editAPI-btn" class="btn btn-secondary" data-dismiss="modal" aria-hidden="true" title="<%=i18n.localize("Keep Editing API")%>"><%=i18n.localize("Keep Editing API")%></button>
-                <a href='javascript:void(0)' id="goToStore-btn" class="btn btn-secondary" title="<%=i18n.localize("Go to API Store")%>"><%=i18n.localize("Go to API Store")%></a>
+                <button id="editAPI-btn" class="btn btn-default" data-dismiss="modal" aria-hidden="true" title="<%=i18n.localize("Keep Editing API")%>"><%=i18n.localize("Keep Editing API")%></button>
+                <a href='javascript:void(0)' id="goToStore-btn" class="btn btn-default" title="<%=i18n.localize("Go to API Store")%>"><%=i18n.localize("Go to API Store")%></a>
                 <a href="<%= jagg.url("/info?"+ apiUrlId ) %>" class="btn btn-primary" title="<%=i18n.localize("Go to Overview")%>"><%=i18n.localize("Go to Overview")%></a>
                 </div>
               </div>
@@ -976,11 +984,8 @@
                      {{/each}}
                  </ul>
                 {{/if}}
-                <button id="define_scopes" class="pointer btn btn-secondary" title="define_scopes" type="button">
-                    <span class="icon fw-stack" style="font-size:10px;">
-                        <i class="fw fw-add fw-stack-1x"></i>
-                        <i class="fw fw-circle-outline fw-stack-2x"></i>
-                    </span>
+                <button id="define_scopes" class="pointer btn btn-default" title="define_scopes" type="button">
+                    <span class="fa fa-circle-plus"></span>
                     <%=i18n.localize("Add Scopes")%>
                 </button>
             </div>
@@ -1290,7 +1295,7 @@
     <div class="modal-footer">
     <div id="res" class="hide" style="color:red;float:left"></div>
     <a class="btn btn-primary" id="scope_submit" title="<%=i18n.localize("Add Scopes")%>">Add Scope</a>
-    <a class="btn btn-secondary" data-dismiss="modal" title="<%=i18n.localize("Close")%>">Close</a>
+    <a class="btn btn-default" data-dismiss="modal" title="<%=i18n.localize("Close")%>">Close</a>
     </div>
     </div>
     </div>

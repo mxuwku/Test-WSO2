@@ -64,7 +64,7 @@
     </div>
 <%
     if(api != null && api.subs > 0){%>
-   			<div class="message message-warning">
+   			<div class="alert alert-warning">
                 <h4><i class="icon fw fw-warning"></i>Warning!</h4>
                 <p>You are editing an API with active subscribers. Tier Availability changes will not be reflected on
 	        active subscriptions.</p>
@@ -120,10 +120,10 @@
 								                            <div class="form-group">
 								                            	<label class="control-label col-xs-12 col-sm-3 col-md-3 col-lg-3"></label>
 								                            	<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-																	<span class="add_ep btn btn-secondary" data-type="{{ ep_type }}" >
+																	<span class="add_ep btn btn-default" data-type="{{ ep_type }}" >
 																		<i class="fw fw-add"></i>
 																	</span>
-																	<span class="remove_ep btn btn-secondary" data-type="{{ ep_type }}" >
+																	<span class="remove_ep btn btn-default" data-type="{{ ep_type }}" >
 																		<i class="fw fw-minus"></i>
 																	</span>
 								                            	</div>
@@ -147,8 +147,8 @@
 																  {{/if}}
 																  <input type="text" class="form-control endpoint_input" id="endpoint-input" data-type="{{type}}" data-index="{{ @index }}" value="{{ url }}" placeholder="E.g.: http://appserver/resource">
 																  <span class="input-group-btn">
-																    <button class="btn btn-secondary ad_config" type="button" data-type="{{ type }}" data-index="{{ @index }}" title='<%=i18n.localize("Advanced Options")%>'><i class="fw fw-settings"></i></button>
-																    <button class="btn btn-secondary check_url_valid" type="button" ><%= i18n.localize("Test")%></button>
+																    <button class="btn btn-default ad_config" type="button" data-type="{{ type }}" data-index="{{ @index }}" title='<%=i18n.localize("Advanced Options")%>'><i class="fw fw-settings"></i></button>
+																    <button class="btn btn-default check_url_valid" type="button" ><%= i18n.localize("Test")%></button>
 																  </span>
 																</div>
 																{{#if invalid }}
@@ -185,7 +185,7 @@
 							                            <div class="form-group">
 							                            	<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
 							                            	<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-															<div class="message message-info remove-margin">
+															<div class="alert alert-info remove-margin">
 											                    <h4><i class="icon fw fw-info"></i>Notice</h4>
 											                    <p> <%=i18n.localize('You have selected "Dynamic Endpoint" which will send the message to the address specified in the "To" header. Please upload a mediation sequence file to Message Mediation Policies, which sets the "To" header.')%></p>
 															</div>
@@ -199,11 +199,13 @@
 							                                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 																<label class="checkbox">
 																  <input type="checkbox" id="load_balance" name="load_balance" {{#if load_balance }}checked="checked"{{/if}}>
-																  <span class="helper">Load Balanced</span>
+																  <span class="helper"></span>
+                                                                  Load Balanced
 																</label>
 							                                    <label class="checkbox">
 																  <input type="checkbox" id="failover" name="failover" {{#if failover }}checked="checked"{{/if}} {{#if failOver }}checked="checked"{{/if}}>
-																  <span class="helper"><%=i18n.localize("Failover")%></span>
+																  <span class="helper"></span>
+                                                                  <%=i18n.localize("Failover")%>
 																</label>
 							                                </div>
 								                        </div>
@@ -330,7 +332,7 @@
 														        <div class="modal-footer">
 															        <div id="res" style="color:red;float:left"></div>
 																	<a href="#" class="btn btn-primary" id="advance_ep_submit" title='<%=i18n.localize("Save")%>"'><%=i18n.localize("Save")%></a>
-																	<a href="#" class="btn btn-secondary" data-dismiss="modal" title='<%=i18n.localize("Close")%>"'><%=i18n.localize("Close")%></a>
+																	<a href="#" class="btn btn-default" data-dismiss="modal" title='<%=i18n.localize("Close")%>"'><%=i18n.localize("Close")%></a>
 														        </div>
 														    </div>
 														    </div>
@@ -402,7 +404,7 @@
 							                            	<p id="endpointSec_help" class="hide"><%=i18n.localize("To connect to secured endpoints, you need to pass the credentials of the backend service.")%></p>
 							                            </label>
 							                            <div class="col-sm-4">
-							                            <select class="select required form-control" id="endpointType" name="endpointType" >
+							                            <select class="custom-select required form-control" id="endpointType" name="endpointType" >
 							                                <option value="nonsecured" <%if( api.endpointTypeSecured=="false"){%> selected="selected" <%}%>><%=i18n.localize("Non Secured")%></option>
 							                                <option value="secured" <%if(api.endpointTypeSecured=="true"){%> selected="selected" <%}%>><%=i18n.localize("Secured")%></option>
 							                            </select>
@@ -420,7 +422,7 @@
 							                            	<p id="endpointAuth_help" class="hide"><%=i18n.localize("Select the authentication scheme you require.")%></p>
 							                            </label>
 							                            <div class="col-sm-4">
-							                            <select class="select required form-control" id="endpointAuthType" name="endpointAuthType" >
+							                            <select class="custom-select required form-control" id="endpointAuthType" name="endpointAuthType" >
 							                                <option value="basicAuth" <%if( api.endpointAuthTypeDigest=="false"){%> selected="selected" <%}%>><%=i18n.localize("Basic Auth")%></option>
 							                                <option value="digestAuth" <%if(api.endpointAuthTypeDigest=="true"){%> selected="selected" <%}%>><%=i18n.localize("Digest Auth")%></option>
 							                            </select>
@@ -517,7 +519,7 @@
                                                                         <div id="res" style="color:red;float:left"></div>
                                                                         <a href="#" class="btn btn-primary cert-upload-btn" id="cert-upload"
                                                                            title='<%=i18n.localize("Upload")%>"'><%=i18n.localize("Upload")%></a>
-                                                                        <a href="#" class="btn btn-secondary modal-close" title='<%=i18n.localize("Close")%>"'><%=i18n.localize("Close")%></a>
+                                                                        <a href="#" class="btn btn-default modal-close" title='<%=i18n.localize("Close")%>"'><%=i18n.localize("Close")%></a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -590,7 +592,7 @@
                                                                            required
                                                                            accept="application/pkcs8, application/pkcs10, application/pkix-crl, application/pkcs7-mime, application/x-x509-ca-cert, application/x-x509-user-cert, application/x-pkcs7-crl, application/x-pkcs12, application/x-pkcs7-certificates, application/x-pkcs7-certreqresp, .p8, .p10, .csr, .cer, .crl, .p7c, .crt, .der, .p12, .pfx, .p7b, .spc, .p7r">
                                                                     <div class="input-group-btn">
-                                                                        <button class="btn btn-secondary browse" title="Browse File" type="button">
+                                                                        <button class="btn btn-default browse" title="Browse File" type="button">
                                                                             <i aria-hidden="true" class="fw fw-file-browse"></i>
                                                                             <span class="hidden-xs"><%=i18n.localize("Browse")%></span>
                                                                         </button>
@@ -612,7 +614,8 @@
 							                                        <input type="checkbox" id="toggleSequence" name="sequence_check"
 							                                            <% if((api.inSequence && (!"none".equals(api.inSequence))) || (api.outSequence && (!"none".equals(api.outSequence)))
 							                                            || ( api.faultSequence && (!"none".equals(api.faultSequence)))) { %> checked="checked" <%}%>>
-							                                            <span class="helper"><%=i18n.localize("Check to select a message mediation policy to be executed in the message flow")%></span>
+							                                            <span class="helper"></span>
+                                                                        <%=i18n.localize("Check to select a message mediation policy to be executed in the message flow")%>
 							                                    </label>
 							                                </div>
 							                            </div>
@@ -633,7 +636,7 @@
                                                                         </optgroup>
 							                                    	</select>
 							                                    	<span class="input-group-btn">
-                                                                        <a href="#sequenceUpload" role="button" class="btn btn-secondary btn-sequenceUpload" data-id="in" data-name="In Flow" data-toggle="modal" title="Mediation Policy Upload" ><i class="fw fw-upload"></i> Upload In Flow</a>
+                                                                        <a href="#sequenceUpload" role="button" class="btn btn-default btn-sequenceUpload" data-id="in" data-name="In Flow" data-toggle="modal" title="Mediation Policy Upload" ><i class="fw fw-upload"></i> Upload In Flow</a>
                                                                     </span>
                                                                 </div>
 
@@ -653,7 +656,7 @@
                                                                         </optgroup>
 							                                    	</select>
 																    <span class="input-group-btn">
-                                                                        <a href="#sequenceUpload" role="button" class="btn btn-secondary btn-sequenceUpload" data-id="out" data-name="Out Flow" data-toggle="modal" title="Mediation Policy Upload" ><i class="fw fw-upload"></i> Upload Out Flow</a>
+                                                                        <a href="#sequenceUpload" role="button" class="btn btn-default btn-sequenceUpload" data-id="out" data-name="Out Flow" data-toggle="modal" title="Mediation Policy Upload" ><i class="fw fw-upload"></i> Upload Out Flow</a>
                                                                     </span>
                                                                 </div>
 
@@ -673,7 +676,7 @@
                                                                         </optgroup>
 																	</select>
 																	<span class="input-group-btn" >
-                                                                        <a href="#sequenceUpload" role="button" class="btn btn-secondary btn-sequenceUpload" data-id="fault" data-name="Fault Flow" data-toggle="modal" title="<%=i18n.localize("Mediation Policy Upload")%>" ><i class="fw fw-upload"></i> <%=i18n.localize("Upload Fault Flow")%></a>
+                                                                        <a href="#sequenceUpload" role="button" class="btn btn-default btn-sequenceUpload" data-id="fault" data-name="Fault Flow" data-toggle="modal" title="<%=i18n.localize("Mediation Policy Upload")%>" ><i class="fw fw-upload"></i> <%=i18n.localize("Upload Fault Flow")%></a>
                                                                     </span>
 																</div>
 
@@ -710,7 +713,7 @@
 							                    <input type="hidden" id="swagger" name="swagger" class="swagger" value="" />
 							                    <input type="hidden" value="endpoint" name="implementation_methods" >
 							                    <div class="form-actions" id="saveButtons">
-							                        <button type="submit" class="btn btn-secondary manageSaveButton has-spinner" id="saveBtn" >Save</button>
+							                        <button type="submit" class="btn btn-default manageSaveButton has-spinner" id="saveBtn" >Save</button>
 							                        <input type="hidden" id="hiddenGoToManage" value=""/>
 							                        <button id="go_to_manage" class="btn btn-primary manageSaveButton has-spinner">Next : Manage &gt;</button>
 							                    </div>
@@ -788,7 +791,7 @@
 								                            <div class="input-group">
 								                                <input type="text" id="prototype_endpoint" value="http://localhost" name="prototype_endpoint" class="required form-control" placeholder="E.g.: http://appserver/resource"/>
 								                                <span class="input-group-btn">
-								                                    <button type="button" id="prototype_test" class="btn btn-secondary check_url_valid btn-block" providerName="<%= api.provider %>" apiName="<%= api.name %>" apiVersion="<%= api.version %>">
+								                                    <button type="button" id="prototype_test" class="btn btn-default check_url_valid btn-block" providerName="<%= api.provider %>" apiName="<%= api.name %>" apiVersion="<%= api.version %>">
 								                                        <span>Test</span>
 								                                    </button>
 								                                </span>
@@ -828,7 +831,7 @@
 								                    <input type="hidden" name="provider" id="apiProvider" value="<%= encode.forHtml(api.provider) %>" />
 								                    <input type="hidden" name="action" value="implement" />
 								                    <input type="hidden" id="swagger" name="swagger" class="swagger" value="" />
-								                    <button type="submit" class="btn btn-secondary manageSaveButton has-spinner" id="savePrototypeBtn" >Save</button>
+								                    <button type="submit" class="btn btn-default manageSaveButton has-spinner" id="savePrototypeBtn" >Save</button>
 								                    <%if(permitted) { %>
 								                    <button class="btn btn-primary manageSaveButton has-spinner" id="prototyped_api" >Deploy as a Prototype</button>
 								                    <%}%>
@@ -856,8 +859,8 @@
 							                </table>
 							                </div>
 							                <div class="modal-footer">
-							                <button class="btn btn-secondary" data-dismiss="modal" aria-hidden="true " title="<%=i18n.localize("Keep Editing API")%>"><%=i18n.localize("Keep Editing API")%></button>
-							                <a href='javascript:void(0)' id="goToStore-btn" class="btn btn-secondary" title="<%=i18n.localize("Go to API Store")%>" ><%=i18n.localize("Go to API Store")%></a>
+							                <button class="btn btn-default" data-dismiss="modal" aria-hidden="true " title="<%=i18n.localize("Keep Editing API")%>"><%=i18n.localize("Keep Editing API")%></button>
+							                <a href='javascript:void(0)' id="goToStore-btn" class="btn btn-default" title="<%=i18n.localize("Go to API Store")%>" ><%=i18n.localize("Go to API Store")%></a>
 							                <a href='<%= jagg.url("/info?"+ apiUrlId ) %>' class="btn btn-primary" title="<%=i18n.localize("Go to Overview")%>" ><%=i18n.localize("Go to Overview")%></a>
 							                </div>
 							                </div>
@@ -909,7 +912,7 @@
                         <div class="pull-right">
                             <div class="modal-footer">
                                 <button type="button" id="upload_sequence" class="btn btn-primary has-spinner"><%=i18n.localize("Upload")%></button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><%=i18n.localize("Close")%></button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><%=i18n.localize("Close")%></button>
                             </div>
                         </div>
 
@@ -1277,7 +1280,8 @@
 			<div class="headerContainer tagContainer col-sm-6">
 				<label class="checkbox">
 					<input type="checkbox" class="allowAll" name="allowAll"  {{#if allowAll }}checked="checked" {{/if}} />
-					<span class="helper"><%=i18n.localize("All Allow Origins")%></span>
+					<span class="helper"></span>
+                    <%=i18n.localize("All Allow Origins")%>
 				</label>
 				{{#unless allowAll }}
 				<div id="accesseAllowOriginDiv" class="add-margin-top-2x">

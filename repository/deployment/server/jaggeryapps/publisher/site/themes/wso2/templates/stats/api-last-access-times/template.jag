@@ -1,5 +1,5 @@
 <% jagg.template("stats/api-last-access-times", function(inputs, outputs, jagg) { %>
-
+<div class="white-wrapper">
 <div class="page-header"> <h2><%=i18n.localize("API Last Access Times (Across All Versions)")%></h2></div>
 <div id="apiLastAccessTimes-stat-page" class="stat-page">
     <%
@@ -9,7 +9,7 @@
     
     <div class="row">
     	<div class="form-group col-sm-2">
-	        <select class="select form-control" id="apiFilter" name="apiFilter">
+	        <select class="custom-select form-control" id="apiFilter" name="apiFilter">
 	        	<option value="allAPIs"><%=i18n.localize("All APIs")%></option>
 	        	<option value="myAPIs"><%=i18n.localize("My APIs")%></option>
 	        </select>
@@ -34,6 +34,7 @@
     <%
         }
     %>
+</div>
 </div>
 
 <% }); %>

@@ -82,7 +82,7 @@ function GadgetUtil() {
 
     this.getDefaultText = function() {
         return '<div class="status-message">'+
-                '<div class="message message-info">'+
+                '<div class="alert alert-info">'+
                     '<h4><i class="icon fw fw-info"></i>No content to display</h4>'+
                     '<p>Please select a date range to view stats.</p>'+
                 '</div>'+
@@ -91,7 +91,7 @@ function GadgetUtil() {
 
     this.getCustemText = function(title, message) {
         return '<div class="status-message">'+
-            '<div class="message message-info">'+
+            '<div class="alert alert-info">'+
             '<h4><i class="icon fw fw-info"></i>'+title+'</h4>'+
             '<p>'+message+'</p>'+
             '</div>'+
@@ -100,7 +100,7 @@ function GadgetUtil() {
 
     this.getEmptyRecordsText = function() {
         return '<div class="status-message">'+
-                '<div class="message message-info">'+
+                '<div class="alert alert-info">'+
                     '<h4><i class="icon fw fw-info"></i>No records found</h4>'+
                     '<p>Please select a date range to view stats.</p>'+
                 '</div>'+
@@ -109,7 +109,7 @@ function GadgetUtil() {
 
     this.getErrorText = function(msg) {
         return '<div class="status-message">'+
-                '<div class="message message-danger">'+
+                '<div class="alert alert-danger">'+
                     '<h4><i class="icon fw fw-info"></i>Error</h4>'+
                     '<p>An error occured while attempting to display this gadget. Error message is: ' + msg.status + ' - ' + msg.message + '</p>'+
                 '</div>'+
@@ -118,7 +118,7 @@ function GadgetUtil() {
 
     this.getLoadingText = function() {
         return '<div class="status-message">' +
-            '<div class="message message-info">' +
+            '<div class="alert alert-info">' +
             '<h4><i class="icon fw fw-info"></i>Loading...</h4>' +
             '<p>Please wait while data is loading.</p>' +
             '</div>' +

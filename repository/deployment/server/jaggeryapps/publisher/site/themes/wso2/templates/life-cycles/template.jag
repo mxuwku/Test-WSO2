@@ -251,7 +251,7 @@ var publishedInExternalStores=<%=publishedInExternalStores%>;
              </div>
     </div>
   <%  if(wfStatus != null && wfStatus.status == 'CREATED') {%> 
-     <div class="message message-info">
+     <div class="alert alert-info">
                     <h4><i class="icon fw fw-info"></i><%=wfStatus.workflowDescription%></h4>
      </div>  
      <div id="deletePendingTasks">
@@ -303,7 +303,7 @@ var publishedInExternalStores=<%=publishedInExternalStores%>;
             if(lcStatus=="CREATED"){
                if(lcData.nextStates[i].toLowerCase().indexOf("prototype") > -1){ %>
                <div class="btn-group" role="group">
-                    <input type="button" id="actionButton<%=String(i)%>" <%if( api.endpointConfig == "" || api.endpointConfig == null){%>disabled<%}%> class="btn btn-secondary" onclick="updateStatus('<%=lcData.nextStates[i]%>')"  value="<%=i18n.localize(next, next)%>"/>
+                    <input type="button" id="actionButton<%=String(i)%>" <%if( api.endpointConfig == "" || api.endpointConfig == null){%>disabled<%}%> class="btn btn-default" onclick="updateStatus('<%=lcData.nextStates[i]%>')"  value="<%=i18n.localize(next, next)%>"/>
                 </div>
                <%} else if (lcData.nextStates[i].toLowerCase().indexOf("publish") > -1) {%>
                <div class="btn-group" role="group">
