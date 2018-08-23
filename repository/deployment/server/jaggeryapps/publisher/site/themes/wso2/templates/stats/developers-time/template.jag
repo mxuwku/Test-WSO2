@@ -1,8 +1,9 @@
 <% jagg.template("stats/developers-time", function(inputs, outputs, jagg) { %>
-<div class="white-wrapper">
-  <div id="developerstime-stat-page" class="stat-page">
-      <div class="title-section"> <h2><%= i18n.localize("Developer Signups")%></h2></div>
-
+<div class="panel panel-default">
+  <div class="page-header panel-heading"> 
+  <h2><%= i18n.localize("Developer Signups")%></h2>
+  </div>
+  <div id="developerstime-stat-page" class="stat-page panel-body">
       <br />
 
   <div class="row">

@@ -13,29 +13,34 @@ if(tenant!='null') {urlPostfix="&tenant="+tenant;}else{urlPostfix='';}
 %>
 
    <!-- #page-content-wrapper -->
-    <div class="page-content-wrapper" style="<% if(outputs.left) { %> padding-left: 300px;<%}%>">
-    
-    
+   <section class="light">
+   <div class="container-fluid">
+   <div class="row">
+    <div class="page-content-wrapper">
+
 	<% if (jagg.getUser()) {
 	    jagg.includeBlock("menu/actions",null);
-	    } 
-	%>		 
+	    }
+	%>
+
 
 <!-- End navbar -->
     <% if(outputs.left) { %>        
             <% jagg.includeBlocks(outputs.left); %>
             <% jagg.includeBlocks(outputs.right); %>
         <% } %>
-
 	<!-- page content -->
-	<div class="container-fluid">
-		<div class="body-wrapper">
+
+	
+		<div class="body-wrapper col-md-10 pull-right">
 		<% if(outputs.title && outputs.title=="APIs") { %><h2><%=outputs.title%></h2>
 		<% } %>
 		<% jagg.includeBlocks(outputs.middle); %>
 		<% jagg.includeBlocks(outputs.bottom); %>
 		</div>
 	</div>
-</div>
+    </div>
+    </div>
+    </section>
     <!-- /#wrapper -->
 <% }); %>

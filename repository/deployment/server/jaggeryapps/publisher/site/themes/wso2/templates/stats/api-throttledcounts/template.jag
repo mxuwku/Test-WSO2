@@ -1,7 +1,7 @@
 <% jagg.template("stats/api-throttledcounts", function(inputs, outputs, jagg) { %>
-<div class="white-wrapper">
-<div class="page-header"> <h2><%=i18n.localize("API Throttled Out Requests")%></h2> </div>
-<div id="apiThrottledCounts-stat-page" class="stat-page">
+<div class="panel panel-default">
+<div class="page-header panel-heading"> <h2><%=i18n.localize("API Throttled Out Requests")%></h2> </div>
+<div id="apiThrottledCounts-stat-page" class="stat-page panel-body">
     <%
         //show content only if analytics enabled
         if(org.wso2.carbon.apimgt.impl.utils.APIUtil.isAnalyticsEnabled()) {

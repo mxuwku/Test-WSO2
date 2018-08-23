@@ -24,7 +24,7 @@
             </div>
         <% }else if(outputs.warning != ""){ %>
         	 <div class="alert alert-danger">
-                    <h4><i class="icon fw fw-warning"></i><%=i18n.localize("Warning!")%></h4>
+                    <h4><i class="fa fa-exclamation-circle"></i><%=i18n.localize("Warning!")%></h4>
                     <p><%=i18n.localize(outputs.warning,outputs.warning)%></p>
              </div>
        <% } else{ %>

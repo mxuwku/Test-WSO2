@@ -1,13 +1,13 @@
 <% jagg.template("stats/api-user-agent-usage", function(inputs, outputs, jagg) { %>
-<div class="white-wrapper">
-<div class="page-header"> <h2><%=i18n.localize("API Usage Across Usage Agent")%></h2> </div>
-<div id="api-user-agent-usage-stat-page" class="stat-page">
+<div class="panel panel-default">
+<div class="page-header panel-heading"> <h2><%=i18n.localize("API Usage Across Usage Agent")%></h2> </div>
+<div id="api-user-agent-usage-stat-page" class="stat-page panel-body">
     <%
         //show content only if analytics enabled
         if(!org.wso2.carbon.apimgt.impl.utils.APIUtil.isAnalyticsEnabled()) {
     %>
     		<div class="alert alert-warning">
-    		<h4><i class="icon fw fw-warning"></i><%=i18n.localize("Not Configured")%></h4>
+    		<h4><i class="fa fa-exclamation-circle"></i><%=i18n.localize("Not Configured")%></h4>
             <p> <a href='https://docs.wso2.com/display/AM210/Configuring+API+Analytics' target='_blank'
             title= '<%=i18n.localize("Refer our documentation to configure API Manager Analytics correctly")%>' class='warningLink'>
             <%=i18n.localize("Refer our documentation to configure API Manager Analytics correctly")%> </a></p>

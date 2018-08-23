@@ -11,33 +11,17 @@
     });
 </script>
 
-<style>
-  .panel-group .panel-title  {
-    display: inline-block;
-    padding-left: 20px;
-    vertical-align: middle;
-  }
-
-  .panel-group .panel-heading .panel-title .heading {
-    display: block;
-  }
-  .panel-group .panel-heading .panel-title .description {
-    display: block;
-    font-weight: normal
-  }
-</style>
-
-
-<div class="white-wrapper">
- <div class="page-header">
+<div class="panel panel-primary">
+ <div class="page-header panel-heading">
      <h2><%=i18n.localize("Let's get started!")%></h2>
 	<p class="lead"><%=i18n.localize("Add New API")%></p>
 </div>
+<div class="panel-body">
 
 	<div class="panel-group accordion" role="tablist" aria-multiselectable="true">
 		<div class="panel panel-default">
 			<div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent=".accordion" href="#accordion1-collapse1" aria-expanded="true" aria-controls="accordion1-collapse1">
-				<div class="status btn btn-lg pr-5">
+				<div class="status btn btn-primary btn-lg mr-5">
           <i class="icon-caret-down icon-large "></i>
         </div>
                 <h4 class="panel-title">
@@ -52,11 +36,11 @@
 						<div class="form-group">
 							<div class="col-sm-12 toggleRadios">
 								<label class="radio-inline sub-labels">
-                                    <input type="radio"	name="import-definition" id="" value="swagger-file">                                
-                                    <span class="helper"></span>
-                                    <%=i18n.localize("Swagger File")%>
-								</label> 
-                                <label class="radio-inline sub-labels urlSelect-label"> 
+                  <input type="radio"	name="import-definition" id="" value="swagger-file">
+                  <span class="helper"></span>
+                  <%=i18n.localize("Swagger File")%>
+								</label>
+                                <label class="radio-inline sub-labels urlSelect-label">
                                     <input type="radio"	name="import-definition" value="swagger-url">
                                     <span class="helper"></span>
                                     <%=i18n.localize("Swagger URL")%>
@@ -64,13 +48,13 @@
 							</div>
 						</div>
 						<div class="form-group toggleContainers">
-							<div class="controls col-sm-12">
+							<div class="controls col-sm-4">
 								<div class="input-group input-wrap file-upload-control">
 									<input type="text" class="form-control" placeholder="Click Browse to add a file" readonly>
 									<input id="swagger-file" name="swagger-file" type="file" title="swagger-file" class="form-control" multiple>
 									<label for="swagger-file" class="error swaggerFileError" style="display:none"><%=i18n.localize("Please use a valid swagger file")%></label>
 									<div class="input-group-btn">
-										<button class="btn btn-primary browse" type="button" title="Browse File">
+										<button class="btn btn-default browse" type="button" title="Browse File">
 											<i class="fw fw-file-browse" aria-hidden="true"></i> <span
 												class="hidden-xs"><%=i18n.localize("Browse")%></span>
 										</button>
@@ -94,7 +78,7 @@
 		</div>
 		<div class="panel panel-default">
 			<div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent=".accordion" href="#accordion1-collapse2" aria-expanded="true" aria-controls="accordion1-collapse2">
-			  <div class="status btn btn-lg pr-5">
+			  <div class="status btn btn-primary btn-lg mr-5">
           <i class="icon-caret-down icon-large "></i>
         </div>
         <h4 class="panel-title">
@@ -124,7 +108,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading" role="tab" id="headingThree" data-toggle="collapse" data-parent=".accordion" href="#accordion1-collapse3" aria-expanded="true" aria-controls="accordion1-collapse3">
 				
-					<div class="status btn btn-lg pr-5">
+					<div class="status btn btn-primary btn-lg mr-5">
           <i class="icon-caret-down icon-large "></i>
         </div>
         <h4 class="panel-title">
@@ -146,7 +130,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading" role="tab" id="headingFour" data-toggle="collapse" data-parent=".accordion" href="#accordion1-collapse4" aria-expanded="true" aria-controls="accordion1-collapse3">
 				
-					<div class="status btn btn-lg pr-5">
+					<div class="status btn btn-primary btn-lg mr-5">
           <i class="icon-caret-down icon-large "></i>
         </div>
                   <h4 class="panel-title">                   		<div class="heading"><%=i18n.localize("Design a New Websocket API")%></div>
@@ -162,10 +146,11 @@
                         <input name="type" value="ws" type="hidden"/>
 	                        <button id="designNewWSAPI" class="btn btn-primary has-spinner" type="button"><%=i18n.localize("Start Creating")%></button>
 					</form>
-				</div>
-			</div>
-		</div>
-        </div>	
-	</div>
+          </div>
+          </div>
+        </div>
+      </div>	
+    </div>
+  </div>
 </div>
 <% }); %>

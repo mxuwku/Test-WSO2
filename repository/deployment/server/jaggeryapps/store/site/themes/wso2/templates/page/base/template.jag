@@ -81,11 +81,11 @@
   <section>
 <style>
   .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
-    padding: 12px 12px;
+  padding: 12px 12px;
   }
-.form-group .bootstrap-select.btn-group {
+  .form-group .bootstrap-select.btn-group {
   background-color: #fff;
-}
+  }
 </style>
 
   <div class="container-fluid">

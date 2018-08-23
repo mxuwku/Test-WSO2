@@ -87,7 +87,7 @@
 </center>-->
 	<div class="page-header">
  		<h2> <%= encode.forHtml(api.name) %> : <%= encode.forHtml(api.context) %>
-        </h2>
+    </h2>
  	</div>
     <div class="content-section shadow-up">
     <div class="content-data">
@@ -96,7 +96,7 @@
 	    </div>
 		<% if(api != null && api.subs > 0){%>
 		    <div class="alert alert-warning">
-                <h4><i class="icon fw fw-warning"></i><%=i18n.localize("Warning!")%></h4>
+                <h4><i class="fa fa-exclamation-circle"></i><%=i18n.localize("Warning!")%></h4>
                 <p><%=i18n.localize("You are editing an API with active subscribers. Tier Availability changes will not be reflected on active subscriptions.")%></p>
             </div>
 		  <%  }%>
@@ -110,9 +110,6 @@
                         </span>
                     </button>
    </div>
-
-
-		  <div class="">
                 <div class="row">
                     <div class="wizard col-xs-12">
                         <div class="wizard-inner">
@@ -480,7 +477,6 @@
                                                             <span class="helper"><%=i18n.localize("Apply to API")%></span>
                                                     </label>
                                                 </div>
-                                                        
                                                         <%}%>
                                             </div>
                                             <%if(!isWSAPI){%>
@@ -890,18 +886,15 @@
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-
-
-
     </div>
 
                         </div>
                     </div>
                 </div>
-            </div>
+            
 
 
-    </div>
+      </div>
     </div>
 </div>
 

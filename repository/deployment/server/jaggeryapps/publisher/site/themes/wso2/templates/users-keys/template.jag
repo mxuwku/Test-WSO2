@@ -11,11 +11,15 @@
 
 			}
 		</script>
-		<div id="col-sm-12">
-        <div id="userKey" class="white-wrapper">
+		<div id="col-sm-12 panel panel-primary">
+        <div class="panel-body">
+        <div id="userKey">
 			<div class="page-header">
 				<h2><%=i18n.localize("Manage Subscriptions")%></h2>
 			</div>
+
+                
+
 
                     <table id="manage-subscriptions" class="table table-responsive table-striped">
                         <thead>
@@ -25,7 +29,7 @@
 
                                 <th class="apiSpecialCell"><%=i18n.localize("API")%></th>
                                 <th class="userSpecialCell"><%=i18n.localize("Still Subscribed?")%></th>
-                                <th class="actionSpecialCell"></th>								
+                                <th class="actionSpecialCell"></th>
                             </tr>
                         </thead>
                         <tbody id="users">
@@ -42,7 +46,6 @@
         }
 
         var i, apiPath,subscriber, numberOfPages, subscribers = outputs.subscribers;
-		
 		var listCount = 0;
         var itemsPerPage = 10; //reduce this number to preview the pagination
         var currentPage = 1;
@@ -100,8 +103,6 @@
 	                if(apiList != null){
 	                    var apis=apiList.split(",");
 	                %>
-	                                
-	
 		                <%
 	                    for(var n=0;n<apis.length;n++){
 	                    api=apis[n].split("::");
@@ -128,7 +129,6 @@
 	                    			</td>
 						                <%
 						                var log = new Log();
-						                
 						                if(existingStatus=='BLOCKED' || existingStatus=='PROD_ONLY_BLOCKED') {
 							                status='Unblock';
 							                newStatus='UNBLOCKED';
@@ -168,7 +168,7 @@
 		                                    			<i class="fw fw-block fw-stack-1x" title="block"></i>
 		                                    		<%} else {%>
 		                                    			<i class="fw fw-check fw-stack-1x" title="unblock"></i>
-		                                    		<%} %>				                                        
+		                                    		<%} %>
 			                                    </span>
 			                                    <span class="hidden-xs"><%=status%></span>
 			                                    </a>
@@ -201,8 +201,9 @@
                         </tbody>
                     </table>
                 <% jagg.includeBlock("paginator", {currentPage:currentPage,numberOfPages:numberOfPages}); %>
+        
         </div>
-        </div>
-
+    </div>
+</div>
 
 <%});%>

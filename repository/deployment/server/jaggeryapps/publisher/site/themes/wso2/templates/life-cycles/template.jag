@@ -244,12 +244,17 @@ var publishedInExternalStores=<%=publishedInExternalStores%>;
      <div class="alert alert-warning" id="removeFromExternalStoresMsg" style="display:none;">
         <span class="badge badge-warning">!</span> <%=i18n.localize("This API is not PUBLISHED. Please remove from external stores.")%>
      </div>
-    <div class="form-group">
-            <label class="control-label col-xs-12 col-sm-4 col-md-3 col-lg-2 text-center-xs" name="state"><h4><%=i18n.localize("Current State")%>:</h4></label>
-            <div class="controls col-xs-12 col-sm-8 col-md-9 col-lg-10 text-center-xs">
-                <h4><p class="form-control-static" name="stateValue"><strong><%=i18n.localize(lcStatus,lcStatus)%></strong></p></h4>
-             </div>
+    <div class="form-group well">
+      <div class="controls col-xs-12 col-sm-8 col-md-9 col-lg-10 text-center-xs">
+            <label class="control-label text-center-xs" name="state">
+              <h4><%=i18n.localize("Current State")%>:</h4>
+            </label>
+            <label class="control-label text-center-xs form-control-static pl-2" name="stateValue">
+                <h4><%=i18n.localize(lcStatus,lcStatus)%></h4>
+            </label>
+             
     </div>
+  </div>
   <%  if(wfStatus != null && wfStatus.status == 'CREATED') {%> 
      <div class="alert alert-info">
                     <h4><i class="icon fw fw-info"></i><%=wfStatus.workflowDescription%></h4>

@@ -1,10 +1,9 @@
 <% jagg.template("stats/applications-time", function(inputs, outputs, jagg) { %>
-<div class="white-wrapper">
-  <div id="applicationsTime-stat-page" class="stat-page">
-    <div class="title-section">
+<div class="panel panel-default">
+    <div class="page-header panel-heading">
     <h2><%=i18n.localize("App Registrations")%></h2>
     </div>
-
+  <div id="applicationsTime-stat-page" class="stat-page panel-body">
     <br />
     <div class="row">
       <div class="form-group col-sm-2">

@@ -1,10 +1,12 @@
 <% jagg.template("stats/apis-time", function(inputs, outputs, jagg) { %>
-<div class="white-wrapper">
-  <div id="apisTime-stat-page" class="stat-page">
-      <div class="title-section"> <h2><%=i18n.localize("Created APIs Over Time")%></h2> </div>
+
+  <div id="apisTime-stat-page" class="stat-page panel panel-default">
+      <div class="page-header panel-heading"> 
+      <h2><%=i18n.localize("Created APIs Over Time")%></h2> 
+      </div>
       
       <br />
-
+<div class="panel-body">
   <div class="row">
       <div class="form-group col-sm-2">
       </div>
@@ -40,8 +42,9 @@
                   <svg style="height:600px;"></svg>
           </div>
       </div>
+    </div>  
   </div>
-</div>
+
 <% }); %>
 
 

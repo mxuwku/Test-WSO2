@@ -1,7 +1,9 @@
 <% jagg.template("stats/api-last-access-times", function(inputs, outputs, jagg) { %>
-<div class="white-wrapper">
-<div class="page-header"> <h2><%=i18n.localize("API Last Access Times (Across All Versions)")%></h2></div>
-<div id="apiLastAccessTimes-stat-page" class="stat-page">
+<div class="panel panel-default">
+    <div class="page-header panel-heading"> 
+    <h2><%=i18n.localize("API Last Access Times (Across All Versions)")%></h2>
+    </div>
+<div id="apiLastAccessTimes-stat-page" class="stat-page panel-body">
     <%
         //show content only if analytics enabled
         if(org.wso2.carbon.apimgt.impl.utils.APIUtil.isAnalyticsEnabled()) {
@@ -14,15 +16,14 @@
 	        	<option value="myAPIs"><%=i18n.localize("My APIs")%></option>
 	        </select>
 		</div>
-		
+
 		<div class="col-sm-4"></div>
-		
+
 		<div class="col-sm-6">
     </div>
-    
+
     </div>
-    
-    
+
     <div id="spinner" class="center-wrapper">
             <i id="icon-spinner" class="fw fw-loader5 fw-4x"></i>
     </div>

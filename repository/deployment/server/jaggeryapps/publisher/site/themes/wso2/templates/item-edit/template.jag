@@ -51,7 +51,7 @@ var outSequencesLoaded = false;
 var faultSequencesLoaded = false;
 
 </script>
-<div class="white-wrapper">
+
 <div class="alert alert-error" id="editAPIError" style="display:none">
 <span id="editErrorSpan"></span>
 </div>
@@ -621,7 +621,6 @@ var faultSequencesLoaded = false;
                 </div>
            </div>
     </div>
-</div>
 
 
 

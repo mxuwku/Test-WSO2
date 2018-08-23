@@ -1,8 +1,8 @@
 <% jagg.template("listing", function(inputs, outputs, jagg) { %>
-    <div id="listing" class="white-wrapper">
-        <div id="listing-title" class="page-header">
-             <h2><%=i18n.localize("All APIs")%></h2>
- 	</div>
+  <div id="listing">
+      <div id="listing-title" class="page-header">
+        <h2><%=i18n.localize("All APIs")%></h2>
+     	</div>
     <div class="content-section shadow-up">
     <div class="content-data">
     <%
@@ -117,7 +117,7 @@
            </div>
        </div>
 
-        
+
         <div class="page-content">
         <div class="row">
 		<%
@@ -285,22 +285,20 @@
 		                            <%if(outputs.isCreatePermitted){ %>
                                <div class="app-data"> 
 			                            <a href="<%=jagg.url("/design")%>?<%= apiUrlId %>" title="<%=i18n.localize("Edit")%>">
-				                         <span class="fw-stack" style="font-size:14px" >
-				                                <i class="fw fw-circle-outline fw-stack-2x" title="<%=i18n.localize("Edit")%>"></i>
-				                                <i class="fw fw-edit fw-stack-1x" title="<%=i18n.localize("Edit")%>"></i>
+				                         <span>
+				                                <i class="fa fa-edit" style="font-size:20px" title="<%=i18n.localize("Edit")%>"></i>
 				                            </span>
 			                            </a>
 			                            <a onClick="removeAPI('<%=api.name%>','<%=api.version%>','<%=api.provider%>',this);return false;" title="<%=i18n.localize("DELETE")%>">
-				                           <span class="fw-stack" style="font-size:14px">
-				                                <i class="fw fw-circle-outline fw-stack-2x" title="<%=i18n.localize("DELETE")%>" ></i>
-				                                <i class="fw fw-delete fw-stack-1x" title="<%=i18n.localize("DELETE")%>"></i>
+				                           <span>
+				                                <i class="fa fa-trash-alt" style="font-size:20px" title="<%=i18n.localize("DELETE")%>" ></i>
 				                            </span>
 			                            </a>
                                 </div>
 			                       <%} %>
                                 </div>
                             </div>
-                        </div>                
+                        </div>
         <% }} }%>
 
 </div>
@@ -315,7 +313,7 @@
     if(mode=="search"){
     %>
     	<div class="alert alert-info" role="alert">
-                    <i class="icon fw fw-warning"></i><strong><%= i18n.localize("Info!")%></strong>
+                    <i class="fa fa-exclamation-circle"></i><strong><%= i18n.localize("Info!")%></strong>
                     <%=i18n.localize("No matching APIs found.")%>
                 </div>
     <%}else{%>

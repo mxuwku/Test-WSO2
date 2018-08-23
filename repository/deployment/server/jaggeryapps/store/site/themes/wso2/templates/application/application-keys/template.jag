@@ -144,7 +144,7 @@
 
 	{{#ifCond keyState 'REJECTED'}}
         <div class="alert alert-warning">
-            <h4><i class="icon fw fw-warning"></i><%=i18n.localize("No Keys Found")%></h4>
+            <h4><i class="fa fa-exclamation-circle"></i><%=i18n.localize("No Keys Found")%></h4>
             <p><%=i18n.localize("This application has been rejected from generating keys.")%></p>
         </div>
 	{{/ifCond}}

@@ -1,13 +1,17 @@
 <% jagg.template("stats/api-geolocation-usage", function(inputs, outputs, jagg) { %>
-<div class="white-wrapper">
-<div class="page-header"> <h2><%=i18n.localize("API Usage Across Geo Locations")%></h2> </div>
-<div id="api-geolocation-usage-stat-page" class="stat-page">
+<div class="panel panel-default">
+<div class="page-header panel-heading"> 
+  <h2><%=i18n.localize("API Usage Across Geo Locations")%></h2>
+</div>
+
+  <div class="panel-body">
+    <div id="api-geolocation-usage-stat-page" class="stat-page">
     <%
         //show content only if analytics enabled
         if(!org.wso2.carbon.apimgt.impl.utils.APIUtil.isAnalyticsEnabled()) {
     %>
     		<div class="alert alert-warning">
-    		<h4><i class="icon fw fw-warning"></i><%=i18n.localize("Not Configured")%></h4>
+    		<h4><i class="fa fa-exclamation-circle"></i><%=i18n.localize("Not Configured")%></h4>
             <p> <a href='https://docs.wso2.com/display/AM210/Configuring+APIM+Analytics' target='_blank'
             title= '<%=i18n.localize("Refer our documentation to configure API Manager Analytics correctly")%>' class='warningLink'>
             <%=i18n.localize("Refer our documentation to configure API Manager Analytics correctly")%> </a></p>
@@ -15,10 +19,10 @@
     <%
     	 } else {
     %>
-<input id="countryInfo" type="hidden" value ="<%=jagg.getAbsoluteUrl(jagg.getThemeFile("templates/stats/api-geolocation-usage/jsonMapFiles/countryInfo.json"))%>">
-<input id="world" type="hidden" value ="<%=jagg.getAbsoluteUrl(jagg.getThemeFile("templates/stats/api-geolocation-usage/jsonMapFiles/world.json"))%>">
-<input id="usainfo" type="hidden" value ="<%=jagg.getAbsoluteUrl(jagg.getThemeFile("templates/stats/api-geolocation-usage/jsonMapFiles/usaInfo.json"))%>">
-<input id="usa" type="hidden" value ="<%=jagg.getAbsoluteUrl(jagg.getThemeFile("templates/stats/api-geolocation-usage/jsonMapFiles/usa.json"))%>">
+      <input id="countryInfo" type="hidden" value ="<%=jagg.getAbsoluteUrl(jagg.getThemeFile("templates/stats/api-geolocation-usage/jsonMapFiles/countryInfo.json"))%>">
+      <input id="world" type="hidden" value ="<%=jagg.getAbsoluteUrl(jagg.getThemeFile("templates/stats/api-geolocation-usage/jsonMapFiles/world.json"))%>">
+      <input id="usainfo" type="hidden" value ="<%=jagg.getAbsoluteUrl(jagg.getThemeFile("templates/stats/api-geolocation-usage/jsonMapFiles/usaInfo.json"))%>">
+      <input id="usa" type="hidden" value ="<%=jagg.getAbsoluteUrl(jagg.getThemeFile("templates/stats/api-geolocation-usage/jsonMapFiles/usa.json"))%>">
 
     <div class="col-md-12" style="margin-top :10px">
     <div class="row">
@@ -76,8 +80,8 @@
     <%
         }
     %>
-
   </div>
+</div>
 </div>
 <% }); %>
 

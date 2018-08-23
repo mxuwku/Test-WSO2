@@ -65,21 +65,21 @@
 <%
     if(api != null && api.subs > 0){%>
    			<div class="alert alert-warning">
-                <h4><i class="icon fw fw-warning"></i>Warning!</h4>
+                <h4><i class="fa fa-exclamation-circle"></i>Warning!</h4>
                 <p>You are editing an API with active subscribers. Tier Availability changes will not be reflected on
 	        active subscriptions.</p>
             </div>
   <%  }%>
 
-  			  <div id="apiSaved" class="alert alert-success" role="alert" style="display:none">
-   		<i class="icon fw fw-success fade out"></i><strong><%=i18n.localize("Success!")%></strong>
-                    <%=i18n.localize("You have successfully saved the API.")%>
-                    <button type="button" class="close" aria-label="close" data-dismiss="alert">
-                        <span aria-hidden="true">
-                            <i class="fw fw-cancel"></i>
-                        </span>
-                    </button>
-   </div>
+<div id="apiSaved" class="alert alert-success" role="alert" style="display:none">
+<i class="icon fw fw-success fade out"></i><strong><%=i18n.localize("Success!")%></strong>
+<%=i18n.localize("You have successfully saved the API.")%>
+  <button type="button" class="close" aria-label="close" data-dismiss="alert">
+    <span aria-hidden="true">
+      <i class="fw fw-cancel"></i>
+    </span>
+  </button>
+</div>
 
 	<div class="">
                         <div class="wizard-inner">
@@ -95,14 +95,12 @@
 									<div class="panel-group accordion" role="tablist">
 									<div class="panel panel-default" id="select-managed-api">
 							          <div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent=".accordion" href="#accordion1-collapse1" aria-expanded="true" aria-controls="accordion1-collapse1">
+                          <div class="status btn btn-primary btn-lg mr-5">
+          <i class="icon-caret-down icon-large "></i>
+        </div>
 										<h4 class="panel-title">
-						                    <div>
 				                                <div class="heading"><%=i18n.localize("Managed API")%></div>
 				                                <div class="description truncate"> <%=i18n.localize("Provide the production and sandbox endpoints of the API to be managed.")%> </div>
-				                                <div class="status">
-				                                    <i class="fw fw-down"></i>
-				                                </div>
-				                            </div>
 				                            <div class="clearfix"></div>
 										</h4>
 									</div>
@@ -173,7 +171,7 @@
 								                            	</a>
 								                            </label>
 							                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-							                                    <select class="form-control select required" id="endpoint_type" name="endpoint_type">
+							                                    <select class="form-control custom-select required" id="endpoint_type" name="endpoint_type">
 							                                        <option value="http"  {{#if http }}selected="selected"{{/if}}>HTTP/REST Endpoint</option>
 							                                        <option value="address" {{#if address }}selected="selected"{{/if}}>HTTP/SOAP Endpoint</option>
 							                                        <option value="default" {{#if default }}selected="selected"{{/if}}>Dynamic Endpoint</option>
@@ -216,7 +214,7 @@
                                                         </div>
                                                         <label class="control-label col-xs-12 col-sm-3 col-md-4 col-lg-3" />
 
-							                            <div class=" form-group col-xs-12 col-sm-7 col-md-7 col-lg-7" style="border: 1px solid #e2e2e2">
+							                            <div class=" form-group col-xs-12 col-sm-7 col-md-7 col-lg-7">
 								                        {{#each production_endpoints}}
 								                        	{{#if ../load_balance}}
 								                        		{{> endpoint this name="Production " type="production_endpoints" label=(inc @index) invalid=../invalid}}
@@ -636,7 +634,7 @@
                                                                         </optgroup>
 							                                    	</select>
 							                                    	<span class="input-group-btn">
-                                                                        <a href="#sequenceUpload" role="button" class="btn btn-default btn-sequenceUpload" data-id="in" data-name="In Flow" data-toggle="modal" title="Mediation Policy Upload" ><i class="fw fw-upload"></i> Upload In Flow</a>
+                                                                        <a href="#sequenceUpload" role="button" class="btn btn-default btn-sequenceUpload" data-id="in" data-name="In Flow" data-toggle="modal" title="Mediation Policy Upload" ><i class="fa fa-upload"></i> Upload In Flow</a>
                                                                     </span>
                                                                 </div>
 
@@ -656,7 +654,7 @@
                                                                         </optgroup>
 							                                    	</select>
 																    <span class="input-group-btn">
-                                                                        <a href="#sequenceUpload" role="button" class="btn btn-default btn-sequenceUpload" data-id="out" data-name="Out Flow" data-toggle="modal" title="Mediation Policy Upload" ><i class="fw fw-upload"></i> Upload Out Flow</a>
+                                                                        <a href="#sequenceUpload" role="button" class="btn btn-default btn-sequenceUpload" data-id="out" data-name="Out Flow" data-toggle="modal" title="Mediation Policy Upload" ><i class="fa fa-upload"></i> Upload Out Flow</a>
                                                                     </span>
                                                                 </div>
 
@@ -676,7 +674,7 @@
                                                                         </optgroup>
 																	</select>
 																	<span class="input-group-btn" >
-                                                                        <a href="#sequenceUpload" role="button" class="btn btn-default btn-sequenceUpload" data-id="fault" data-name="Fault Flow" data-toggle="modal" title="<%=i18n.localize("Mediation Policy Upload")%>" ><i class="fw fw-upload"></i> <%=i18n.localize("Upload Fault Flow")%></a>
+                                                                        <a href="#sequenceUpload" role="button" class="btn btn-default btn-sequenceUpload" data-id="fault" data-name="Fault Flow" data-toggle="modal" title="<%=i18n.localize("Mediation Policy Upload")%>" ><i class="fa fa-upload"></i> <%=i18n.localize("Upload Fault Flow")%></a>
                                                                     </span>
 																</div>
 
@@ -723,15 +721,15 @@
 							            </div>
 							            <div class="panel panel-default"><%if(api.type.toUpperCase() != "WS"){%>
 							            	 <div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent=".accordion" href="#accordion1-collapse2" aria-expanded="true" aria-controls="accordion1-collapse2">
+                              <div class="status btn btn-primary btn-lg mr-5">
+                                <i class="icon-caret-down icon-large "></i>
+                              </div>
 												<h4 class="panel-title">
-								                    <div>
-						                                <div class="heading">Prototyped API</div>
-						                                <div class="description truncate" title="<%=i18n.localize("Use the inbuilt JavaScript engine to prototype the API or provide an endpoint to a prototype API. The inbuilt JavaScript engine does not have support to prototype SOAP APIs")%>"><%=i18n.localize("Use the inbuilt JavaScript engine to prototype the API or provide an endpoint to a prototype API. The inbuilt JavaScript engine does not have support to prototype SOAP APIs")%></div>
-						                                <div class="status">
-						                                    <i class="fw fw-down"></i>
-						                                </div>
-						                            </div>
-						                            <div class="clearfix"></div>
+                              <div class="heading">Prototyped API</div>
+                              <div class="description truncate" title="<%=i18n.localize("Use the inbuilt JavaScript engine to prototype the API or provide an endpoint to a prototype API. The inbuilt JavaScript engine does not have support to prototype SOAP APIs")%>">
+                                <%=i18n.localize("Use the inbuilt JavaScript engine to prototype the API or provide an endpoint to a prototype API. The inbuilt JavaScript engine does not have support to prototype SOAP APIs")%>
+                              </div>
+                              <div class="clearfix"></div>
 												</h4>
 											</div>
 							            <div id="accordion1-collapse2" class="panel-collapse collapse <% if( apiStatus=="PROTOTYPED" ){%> in <%}%>" role="tabpanel" aria-labelledby="headingTwo">
@@ -760,19 +758,14 @@
 								                            	<input class="implementation_methods" type="radio" value="endpoint" name="implementation_methods" <%= endpoint_impl%> >
 								                            	<span class="helper">Endpoint</span>
 								                            </label>
-								
 								                    </div>
 								                </div>
 								                </fieldset>
-								
 								                <div id="api_designer">
 								                    <div id ="apidoc_details"></div><br/><br/>
 								                    <div id ="resource_details"></div>
 								                </div>
-								
 								                <div class="clear"></div>
-								
-								
 								                <fieldset class="implementation_method_endpoint implementation_method <%= hide_endpoint %>">
 								                    <input type="hidden" class="prototype_config form-control" name="endpoint_config" value="<%= encode.forHtmlAttribute(api.endpointConfig) %>"/>
 								                    <div class="form-group">

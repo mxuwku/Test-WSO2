@@ -3154,7 +3154,7 @@ Handlebars.registerHelper('renderDefaultSecurity', function (security) {
 
             for(var i=0 ; i < security.length ; i++){
                 if(security[i]['default'] !== undefined){                                     
-                     response = '<div class="alert alert-warning remove-margin"><h4 class="remove-padding" style="color: #f0ad4e;"><i class="icon fw fw-warning"></i> Required Scopes</h4>';
+                     response = '<div class="alert alert-warning remove-margin"><h4 class="remove-padding" style="color: #f0ad4e;"><i class="fa fa-exclamation-circle"></i> Required Scopes</h4>';
                      response = response + '<table class="headers">'+              
                                '<thead>'+
                                   '<tr>'+

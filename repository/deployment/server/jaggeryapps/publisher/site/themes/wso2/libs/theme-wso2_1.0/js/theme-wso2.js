@@ -305,7 +305,7 @@ var responsiveTextRatio = 0.2,
 
                         //Search input default styles override
                         var search_input = $(this).closest('.dataTables_wrapper').find('div[id$=_filter] input');
-                        search_input.before('<i class="fw fw-search search-icon"></i>').removeClass('input-sm');
+                        search_input.before('<i class="fw fw-search search-icon filterIconFix"></i>').removeClass('input-sm');
 
                         // Create sorting dropdown menu for list table advance operations
                         var dropdownmenu = $('<ul class="dropdown-menu arrow arrow-top-right dark sort-list add-margin-top-2x"><li class="dropdown-header">Sort by</li></ul>');

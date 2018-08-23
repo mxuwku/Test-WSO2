@@ -185,7 +185,7 @@
                                         <p>Alerts don't have default classes, only base and modifier classes.</p>
                                     </li>
                                     <li class="alert alert-warning">
-                                        <h4><i class="icon fw fw-warning"></i>Major Information Message</h4>
+                                        <h4><i class="fa fa-exclamation-circle"></i>Major Information Message</h4>
                                         <p>Alerts don't have default classes, only base and modifier classes.</p>
                                     </li>
                                     <li class="alert alert-danger">

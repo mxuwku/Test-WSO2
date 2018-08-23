@@ -43,15 +43,18 @@
     %>
 
 
-
-<div class="page-header"> <h2><%=i18n.localize("Analytics")%></h2> </div>
+<div class="panel panel-default">
+  <div class="page-header panel-heading">
+    <h2><%=i18n.localize("Analytics")%></h2> 
+  </div>
+  <div class="panel-body">
     <%
 	var APIUtil = org.wso2.carbon.apimgt.impl.utils.APIUtil;
 	var isAnalyticsEnabled = APIUtil.isAnalyticsEnabled();
 	if(!isAnalyticsEnabled) {
 		%>
 		<div class="alert alert-warning">
-		<h4><i class="icon fw fw-warning"></i><%=i18n.localize("Not Configured")%></h4>
+		<h4><i class="fa fa-exclamation-circle"></i><%=i18n.localize("Not Configured")%></h4>
         <p> <a href='https://docs.wso2.com/display/AM210/Configuring+APIM+Analytics' target='_blank'
         title= '<%=i18n.localize("WSO2 documentation on APIM Analytics")%>' class='warningLink'>
         <%=i18n.localize("Refer our documentation to configure API Manager Analytics correctly")%> </a></p>
@@ -173,7 +176,8 @@
 
 
 		</ul>
-	</div>
+  </div>
+</div>
 
 
 <%});%>

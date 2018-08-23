@@ -1,7 +1,10 @@
 <% jagg.template("stats/api-subscriptions", function(inputs, outputs, jagg) { %>
-<div class="white-wrapper">
-    <div id="apiSubscription-stat-page" class="stat-page">
-    <div class="page-header"> <h2><%=i18n.localize("Overall API Subscriptions (Across All Versions)")%></h2> </div>
+<div class="panel panel-default">
+    
+    <div class="page-header panel-heading"> 
+        <h2><%=i18n.localize("Overall API Subscriptions (Across All Versions)")%></h2> 
+    </div>
+    <div id="apiSubscription-stat-page" class="stat-page panel-body">
         <div class="row">
         	<div class="form-group col-sm-2">
     	        <select class="custom-select form-control" id="apiFilter" name="apiFilter">

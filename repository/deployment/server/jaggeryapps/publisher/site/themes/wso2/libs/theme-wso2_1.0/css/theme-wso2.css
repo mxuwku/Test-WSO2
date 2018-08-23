@@ -8229,10 +8229,10 @@ input[type=number].form-control {
   display: none;
 }
 
-.file-upload-control input[readonly] {
+/*.file-upload-control input[readonly] {
   background-color: white !important;
   cursor: text !important;
-}
+}*/
 
 @media only screen and (max-width: 768px) {
   .input-group.res-wrap, .input-group.res-wrap .form-control, .input-group.res-wrap .control-label, .input-group.res-wrap .input-group-btn {
@@ -9285,13 +9285,13 @@ a.list-group-item:hover {
   width: 101%;
 }
 
-.tab-content {
+/*.tab-content {
   border-width: 0px 1px 1px 1px;
   border-style: solid;
   border-color: #ddd;
   padding: 20px;
   min-height: 300px;
-}
+}*/
 
 /* ========================================================================
  * Button color customizations
@@ -9801,7 +9801,7 @@ a.list-group-item:hover {
 /* ========================================================================
  * Tags input
  * ======================================================================== */
-.tagContainer .bootstrap-tagsinput {
+/*.tagContainer .bootstrap-tagsinput {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -o-border-radius: 0px;
@@ -9837,7 +9837,7 @@ a.list-group-item:hover {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-}
+}*/
 
 /* ==================================================================
  * Login
@@ -9974,12 +9974,3 @@ a.list-group-item:hover {
   }*/
 
 /*# sourceMappingURL=apim-publisher.css.map */
-
-/*Added*/
-
-.white-wrapper {
-  background-color: #ffffff;
-  position: relative;
-  border: 1px solid #e2e2e2;
-  padding: 60px;
-}

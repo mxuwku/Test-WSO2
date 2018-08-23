@@ -7,9 +7,9 @@ var result = mod.getTiers();
 <script>
 var res = <%=result%>;
 </script>
-<div class="white-wrapper">
-<div class="page-header"> <h2><%=i18n.localize("API Request Count with Throttling Tiers")%></h2></div>
-
+<div class="panel panel-default">
+<div class="page-header panel-heading"> <h2><%=i18n.localize("API Request Count with Throttling Tiers")%></h2></div>
+<div class="panel-body">
 <div class="content-section shadow-up">
 <div class="content-data">
     <div id="rangeSliderWrapper" class="well">
@@ -46,6 +46,7 @@ var res = <%=result%>;
 </div>
         
 
+</div>
 </div>
 </div>
 </div>

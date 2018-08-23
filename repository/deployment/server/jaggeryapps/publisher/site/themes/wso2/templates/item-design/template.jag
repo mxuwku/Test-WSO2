@@ -37,7 +37,7 @@
     }
             }%>
 </script>
-<div id="item-add" class="white-wrapper">
+<div id="item-add">
 <%
     var design_w_link = jagg.url('/design?'+apiUrlId);
     var implement_w_link = jagg.url('/implement?'+apiUrlId);
@@ -61,10 +61,10 @@
 
     var manage_wlabel = "";
     if(api && (api.availableTiers !="" || api.availableSubscriptionPolicy !="")){
-        manage_wlabel = "completed";      
+        manage_wlabel = "completed";
     }else{
-        var manage_w_link = '#';        
-    }         
+        var manage_w_link = '#';
+    }
 %>
 
 
@@ -84,7 +84,7 @@
 <%
     if(api != null && api.subs > 0){%>
     	<div class="alert alert-warning">
-                <h4><i class="icon fw fw-warning"></i><%=i18n.localize("Warning")%>!</h4>
+                <h4><i class="fa fa-exclamation-circle"></i><%=i18n.localize("Warning")%>!</h4>
                 <p><%=i18n.localize("You are editing an API with active subscribers. Tier Availability changes will not be reflected on active subscriptions.")%></p>
 		</div>
   <% }%>
@@ -533,7 +533,7 @@
 					<div class="modal-body">
 						<div class="alert alert-warning remove-margin-top">
 							<h4>
-								<i class="icon fw fw-warning"></i><%=i18n.localize("Warning")%>
+								<i class="fa fa-exclamation-circle"></i><%=i18n.localize("Warning")%>
 							</h4>
 							<p>
 								<%=i18n.localize("Existing API definition will be overwritten by the imported definition.")%>

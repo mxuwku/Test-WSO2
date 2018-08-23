@@ -1,7 +1,10 @@
 <% jagg.template("stats/subscriptions-time", function(inputs, outputs, jagg) { %>
-<div class="white-wrapper">
-  <div id="apiSubscriptionTime-stat-page" class="stat-page">
-      <div class="title-section"> <h2><%=i18n.localize("API Subscription Over Time")%></h2> </div>
+<div class="panel panel-default">
+  <div class="page-header panel-heading"> 
+  <h2><%=i18n.localize("API Subscription Over Time")%></h2> 
+  </div>
+  <div id="apiSubscriptionTime-stat-page" class="stat-page panel-body">
+      
 
   <br/>
 
