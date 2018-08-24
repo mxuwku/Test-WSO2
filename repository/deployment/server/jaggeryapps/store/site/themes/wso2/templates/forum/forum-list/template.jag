@@ -1,4 +1,4 @@
-<% jagg.template("forum/forum-list", function(inputs, outputs, jagg) { 
+<% jagg.template("forum/forum-list", function(inputs, outputs, jagg) {
 <script src="https://static.scania.com/build/global/2.3.5/js/corporate-ui.js"></script>
 var siteConf = require("/site/conf/site.json");
 
@@ -10,7 +10,7 @@ var urlSuffix = jagg.getTenantURLPrefix();
 
 <%
 var needLoginStyleClass = "";
-if(!jagg.getUser()){ 
+if(!jagg.getUser()){
 	needLoginStyleClass = "need-login";
 }
 
@@ -24,7 +24,7 @@ var reqUrl = request.getRequestURI();
 <% if(!inputs.api){ %>
 <div class="col-lg-10">
 <div id="Message">
-    <h1><%=i18n.localize("Forum")%></h1>
+    <h2><%=i18n.localize("Forum")%></h2>
 </div>
 <% } %>
 <div class="white-wrapper p-5" id="forum_topics_list_page">
@@ -75,7 +75,7 @@ var reqUrl = request.getRequestURI();
                 <th class="col-md-1"></th>
             </tr>
         </thead>
-        <tbody> 
+        <tbody>
 
             {{#each topics}}
             <tr>
@@ -97,7 +97,7 @@ var reqUrl = request.getRequestURI();
                     <%}%>
                 </td>
             </tr>
-            {{/each}} 
+            {{/each}}
 
         </tbody>
     </table>

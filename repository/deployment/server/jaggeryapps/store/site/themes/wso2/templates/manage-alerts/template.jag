@@ -3,9 +3,9 @@
 
     <div id="manageAlerts">
         <div class="page-header">
-            <h1><%=i18n.localize("Manage Alert Types")%></h1>
+            <h2><%=i18n.localize("Manage Alert Types")%></h2>
         </div>
-        
+
            <%
             var error = outputs.alertTypesInformations.error;
             if(error == false){
@@ -76,7 +76,7 @@
                 <%
             }
             %>
-        
+
     </div>
     </div>
 <%});%>
