@@ -26,28 +26,28 @@
                         <div>
 	                    <!-- <ul class="nav navbar-nav"> -->
 	                    <% if(inputs.page == "application/application-list"){%>
-	                            <a class="btn btn-default" title="<%=i18n.localize('Add Application')%>" href="<%= jagg.urlTenanted("/site/pages/application-add.jag") %>">
+	                            <a class="btn btn-primary" title="<%=i18n.localize('Add Application')%>" href="<%= jagg.urlTenanted("/site/pages/application-add.jag") %>">
 	                                <span class="fa fa-plus">
 	                                </span>
 	                                <%=i18n.localize('Add Application')%>
 	                            </a>
 	                    <% }else if(inputs.page == "application/application-add"){%>
-	                            <a class="btn btn-default" title="<%=i18n.localize('Application List')%>" href="<%= jagg.urlTenanted("/site/pages/applications.jag") %>">
+	                            <a class="btn btn-default pull-right" title="<%=i18n.localize('Application List')%>" href="<%= jagg.urlTenanted("/site/pages/applications.jag") %>">
 	                                <span class="icon fw-stack">
 	                                    <i class="fw fw-left fw-stack-1x"></i>
 	                                    <i class="fw fw-circle-outline fw-stack-2x"></i>
 	                                </span>
-	                                <%=i18n.localize('Application List')%>
+	                                <%=i18n.localize('Go Back')%>
 	                            </a>
 	                    <% }else if(inputs.page == "application/application-view"){ %>
-	                            <a class="btn btn-default" title="<%=i18n.localize('Application List')%>"  href="<%= jagg.urlTenanted("/site/pages/applications.jag") %>">
+	                            <a class="btn btn-default pull-right" title="<%=i18n.localize('Application List')%>"  href="<%= jagg.urlTenanted("/site/pages/applications.jag") %>">
 	                                <span class="icon fw-stack">
 	                                    <i class="fw fw-left fw-stack-1x"></i>
 	                                    <i class="fw fw-circle-outline fw-stack-2x"></i>
 	                                </span>
-	                                 <%=i18n.localize('Application List')%>
+	                                 <%=i18n.localize('Go Back')%>
  	                            </a>
-	                            <a class="btn btn-default" title="<%=i18n.localize("Edit")%>" href="<%= jagg.urlTenanted("/site/pages/application-edit.jag?name="+request.getParameter("name")) %>">
+	                            <a class="btn btn-primary" title="<%=i18n.localize("Edit")%>" href="<%= jagg.urlTenanted("/site/pages/application-edit.jag?name="+request.getParameter("name")) %>">
 	                                <span class="icon fw-stack">
 	                                    <i class="fw fw-edit fw-stack-1x"></i>
 	                                    <i class="fw fw-circle-outline fw-stack-2x"></i>
@@ -55,7 +55,7 @@
 	                                <%=i18n.localize("Edit")%>
 	                            </a>
                     <% }else if(inputs.page == "application/application-edit"){ %>
-                            <a class="btn btn-default" title="edit app" href="<%= jagg.urlTenanted("/site/pages/application.jag?name="+ request.getParameter("name")) %>">
+                            <a class="btn btn-default pull-right" title="edit app" href="<%= jagg.urlTenanted("/site/pages/application.jag?name="+ request.getParameter("name")) %>">
                                 <span class="icon fw-stack">
                                     <i class="fw fw-left fw-stack-1x"></i>
                                     <i class="fw fw-circle-outline fw-stack-2x"></i>
@@ -70,7 +70,7 @@
 	                    			needLoginStyleClass = "need-login";
 	                    		}
 	                    	%>
-		                      <a class="btn btn-default" title="<%=i18n.localize('Create New Topic')%>" <%= needLoginStyleClass %>" href="<%= jagg.getAbsoluteUrl('/forum/new')+'?parentId=' + parentId + '&' + urlSuffix%>">
+		                      <a class="btn btn-primary" title="<%=i18n.localize('Create New Topic')%>" <%= needLoginStyleClass %>" href="<%= jagg.getAbsoluteUrl('/forum/new')+'?parentId=' + parentId + '&' + urlSuffix%>">
 			                        <span class="fa fa-plus">
 			                            <i class="fw fw-add fw-stack-1x"></i>
 			                            <i class="fw fw-circle-outline fw-stack-2x"></i>
@@ -79,7 +79,7 @@
 			                    </a>
 
 	            		<% } else if(inputs.page == "api/api-info" || inputs.page == "api/api-listing-prototyped"){%>
-	                            <a class="btn btn-default" title="<%=i18n.localize("Go Back")%>" href="<%= jagg.urlTenanted("/") %>">
+	                            <a class="btn btn-default pull-right" title="<%=i18n.localize("Go Back")%>" href="<%= jagg.urlTenanted("/") %>">
 	                                <span class="icon fw-stack">
 	                                    <i class="fw fw-left fw-stack-1x" title="<%=i18n.localize("Go Back")%>"></i>
 	                                    <i class="fw fw-circle-outline fw-stack-2x" title="<%=i18n.localize("Go Back")%>"></i>
@@ -88,12 +88,12 @@
 	                            </a>
 	                    <% } else if(inputs.page == "forum/forum-new" || inputs.page == "forum/forum-topic"){%>
 	                    <%var urlSuffix = jagg.getTenantURLPrefix(); %>
-	                            <a class="btn btn-default" title="<%=i18n.localize("Go Back")%>" href="<%=jagg.getAbsoluteUrl('/forum')+ '?' + urlSuffix%>">
+	                            <a class="btn btn-default pull-right" title="<%=i18n.localize("Go Back")%>" href="<%=jagg.getAbsoluteUrl('/forum')+ '?' + urlSuffix%>">
 	                                <span class="icon fw-stack">
 	                                    <i class="fw fw-left fw-stack-1x" title="<%=i18n.localize("forum.topic.list")%>"></i>
 	                                    <i class="fw fw-circle-outline fw-stack-2x" title="<%=i18n.localize("Topic List")%>"></i>
 	                                </span>
-	                               <%=i18n.localize("Topic List")%>
+	                               <%=i18n.localize("Go Back")%>
 	                            </a>
 	                    <% } %>
 

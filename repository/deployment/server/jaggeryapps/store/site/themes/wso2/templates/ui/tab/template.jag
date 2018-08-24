@@ -16,7 +16,7 @@ function setLocalStorageValue() {
 </script>
 
 <div class="row">
-<div class="white-wrapper mt-5 p-5">
+<div class="mt-5">
     <%
         var tabs = outputs.tabs, length = tabs.length;
         var i, index, tab, classes;

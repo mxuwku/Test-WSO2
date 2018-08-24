@@ -38,7 +38,7 @@
         <strong><%=i18n.localize("Congratulations! Your application creation request for -")%> "<span id="applicationPendingShowName"></span>" <%=i18n.localize("has been submitted and is now awaiting approval.")%></strong>
 </div>
 <br />
-<div class="white-wrapper p-5">
+<div>
 <form class="form-horizontal" id="appAddForm">
   <input type="hidden" id="apiPath" value="<%=apiPath%>"/>
   <input type="hidden" id="goBack" value="<%= encode.forHtmlAttribute(goBack)%>"/>
