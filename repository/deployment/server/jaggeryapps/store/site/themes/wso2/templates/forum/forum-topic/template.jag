@@ -103,7 +103,7 @@
         </div>
 
         <div id="no_topic_msg" class="alert alert-info" style="display:none;">
-            <h4><i class="icon fw fw-info"></i>No replies found.</h4>
+            <p><strong> <i class="icon fw fw-info"></i>No replies found.</strong></p>
             <p>You can start adding replies below</p>
         </div>
 

@@ -42,7 +42,7 @@
             </div>
 
         <div id="noData" class="hide alert alert-info">
-			<h4><i class="icon fw fw-info"></i>No Data Available.</h4>
+			<p><strong><i class="icon fw fw-info"></i>No Data Available.</h4></strong></p>
 		</div>
     <%
         }

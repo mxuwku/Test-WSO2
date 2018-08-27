@@ -70,7 +70,7 @@
             }else{
                 %>
                     <div class="alert alert-warning">
-                        <h4><i class="fa fa-exclamation-circle"></i><%= i18n.localize("Not Configured")%></h4>
+                        <p><strong><i class="fa fa-exclamation-circle"></i><%= i18n.localize("Not Configured")%></strong></p>
                         <p><%= i18n.localize(encode.forHtml(outputs.alertTypesInformations.message),encode.forHtml(outputs.alertTypesInformations.message)) %></p>
                     </div>
                 <%

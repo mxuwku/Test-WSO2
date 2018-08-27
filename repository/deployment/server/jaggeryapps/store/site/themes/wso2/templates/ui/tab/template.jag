@@ -15,7 +15,6 @@ function setLocalStorageValue() {
 };
 </script>
 
-<div class="row">
 <div class="mt-5">
     <%
         var tabs = outputs.tabs, length = tabs.length;
@@ -48,6 +47,5 @@ function setLocalStorageValue() {
     <div class="tab-pane fade <% if(i==0){%>in active<% } %>" id="tab<%=String(i)%>"><% jagg.includeBlocks(tab.body); %></div>
     <% } %>
     </div>
-</div>
 </div>
 <% }); %>

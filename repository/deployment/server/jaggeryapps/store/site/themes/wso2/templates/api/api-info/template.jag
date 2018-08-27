@@ -318,7 +318,7 @@ var urlPrefix = jagg.getTenantURLPrefix("&");
 			        <%
 			        var apiName=request.getParameter("name");
 			        %>
-            		<strong><%=i18n.localize("No API available with the name -")%><%= encode.forHtml(apiName)%> <%=i18n.localize("or the user is not authorized to view the API.")%></strong>
+            	<p>	<strong><%=i18n.localize("No API available with the name -")%><%= encode.forHtml(apiName)%> <%=i18n.localize("or the user is not authorized to view the API.")%></strong></p>
             	</div>
         	</div>
         <% } %>

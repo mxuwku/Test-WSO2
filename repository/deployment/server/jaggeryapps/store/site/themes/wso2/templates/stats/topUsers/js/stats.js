@@ -3,7 +3,7 @@ var statsEnabled = isDataPublishingEnabled();
 
     currentLocation=window.location.pathname;
     jagg.post("/site/blocks/stats/topUsers/ajax/stats.jag", { action:"getFirstAccessTime",currentLocation:currentLocation  },
-        function (json) {            
+        function (json) {
 
             if (!json.error) {
                 if( json.usage && json.usage.length > 0){
@@ -34,7 +34,7 @@ var statsEnabled = isDataPublishingEnabled();
                     $('#date-range').click(function(){
                          $(this).removeClass('active');
                     });
-                    
+
                     //date picker
                     $('#date-range').daterangepicker({
                           timePicker: true,
@@ -136,7 +136,7 @@ var drawTopUsersGraph = function(from,to){
                     $('#userTable'+(k+1)).show();
                 }
             }else{
-                $('#topUsersView').html($('<div id="noData" class="alert alert-info"><h4><i class="icon fw fw-info"></i>'+i18n.t("No Data Available.")+'</h4></div>'));
+                $('#topUsersView').html($('<div id="noData" class="alert alert-info"><p><strong><i class="icon fw fw-info"></i>'+i18n.t("No Data Available.")+'</strong></p></div>'));
             }
             } else {
                 if (json.message == "AuthenticateError") {
@@ -199,7 +199,7 @@ var drawTopAppUsers = function(from,to){
                      if(json.usage[i].userCountArray.length > 1){
                         for (var j =1 ; j < json.usage[i].userCountArray.length; j++) {
                              $('#topAppUsersTable').append($('<tr><td>' + "" + '</td><td>' + json.usage[i].userCountArray[j].user + '</td><td class="tdNumberCell">' + json.usage[i].userCountArray[j].count + '</td></tr>'));
-                        } 
+                        }
                     }
                 }
                 if (length == 0) {
@@ -276,7 +276,7 @@ var drawRegisteredUserCountByApplications = function(from,to){
                         // CREATE VIS & GROUPS
 
                         var vis = d3.select("#subsChart").append("div:div").attr("class", "col-xs-12 col-sm-6 col-md-4 col-lg-3");
-                        
+
                         vis = vis.append("svg:svg").style("height","200px");
 
                         vis.append("text").attr("class", "title_text")
@@ -504,7 +504,7 @@ var drawRegisteredUserCountByApplications = function(from,to){
                     update(0);
                 }
             } else {
-            	$('#subsChart').html($('<div id="noData" class="alert alert-info"><h4><i class="icon fw fw-info"></i>No Data Available.</h4></div>'));
+            	$('#subsChart').html($('<div id="noData" class="alert alert-info"><p><strong><i class="icon fw fw-info"></i>No Data Available.</strong></p></div>'));
             }
             } else {
                 if (json.message == "AuthenticateError") {
@@ -553,7 +553,7 @@ function isDataPublishingEnabled(){
     jagg.post("/site/blocks/stats/topUsers/ajax/stats.jag", { action: "isDataPublishingEnabled"},
         function (json) {
             if (!json.error) {
-                statsEnabled = json.usage;                
+                statsEnabled = json.usage;
                 return statsEnabled;
             } else {
                 if (json.message == "AuthenticateError") {
@@ -562,7 +562,7 @@ function isDataPublishingEnabled(){
                     jagg.message({content: json.message, type: "error"});
                 }
             }
-        }, "json");        
+        }, "json");
 }
 
 var convertTimeString = function(date){

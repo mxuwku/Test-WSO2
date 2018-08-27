@@ -226,11 +226,11 @@
                  if (request.getParameter("query") == null) {
                     %>
 		            <div class="alert alert-info">
-				    	<h4><i class="icon fw fw-info"></i><%=i18n.localize("No Prototyped APIs available")%></h4>
+				    	<p><strong><i class="icon fw fw-info"></i><%=i18n.localize("No Prototyped APIs available")%></strong></p>
 				    </div>
             <%   } else { %>
             		 <div class="alert alert-info">
-				    	<h4><i class="icon fw fw-info"></i><%=i18n.localize("No matching results")%></h4>
+				    	<p><strong><i class="icon fw fw-info"></i><%=i18n.localize("No matching results")%></strong></p>
 				    </div>
             <%
                          }

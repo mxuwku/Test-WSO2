@@ -8,7 +8,7 @@
 
 <div id="application-list">
   <div  id="application-table-nodata" class="hide alert alert-info">
-        <h4><i class="icon fw fw-info"></i><%=i18n.localize("No Applications")%></h4>
+        <p><strong><i class="icon fw fw-info"></i><%=i18n.localize("No Applications")%></strong></p>
         <p><%=i18n.localize("No applications yet. Click Add Applications in the action bar to add an application.")%></p>
   </div>
 
