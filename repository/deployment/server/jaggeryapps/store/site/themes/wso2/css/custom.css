@@ -575,3 +575,14 @@ a.remove_rating:hover{
 input[type=checkbox] + span:before {
       margin: 9px 6px -3px 3px;
   }
+
+.navigation li.active .sublevel-menu{
+  border-bottom: 1px solid;
+}
+ul.nav.nav-pills.nav-stacked .sublevel-menu li.active{
+  border-color:#e2e2e2;
+}
+.sublevel-menu li.active a,.sublevel-menu li.active a:hover{
+  background: #eee;
+  color:#4a8ba4;
+}
