@@ -144,7 +144,7 @@ var drawGraphAPIUsage = function(from,to){
                         }
                      }
                     }else{
-                        $('#apiUsage').html($('<div id="noData" class="alert alert-info"><p><strong><i class="icon fw fw-info"></i>No Data Available.</strong></p></div>'));
+                        $('#apiUsage').html($('<div id="noData" class="alert alert-info"><p><strong><i class="icon fa fa-exclamation-circle"></i>No Data Available.</strong></p></div>'));
                     }
                 } else {
                     if (json.message == "AuthenticateError") {

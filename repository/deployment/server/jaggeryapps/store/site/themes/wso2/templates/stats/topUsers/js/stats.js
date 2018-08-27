@@ -136,7 +136,7 @@ var drawTopUsersGraph = function(from,to){
                     $('#userTable'+(k+1)).show();
                 }
             }else{
-                $('#topUsersView').html($('<div id="noData" class="alert alert-info"><p><strong><i class="icon fw fw-info"></i>'+i18n.t("No Data Available.")+'</strong></p></div>'));
+                $('#topUsersView').html($('<div id="noData" class="alert alert-info"><p><strong><i class="icon fa fa-exclamation-circle"></i>'+i18n.t("No Data Available.")+'</strong></p></div>'));
             }
             } else {
                 if (json.message == "AuthenticateError") {
@@ -504,7 +504,7 @@ var drawRegisteredUserCountByApplications = function(from,to){
                     update(0);
                 }
             } else {
-            	$('#subsChart').html($('<div id="noData" class="alert alert-info"><p><strong><i class="icon fw fw-info"></i>No Data Available.</strong></p></div>'));
+            	$('#subsChart').html($('<div id="noData" class="alert alert-info"><p><strong><i class="icon fa fa-exclamation-circle"></i>No Data Available.</strong></p></div>'));
             }
             } else {
                 if (json.message == "AuthenticateError") {

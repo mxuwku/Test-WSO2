@@ -590,3 +590,6 @@ nav.navigation .left-menu-item{
   display: inline;
   margin-left: 5px;
 }
+.alert .fa{
+  margin-right: 5px;
+}

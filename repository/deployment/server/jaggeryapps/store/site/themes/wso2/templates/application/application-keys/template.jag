@@ -161,7 +161,7 @@
 
   {{else}}
     <div class="alert alert-info remove-margin">
-    	<p><strong><i class="icon fw fw-info"></i><%=i18n.localize("No Keys Found")%></strong></p>
+    	<p><strong><i class="icon fa fa-exclamation-circle"></i><%=i18n.localize("No Keys Found")%></strong></p>
         <p><%=i18n.localize("No keys are generated for this type in this application.")%></p>
     </div>
   	  {{#unless provide_keys_form }}

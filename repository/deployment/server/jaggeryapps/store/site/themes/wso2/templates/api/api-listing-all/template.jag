@@ -361,11 +361,11 @@ var reqUrl = request.getRequestURI();
             <% if(totalLength == 0) {
                          if (request.getParameter("query") == null) {  %>
                          	<div class="alert alert-info">
-						    <p>	<strong><i class="icon fw fw-info"></i><%=i18n.localize("No APIs published yet")%></strong></p>
+						    <p>	<strong><i class="icon fa fa-exclamation-circle"></i><%=i18n.localize("No APIs published yet")%></strong></p>
 						    </div>
 			            <%   } else {    %>
 			            	<div class="alert alert-info">
-						    <p>	<strong><i class="icon fw fw-info"></i><%=i18n.localize("No matching results")%></strong></p>
+						    <p>	<strong><i class="icon fa fa-exclamation-circle"></i><%=i18n.localize("No matching results")%></strong></p>
 						    </div>
 			            <%
 			                         }

@@ -108,7 +108,7 @@ var urlPrefix = jagg.getTenantURLPrefix("&");
 
 <% if(empty) { %>
     <div class="alert alert-info remove-margin">
-        <p><strong><i class="icon fw fw-info"></i><%=i18n.localize("No Documents Found")%></strong></p>
+        <p><strong><i class="icon fa fa-exclamation-circle"></i><%=i18n.localize("No Documents Found")%></strong></p>
         <p><%=i18n.localize("No documents have been associated with this API so far.")%></p>
     </div>
 <% } %>
