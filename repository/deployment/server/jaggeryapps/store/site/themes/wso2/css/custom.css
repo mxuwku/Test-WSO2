@@ -586,3 +586,7 @@ ul.nav.nav-pills.nav-stacked .sublevel-menu li.active{
   background: #eee;
   color:#4a8ba4;
 }
+nav.navigation .left-menu-item{
+  display: inline;
+  margin-left: 5px;
+}
