@@ -11,13 +11,10 @@
     });
 </script>
 
-<div class="panel panel-primary">
- <div class="page-header panel-heading">
+<div class="page-header">
      <h2><%=i18n.localize("Let's get started!")%></h2>
 	<p class="lead"><%=i18n.localize("Add New API")%></p>
 </div>
-<div class="panel-body">
-
 	<div class="panel-group accordion" role="tablist" aria-multiselectable="true">
 		<div class="panel panel-default">
 			<div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent=".accordion" href="#accordion1-collapse1" aria-expanded="true" aria-controls="accordion1-collapse1">
@@ -150,7 +147,7 @@
           </div>
         </div>
       </div>	
-    </div>
-  </div>
+    
+
 </div>
 <% }); %>

@@ -29,7 +29,7 @@ i18n.init(request,localeResourcesBasePath);
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<noscript><meta http-equiv="refresh" content="0;url=https://static.scania.com/vendors/components/pure-js/nonJS-browsers/1.0.0/nonJS-browsers.html"></noscript>
-	<script src="https://static.scania.com/build/global/3.1.0/js/corporate-ui.js"></script>
+	<script src="https://static.scania.com/build/global/3.1.1/js/corporate-ui.js"></script>
        <!--  <script type="text/javascript" src="http://localhost:1337/js/corporate-ui.js?preload=false"></script> -->
     <script>
         var requestURL = '<%= jagg.getAbsoluteUrl("") %>';

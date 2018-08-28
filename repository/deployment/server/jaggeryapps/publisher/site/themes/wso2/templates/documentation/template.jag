@@ -19,12 +19,12 @@
         if(tenant!='null') {urlPostfix="&tenant="+tenant;}else{urlPostfix='';}
      %>
         <div class="row-fluid">
-            <div class="control-group">
+            <div class="control-group mt-4">
                 <input type="hidden" id="docAPIVersion" value="<%=api.version%>"/>
                 <input type="hidden" id="docAPIName" value="<%=api.name%>"/>
                 <%if(createPermitted){%>
                 <div id="addDoc">
-                <a onclick="newDocFormToggle()" href="#" title="<%=i18n.localize("Add New Document")%>" class="btn btn-primary  btn-sm padding-reduce-on-grid-view">
+                <a onclick="newDocFormToggle()" href="#" title="<%=i18n.localize("Add New Document")%>" class="btn btn-primary  padding-reduce-on-grid-view">
                     <i class=" glyphicon glyphicon-plus-sign" title="<%=i18n.localize("Add New Document")%>"></i>
                     <%=i18n.localize("Add New Document")%>
                 </a>

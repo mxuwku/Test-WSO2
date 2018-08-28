@@ -748,15 +748,18 @@
 								                                var endpoint_impl = "checked='checked'";
 								                                var hide_impl="hide";
 								                            } %>
-
-								                            <label class="radio add-margin-right-5x">
-								                            	<input class="implementation_methods" type="radio" value="inline" name="implementation_methods" <%= inline_impl%> >
-								                            	<span class="helper">Inline</span>
+                                          <div class="radio">
+								                            <label class="add-margin-right-5x">
+                                                            <span class="helper">Inline</span>
+								                            	<input class="radio implementation_methods" type="radio" value="inline" name="implementation_methods" <%= inline_impl%> >
 								                            </label>
+                                          </div>
+
 
 								                            <label class="radio">
+                                                            <span class="helper">Endpoint</span>
 								                            	<input class="implementation_methods" type="radio" value="endpoint" name="implementation_methods" <%= endpoint_impl%> >
-								                            	<span class="helper">Endpoint</span>
+								                            	
 								                            </label>
 								                    </div>
 								                </div>
