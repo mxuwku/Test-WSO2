@@ -673,7 +673,7 @@ APIDesigner.prototype.render_resources = function(){
           '<button type="submit" class="btn btn-primary btn-sm editable-submit">'+
             '<i class="fw fw-check"></i>'+
           '</button>'+
-          '<button type="button" class="btn btn-secondary btn-sm editable-cancel">'+
+          '<button type="button" class="btn btn-default btn-sm editable-cancel">'+
             '<i class="fw fw-cancel"></i>'+
           '</button>';
 };
@@ -789,9 +789,9 @@ APIDesigner.prototype.edit_swagger = function(){
     var tempNav = $('.navbar').clone();
     tempNav.find('.navbar-header').remove();
     tempNav.find('#navbar').removeClass('collapse').find('.navbar-nav li').remove();
-    $('.swagger_editer_header').prepend($('.swagger_editer_header .btn-secondary'));
-    $('.swagger_editer_header .btn-secondary .fw-stack').remove();
-    $('.swagger_editer_header .btn-secondary').prepend('<span class="icon fw-stack"><i class="fw fw-left fw-stack-1x" ' +
+    $('.swagger_editer_header').prepend($('.swagger_editer_header .btn-default'));
+    $('.swagger_editer_header .btn-default .fw-stack').remove();
+    $('.swagger_editer_header .btn-default').prepend('<span class="icon fw-stack"><i class="fw fw-left fw-stack-1x" ' +
                 '+ title="Go to Overview"></i><i class="fw fw-circle-outline fw-stack-2x" title="Go Back"></i></span>');
     tempNav.find('.navbar-nav').append($('.swagger_editer_header'));
     tempNav.hide().addClass('tempNav').css({
@@ -1216,7 +1216,7 @@ var disableForm = function(){
        });     
     });
 
-    $('.btn-secondary').prop('disabled', true);
+    $('.btn-default').prop('disabled', true);
     $('#swaggerEditor').unbind('click');
 
 }
