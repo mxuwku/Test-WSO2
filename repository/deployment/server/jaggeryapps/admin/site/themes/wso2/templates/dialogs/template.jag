@@ -5,17 +5,17 @@ i18n.init(request,localeResourcesBasePath);%>
 
          <div class="modal fade" id="messageModal">
            <div class="modal-dialog" >
-             <div class="modal-content" >
-                   <div class="modal-header">
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                     <h3 class="modal-title"><%=i18n.localize("Modal title")%></h3>
+             <div class="panel panel-warning" >
+                   <div class="panel-heading">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #fff;"><span aria-hidden="true">&times;</span></button>
+                     <h3 class="panel-title"><%=i18n.localize("Modal title")%></h3>
                    </div>
-                   <div class="modal-body">
+                   <div class="panel-body">
                      <p>One fine body&hellip;</p>
                    </div>
                    <div class="modal-footer">
                          <a href="#" class="btn btn-primary"><%=i18n.localize("Save changes")%></a>
-                         <a href="#" class="btn btn-other" data-dismiss="modal"><%=i18n.localize("Close")%></a>
+                         <a href="#" class="btn btn-default" data-dismiss="modal"><%=i18n.localize("Close")%></a>
                    </div>
              </div>
            </div>

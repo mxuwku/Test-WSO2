@@ -11,9 +11,9 @@
 
 			}
 		</script>
+        <div id="userKey">
 		<div id="col-sm-12 panel panel-primary">
         <div class="panel-body">
-        <div id="userKey">
 			<div class="page-header">
 				<h2><%=i18n.localize("Manage Subscriptions")%></h2>
 			</div>
@@ -21,7 +21,7 @@
                 
 
 
-                    <table id="manage-subscriptions" class="table table-responsive table-striped">
+                    <table id="manage-subscriptions" class="table tablesorter table-responsive table-striped">
                         <thead>
                             <tr>
                                 <th class="userSpecialCell"><%=i18n.localize("User")%></th>
@@ -144,7 +144,7 @@
 	                                <td>
 	                                	<div class="form-group form-inline">
 									        <div class="col-sm-6 text-right">
-										        <select class="custom-select form-control" style="background-color: #fff;" id="<%=radioInputName%>" name="blockType"  <%if (existingStatus=='PROD_ONLY_BLOCKED' || existingStatus=='BLOCKED') { %> disabled <%} %>>
+										        <select class="form-control custom-select" id="<%=radioInputName%>" name="blockType"  <%if (existingStatus=='PROD_ONLY_BLOCKED' || existingStatus=='BLOCKED') { %> disabled <%} %>>
 										            <%if (existingStatus=='PROD_ONLY_BLOCKED' || existingStatus=='BLOCKED') { %>
 										                <option value="blockProduction" <%if(existingStatus=='PROD_ONLY_BLOCKED'){%> selected="selected" <%}%>><%=i18n.localize("Production Only")%></option>
 										                <option value="blockAll" <%if(existingStatus=='BLOCKED'){%> selected="selected" <%}%>><%=i18n.localize("Production & Sandbox")%></option>				              							                

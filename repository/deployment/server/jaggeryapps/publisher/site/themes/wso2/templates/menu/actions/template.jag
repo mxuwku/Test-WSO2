@@ -71,7 +71,7 @@
 
   
 
-      <nav class="navbar navbar-default navbar-row col-lg-10 pull-right" data-spy="affix" data-offset-top="80" data-offset-bottom="40" style="background-color: transparent; padding-left: 0px">
+      <nav class="navbar navbar-default navbar-row col-lg-10 pull-right" data-offset-top="80" data-offset-bottom="40" style="background-color: transparent; padding-left: 0px">
 
 <!--         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed"
@@ -122,7 +122,7 @@
 	                        	var apiUrlId = "name=" + encode.forUriComponent(request.getParameter("name")) + "&version=" + encode.forUriComponent(request.getParameter("version"))+ "&provider=" + encode.forUriComponent(request.getParameter("provider"))+urlPostfix;
 	                        	if(isCreatePermitted) {
 	                        %>
-	                        <div class="col-lg-1 pull-right" style="padding-left:0px;">
+	                        <div class="col-sm-1 pull-right" style="padding-left:0px;">
 	                            <a class="btn btn-default" href="<%=listMappedUrl%><%=urlPrefix%>" title="<%=i18n.localize("Go Back")%>">
 	                                <span>
 	                                    <i class="fa fa-chevron-left" title="<%=i18n.localize("Go Back")%>"></i>
@@ -130,7 +130,7 @@
 	                                <%=i18n.localize("Go Back")%>
 	                            </a>
 	                        </div>
-                          <div class="col-lg-4 pull-left" style="padding-left: 0px;">
+                          <div class="col-sm-10 pull-left" style="padding-left: 0px;">
 	                            <a class="btn btn-primary" href="<%=jagg.url("/design")%>?<%= apiUrlId %>" title="<%=i18n.localize("Edit API")%>">
 	                                <span>
 	                                    <i class="fa fa-edit" title="<%=i18n.localize("Edit API")%>"></i>

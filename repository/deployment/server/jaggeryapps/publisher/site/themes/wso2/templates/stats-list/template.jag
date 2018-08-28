@@ -65,7 +65,7 @@
 
 	<div class="col-sm-4">
 		<h3><%=i18n.localize("APIs")%></h3>
-		<ul class="nav nav-pills secondary-nav collapse <%if(reqUrl.indexOf(allStatsListURL) >= 0 || reqUrl.indexOf(allStatsListMappedUrl) >= 0) {%>in <%} %>" id="secondaryMenu" role="menu" aria-labelledby="btn-1">
+		<ul class="nav nav-pills secondary-nav analytics-nav collapse <%if(reqUrl.indexOf(allStatsListURL) >= 0 || reqUrl.indexOf(allStatsListMappedUrl) >= 0) {%>in <%} %>" id="secondaryMenu" role="menu" aria-labelledby="btn-1">
 			<li><a class="substats" "<%=i18n.localize("Created APIs Over Time")%>"
 				href="<%=allStatsMappedUrl%>?page=apis-time&stat=stat<%=urlPrefix%>"
 				onclick="jagg.sessionAwareJS({redirect:'<%=allStatsMappedUrl%>?page=apis-time&stat=stat<%=urlPrefix%>',e:event,ssoEnabled:<%=ssoEnabled%>})">
@@ -140,7 +140,7 @@
 	</div>
 	<div class="col-sm-4">
 		<h3><%=i18n.localize("Applications")%></h3>
-		<ul class="nav nav-pills secondary-nav  collapse <%if(reqUrl.indexOf(allStatsListURL) >= 0 || reqUrl.indexOf(allStatsListMappedUrl) >= 0) {%>in <%} %>" id="secondaryMenu" role="menu" aria-labelledby="btn-1">
+		<ul class="nav nav-pills secondary-nav analytics-nav collapse <%if(reqUrl.indexOf(allStatsListURL) >= 0 || reqUrl.indexOf(allStatsListMappedUrl) >= 0) {%>in <%} %>" id="secondaryMenu" role="menu" aria-labelledby="btn-1">
 			<li><a class="substats" title="<%=i18n.localize("App Throttled Requests")%>"
 							href="<%=allStatsMappedUrl%>?page=application-throttledcounts&stat=all-stat<%=urlPrefix%>"
 							onclick="jagg.sessionAwareJS({redirect:'<%=allStatsMappedUrl%>?page=application-throttledcounts&stat=all-stat<%=urlPrefix%>',e:event,ssoEnabled:<%=ssoEnabled%>})">
@@ -155,7 +155,7 @@
 	</div>
 	<div class="col-sm-4">
 		<h3><%=i18n.localize("Subscriptions")%></h3>
-		<ul class="nav nav-pills secondary-nav  collapse <%if(reqUrl.indexOf(allStatsListURL) >= 0 || reqUrl.indexOf(allStatsListMappedUrl) >= 0) {%>in <%} %>" id="secondaryMenu" role="menu" aria-labelledby="btn-1">
+		<ul class="nav nav-pills secondary-nav analytics-nav collapse <%if(reqUrl.indexOf(allStatsListURL) >= 0 || reqUrl.indexOf(allStatsListMappedUrl) >= 0) {%>in <%} %>" id="secondaryMenu" role="menu" aria-labelledby="btn-1">
 
 			<li><a class="substats" title="<%=i18n.localize("API Subscriptions")%>"
 							href="<%=allStatsMappedUrl%>?page=api-subscriptions&stat=all-stat<%=urlPrefix%>"

@@ -21,14 +21,14 @@ if(api != null) {
     var tenantDomain = MultitenantUtils.getTenantDomain(jagg.getUser().username);
 %>
 <!-- link type="text/css" rel="stylesheet" href="<%=jagg.getAbsoluteUrl(jagg.getThemeFile("templates/utils/dojo-release-1.8.3/dijit/themes/claro/claro.css"))%>"  media="screen"/-->
-<div id="item-info" class="">
+<div id="item-info">
 	<div class="page-header">
 		<h2><%= encode.forHtml(api.name)%> - <%= encode.forHtml(api.version)%></h2>
 	</div>
 
   <div class="">
     <div class="content-section shadow-up">
-        <div class="content-data panel-body">
+        <div class="content-data">
             <input type="hidden" id="infoAPIVersion" value="<%=api.version%>"/>
             <input type="hidden" id="infoAPIName" value="<%=api.name%>"/>
             <span id="spanProvider" style="display:none;"><%=api.provider%></span>

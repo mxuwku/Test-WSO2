@@ -291,11 +291,12 @@ var publishedInExternalStores=<%=publishedInExternalStores%>;
                         }else{%>
                             <div class="form-group">
                                <label class="control-label col-sm-3"></label>
-                                   <label class="checkbox col-sm-3" id="itemsDivfromLCXML<%=String(j)%>">
+                                  <label class="checkbox-inline col-sm-3" id="itemsDivfromLCXML<%=String(j)%>">
                                     <input type="checkbox" id="itemDiv<%=String(j)%>" name="itemDiv" onChange="setChecklistItemVal(itemDiv<%=String(j)%>,<%=itemOrder%>)" value="<%=itemValue%>" <%if(itemValue=="true"){%>checked<%}%>>
-                                    <span class="helper"><%=i18n.localize(itemName, itemName)%></span>
-                                </label>
-                              </div>
+                                    <span></span>
+                                    <%=i18n.localize(itemName, itemName)%>
+                                  </label>
+                            </div>
                         <%}
                  <%}}}%>
 

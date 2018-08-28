@@ -12,12 +12,12 @@
     <div class="col-md-2">
          <% jagg.includeBlock("item-nav-list",{api:api}); %>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-6">
     <%if(api.description!=''){%>
         <h4><%= i18n.localize("Description")%></h4>
         <div class="well" id="apiView"><%=encode.forHtml(api.description)%></div>
     <%}%>
-        <table class="table table-bordered">
+        <table class="table table-striped tableRemoveBorder">
             <tbody>
             <% if (isPublisherAccessControlEnabled) { %>
                 <tr>
@@ -32,7 +32,7 @@
                 </tr>
             <% } %>
             <tr>
-                <td class="col-sm-3"><%=i18n.localize("Visibility on Store")%></td>
+                <td class="col-sm-3"><strong><%=i18n.localize("Visibility on Store")%></strong></td>
                 <td id="inUrl">
                     <%if(api.visibility == "restricted"){%>
                         <%=i18n.localize("Restricted by roles, only visible to ") + api.roles +"."%><%}
@@ -40,12 +40,12 @@
                 </td>
             </tr>
             <tr>
-                <td class="col-sm-3"><%=i18n.localize("Context")%></td>
+                <td class="col-sm-3"><strong><%=i18n.localize("Context")%></strong></td>
                 <td id="inUrl"><%=api.context%></td>
             </tr>
             <% if(endpoint_config && (endpoint_config.production_endpoints != undefined)){ %>
             <tr>
-                <td class="col-sm-3"><%=i18n.localize("Production URL")%></td>
+                <td class="col-sm-3"><strong><%=i18n.localize("Production URL")%></strong></td>
                 <td id="inUrl">
                 <%
                     if(endpoint_config.production_endpoints instanceof Array){
@@ -83,7 +83,7 @@
             <% } %>
             <%if(endpoint_config && (endpoint_config.sandbox_endpoints != undefined)){%>
             <tr>
-                <td><%=i18n.localize("Sandbox URL")%></td>
+                <td><strong><%=i18n.localize("Sandbox URL")%></strong></td>
                 <td id="sandbox">
                 <%
                     if(endpoint_config.sandbox_endpoints instanceof Array){
@@ -103,7 +103,7 @@
             </tr>
             <% if(endpoint_config && (endpoint_config.sandbox_failovers != undefined)){ %>
             <tr>
-                <td><%=i18n.localize("Sandbox Fail-over Endpoint(s)")%></td>
+                <td><strong><%=i18n.localize("Sandbox Fail-over Endpoint(s)")%></strong></td>
                 <td>
                 <%
                         print('<ul class="endpoint_list">');
@@ -138,15 +138,15 @@
             </tr>
             <%}%>
             <tr>
-                <td><%=i18n.localize("Date Last Updated")%></td>
+                <td><strong><%=i18n.localize("Date Last Updated")%></strong></td>
                 <td id="inUpdated" class="dateFull"><%=api.lastUpdated%></td>
             </tr>
             <tr>
-                <td><%=i18n.localize("Tier Availability")%></td>
+                <td><strong><%=i18n.localize("Tier Availability")%></strong></td>
                 <td id="tierAvb"><%=api.availableTiersDisplayNames%></td>
             </tr>
             <tr>
-                <td><%=i18n.localize("Default API Version")%></td>
+                <td><strong><%=i18n.localize("Default API Version")%></strong></td>
                 <td id="defaultAPIVersion">
                     <%if(api.hasDefaultVersion){
                         print(api.currentDefaultVersion);
@@ -164,7 +164,7 @@
              <%
             }if(api.bizOwner!=''){%>
              <tr>
-                <td><%=i18n.localize("Business Owner")%></td>
+                <td><strong><%=i18n.localize("Business Owner")%></strong></td>
                 <td id="bizOwnerData"><%=encode.forHtml(api.bizOwner)%> <% if(api.bizOwnerMail!=''){%>
                 [<a title="mailto" href="mailto:<%=encode.forHtml(api.bizOwnerMail)%>"><%=encode.forHtml(api.bizOwnerMail)%></a>]
                 <%}%>
@@ -181,7 +181,7 @@
             </tr>
             <%}%>
                          <tr>
-                            <td>Published Environments</td>
+                            <td><strong>Published Environments</strong></td>
                             <td>
            <% var publishedEnvironments = api.environments;
               var publishedElement="";
