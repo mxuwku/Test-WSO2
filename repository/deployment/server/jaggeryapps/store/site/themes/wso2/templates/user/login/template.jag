@@ -1,6 +1,5 @@
 <% jagg.template("user/login", function(inputs, outputs, jagg) { %>
 
-  <!-- <script src="https://static.scania.com/build/global/2.4.1/js/corporate-ui.js"></script> --> <!-- TBRLO 1 line of code -->
 <script>
 //Switch form
   function step(step) {

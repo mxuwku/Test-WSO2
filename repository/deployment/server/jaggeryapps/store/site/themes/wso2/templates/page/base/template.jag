@@ -52,7 +52,7 @@
 
     <!-- Le fav and touch icons - Favicon is loaded in Corporate UI
     <link rel="shortcut icon" href="<%=jagg.getAbsoluteUrl(jagg.getThemeFile("images/favicon-store.png"))%>">-->
-    <script src="https://static.scania.com/build/global/3.1.0/js/corporate-ui.js"></script>
+    <script src="https://static.scania.com/build/global/3.1.1/js/corporate-ui.js"></script>
 
  <%
     var data = jagg.data();

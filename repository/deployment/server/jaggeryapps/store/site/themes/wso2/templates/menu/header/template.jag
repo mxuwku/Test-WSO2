@@ -29,7 +29,7 @@ var MultitenantUtils = Packages.org.wso2.carbon.utils.multitenancy.MultitenantUt
 <!--  Rearranged by Jesper -->
 
 <c-corporate-header site-name="<%=i18n.localize("API Store")%>" site-url="/store/">
-
+<nav-item location="/publisher/">API Publisher</nav-item>
 <% if(user){ %>
   <nav-item >
 <ul class="nav float-remove-xs text-center-xs">
