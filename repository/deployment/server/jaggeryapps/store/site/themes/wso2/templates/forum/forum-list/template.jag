@@ -23,7 +23,7 @@ var reqUrl = request.getRequestURI();
 %>
 <% if(!inputs.api){ %>
 <div class="col-lg-10">
-<div id="Message">
+<div id="Message" class="page-header">
     <h2><%=i18n.localize("Forum")%></h2>
 </div>
 <% } %>

@@ -26,7 +26,7 @@
  var apiViewUrl = '<%= jagg.url('/apis/info') %>';
  </script>
 <div class="col-lg-10">
-<div id="Message">
+<div id="Message" class="page-header">
     <h2><%=i18n.localize("Edit Application")%></h2>
 </div>
 <div class="alert alert-success" id="appAddMessage" style="display:none">

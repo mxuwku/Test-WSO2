@@ -1,7 +1,7 @@
 <% jagg.template("forum/forum-topic", function(inputs, outputs, jagg) {
 
 %>
-<div class="col-lg-10 mt-5">
+<div class="col-lg-10">
   <div id="forum_topic_details_page">
     <div id="forum_topic_title_bar" class="title-section"></div>
     <div id="forum_topic_content"></div>
@@ -11,7 +11,7 @@
 
 <script id="fourm_topic_title_template" type="text/x-handlebars-template">
 
-
+    <div class="page-header">
       <h2 id="forum_topic_subject_lable" class="word-break">
         <span>{{ replies.topic.0.subject}}</span>
         <%if(jagg.getUser()){%>
@@ -23,10 +23,10 @@
             {{/if_creator}}
           <%}%>
       </h2>
-
+      </div>
 
   <div style="display: none">
-    <div class="page-header"><h2 class="word-break"><%=i18n.localize('Forum Topic')%></h2></div>
+    <div class="page-header"><h2 class="word-break page-header"><%=i18n.localize('Forum Topic')%></h2></div>
     <input id="forum_topic_subject_edit_input" title="forum_topic_subject_edit" type="text" class="form-control" value="{{ replies.topic.0.subject}}"></input>
   </div>
 

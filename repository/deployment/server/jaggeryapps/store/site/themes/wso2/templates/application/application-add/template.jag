@@ -18,7 +18,7 @@
  var urlPrefix = '<%=jagg.getTenantURLPrefix("&") %>';
  </script>
 <div class="col-lg-10">
-<div id="Message">
+<div id="Message" class="page-header">
     <h2><%=i18n.localize("Add Application")%></h2>
 </div>
 <div class="page-body">

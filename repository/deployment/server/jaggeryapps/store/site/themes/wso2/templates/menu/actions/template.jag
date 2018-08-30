@@ -33,7 +33,7 @@
 	                            </a>
 	                    <% }else if(inputs.page == "application/application-add"){%>
 	                            <a class="btn btn-default pull-right" title="<%=i18n.localize('Application List')%>" href="<%= jagg.urlTenanted("/site/pages/applications.jag") %>">
-	                                <span class="icon fw-stack">
+	                                <span class="fa fa-chevron-left">
 	                                    <i class="fw fw-left fw-stack-1x"></i>
 	                                    <i class="fw fw-circle-outline fw-stack-2x"></i>
 	                                </span>
@@ -41,14 +41,14 @@
 	                            </a>
 	                    <% }else if(inputs.page == "application/application-view"){ %>
 	                            <a class="btn btn-default pull-right" title="<%=i18n.localize('Application List')%>"  href="<%= jagg.urlTenanted("/site/pages/applications.jag") %>">
-	                                <span class="icon fw-stack">
+	                                <span class="fa fa-chevron-left">
 	                                    <i class="fw fw-left fw-stack-1x"></i>
 	                                    <i class="fw fw-circle-outline fw-stack-2x"></i>
 	                                </span>
 	                                 <%=i18n.localize('Go Back')%>
  	                            </a>
 	                            <a class="btn btn-primary" title="<%=i18n.localize("Edit")%>" href="<%= jagg.urlTenanted("/site/pages/application-edit.jag?name="+request.getParameter("name")) %>">
-	                                <span class="icon fw-stack">
+	                                <span class="fa fa-pencil">
 	                                    <i class="fw fw-edit fw-stack-1x"></i>
 	                                    <i class="fw fw-circle-outline fw-stack-2x"></i>
 	                                </span>
@@ -56,7 +56,7 @@
 	                            </a>
                     <% }else if(inputs.page == "application/application-edit"){ %>
                             <a class="btn btn-default pull-right" title="edit app" href="<%= jagg.urlTenanted("/site/pages/application.jag?name="+ request.getParameter("name")) %>">
-                                <span class="icon fw-stack">
+                                <span class="fa fa-pencil">
                                     <i class="fw fw-left fw-stack-1x"></i>
                                     <i class="fw fw-circle-outline fw-stack-2x"></i>
                                 </span>
@@ -80,7 +80,7 @@
 
 	            		<% } else if(inputs.page == "api/api-info" || inputs.page == "api/api-listing-prototyped"){%>
 	                            <a class="btn btn-default pull-right" title="<%=i18n.localize("Go Back")%>" href="<%= jagg.urlTenanted("/") %>">
-	                                <span class="icon fw-stack">
+	                                <span class="fa fa-chevron-left">
 	                                    <i class="fw fw-left fw-stack-1x" title="<%=i18n.localize("Go Back")%>"></i>
 	                                    <i class="fw fw-circle-outline fw-stack-2x" title="<%=i18n.localize("Go Back")%>"></i>
 	                                </span>
@@ -89,7 +89,7 @@
 	                    <% } else if(inputs.page == "forum/forum-new" || inputs.page == "forum/forum-topic"){%>
 	                    <%var urlSuffix = jagg.getTenantURLPrefix(); %>
 	                            <a class="btn btn-default pull-right" title="<%=i18n.localize("Go Back")%>" href="<%=jagg.getAbsoluteUrl('/forum')+ '?' + urlSuffix%>">
-	                                <span class="icon fw-stack">
+	                                <span class="fa fa-chevron-left">
 	                                    <i class="fw fw-left fw-stack-1x" title="<%=i18n.localize("forum.topic.list")%>"></i>
 	                                    <i class="fw fw-circle-outline fw-stack-2x" title="<%=i18n.localize("Topic List")%>"></i>
 	                                </span>

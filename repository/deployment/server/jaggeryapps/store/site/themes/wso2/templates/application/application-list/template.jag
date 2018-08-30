@@ -1,6 +1,6 @@
 <% jagg.template("application/application-list", function(inputs, outputs, jagg) { %>
 <div class="col-lg-10">
-<div id="Message">
+<div id="Message" class="page-header">
     <h2><%=i18n.localize("Applications")%></h2>
 </div>
 <div>

@@ -16,7 +16,7 @@ for(var i=0;i < outputs.tiers.length; i++){
 }
 </style>
 <div class="col-lg-10">
-<div id="Message">
+<div id="Message" class="page-header">
     <h2 id="application_name"><%= encode.forHtml(application.name) %></h2>
 </div>
   <!-- Nav tabs -->
