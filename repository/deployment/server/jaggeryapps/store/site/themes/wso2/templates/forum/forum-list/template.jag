@@ -1,4 +1,4 @@
-<% jagg.template("forum/forum-list", function(inputs, outputs, jagg) { 
+<% jagg.template("forum/forum-list", function(inputs, outputs, jagg) {
 <script src="https://static.scania.com/build/global/2.3.5/js/corporate-ui.js"></script>
 var siteConf = require("/site/conf/site.json");
 
@@ -10,7 +10,7 @@ var urlSuffix = jagg.getTenantURLPrefix();
 
 <%
 var needLoginStyleClass = "";
-if(!jagg.getUser()){ 
+if(!jagg.getUser()){
 	needLoginStyleClass = "need-login";
 }
 
@@ -24,10 +24,10 @@ var reqUrl = request.getRequestURI();
 <% if(!inputs.api){ %>
 <div class="col-lg-10">
 <div id="Message">
-    <h1><%=i18n.localize("Forum")%></h1>
+    <h2><%=i18n.localize("Forum")%></h2>
 </div>
 <% } %>
-<div class="white-wrapper p-5" id="forum_topics_list_page">
+<div id="forum_topics_list_page">
         <div class="form-horizontal form-search">
           <div class="form-group">
           <div class="col-md-12 col-lg-12">
@@ -49,11 +49,11 @@ var reqUrl = request.getRequestURI();
         </div>
     <div class="row">
       <div class="col-md-12 col-lg-12">
-      <div class="white-wrapper forum_topics_list" style="display:none">
+      <div class="forum_topics_list" style="display:none">
         <div id="forum_topics_list" style="display:none"></div>
       </div>
         <div id="forum_no_topics" style="display:none" class="alert alert-info">
-			<h4><i class="icon fw fw-info"></i><%=i18n.localize('No topics found.')%></h4>
+			<p><strong><i class="icon fa fa-exclamation-circle"></i><%=i18n.localize('No topics found.')%></strong></p>
 			<p><%=i18n.localize('There are no forum topics available.')%></p>
 		</div>
 		<ul id="forum_topics_list_paginator" class="pull-right"></ul>
@@ -75,7 +75,7 @@ var reqUrl = request.getRequestURI();
                 <th class="col-md-1"></th>
             </tr>
         </thead>
-        <tbody> 
+        <tbody>
 
             {{#each topics}}
             <tr>
@@ -97,7 +97,7 @@ var reqUrl = request.getRequestURI();
                     <%}%>
                 </td>
             </tr>
-            {{/each}} 
+            {{/each}}
 
         </tbody>
     </table>

@@ -6,12 +6,12 @@
             <nav class="navigation">
                 <ul class="nav nav-pills nav-stacked">
                 	<%if(inputs.pagePath == "api/listing" || inputs.pagePath == "api/api-listing-prototyped" || inputs.pagePath == "api/api-info" || inputs.pagePath == "api/documentation/view") { %>
-	                    <li class="active"><a title="APIs" href="<%= jagg.urlTenanted("/")%>"><i class="fw fw-api icon"></i><span class="left-menu-item "><%= i18n.localize("APIs")%></span></a></li>
-	                    <li><a title="Applications" href="<%= jagg.urlTenanted("/site/pages/applications.jag")%>" class="<%= "link-myapplications" + (user ? "" : " need-login") %>"><span class="left-menu-item"><%=i18n.localize("Applications")%></span></a></li>
+	                    <li class="active"><a title="APIs" href="<%= jagg.urlTenanted("/")%>"><i class="fa fa-cloud"></i><span class="left-menu-item "><%= i18n.localize("APIs")%></span></a></li>
+	                    <li><a title="Applications" href="<%= jagg.urlTenanted("/site/pages/applications.jag")%>" class="<%= "link-myapplications" + (user ? "" : " need-login") %>"><i class="fa fa-cogs"></i><span class="left-menu-item"><%=i18n.localize("Applications")%></span></a></li>
 	                    <% if (outputs.isForumEnabled && (!outputs.tenantDomains || outputs.tenantDomains.indexOf(tenant) == -1 || tenant =="carbon.super")) { %>
-	                    	<li><a title="forum" href="<%= jagg.urlTenanted("/forum")%>"><i class="fw fw-forum icon"></i><span class="left-menu-item"><%= i18n.localize("Forum")%></span></a></li>
+	                    	<li><a title="forum" href="<%= jagg.urlTenanted("/forum")%>"><i class="fa fa-users"></i><span class="left-menu-item"><%= i18n.localize("Forum")%></span></a></li>
 	                    <%} %>
-	                    <li><a title="Statistics" href="<%= jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-statistics icon"></i><span class="left-menu-item"><%= i18n.localize("Analytics")%> <i class="fw fw-down fw-stack-1x toggle-icon-up remove-float"></i></span></a>
+	                    <li><a title="Statistics" href="<%= jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fa fa-bar-chart"></i><span class="left-menu-item"><%= i18n.localize("Analytics")%> <i class="fw fw-down fw-stack-1x toggle-icon-up remove-float"></i></span></a>
 	                    	<ul class="sublevel-menu">
 	                            <li><a title="<%=i18n.localize("API Usage")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-api icon"></i><span class="name"><%=i18n.localize("API Usage")%></span></a></li>
 	                            <li><a title="<%=i18n.localize("Top Users")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=topUsers")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-api icon"></i><span class="name"><%=i18n.localize("Top Users")%></span></a></li>
@@ -20,13 +20,13 @@
                               <li><a title="<%=i18n.localize("Manage Alert Types")%>" href="<%=jagg.urlTenanted("/site/pages/manage-alert-type.jag")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-notification icon"></i><span class="name"><%=i18n.localize("Manage Alert Types")%></span></a></li>
 	                        </ul>
 	                    </li>
-	                  <%} else if (inputs.pagePath == "application/application-list" || inputs.pagePath == "application/application-add" || inputs.pagePath == "application/application-view" || inputs.pagePath == "application/application-edit") { %> 
-	                  	<li class="active"><a title="Applications" href="<%= jagg.urlTenanted("/site/pages/applications.jag")%>" class="<%= "link-myapplications" + (user ? "" : " need-login") %>"><i class="fw fw-application icon"></i><span class="left-menu-item"><%=i18n.localize("Applications")%></span></a></li>
-	                  	<li><a title="APIs" href="<%= jagg.urlTenanted("/")%>"><i class="fw fw-api icon"></i><span class="left-menu-item "><%=i18n.localize("APIs")%></span></a></li>
+	                  <%} else if (inputs.pagePath == "application/application-list" || inputs.pagePath == "application/application-add" || inputs.pagePath == "application/application-view" || inputs.pagePath == "application/application-edit") { %>
+	                  	<li><a title="APIs" href="<%= jagg.urlTenanted("/")%>"><i class="fa fa-cloud"></i><span class="left-menu-item "><%=i18n.localize("APIs")%></span></a></li>
+                      <li class="active"><a title="Applications" href="<%= jagg.urlTenanted("/site/pages/applications.jag")%>" class="<%= "link-myapplications" + (user ? "" : " need-login") %>"><i class="fa fa-cogs"></i><span class="left-menu-item"><%=i18n.localize("Applications")%></span></a></li>
 	                    <% if (outputs.isForumEnabled && (!outputs.tenantDomains || outputs.tenantDomains.indexOf(tenant) == -1 || tenant =="carbon.super")) { %>
-	                    	<li><a title="Forum" href="<%= jagg.urlTenanted("/forum")%>"><i class="fw fw-forum icon"></i><span class="left-menu-item"><%=i18n.localize("Forum")%></span></a></li>
+	                    	<li><a title="Forum" href="<%= jagg.urlTenanted("/forum")%>"><i class="fa fa-users"></i><span class="left-menu-item"><%=i18n.localize("Forum")%></span></a></li>
 	                    <%} %>
-	                    <li><a title="Statistics" href="<%= jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-statistics icon"></i><span class="left-menu-item"><%=i18n.localize("Analytics")%> <i class="fw fw-down fw-stack-1x toggle-icon-up remove-float"></i></span></a>
+	                    <li><a title="Statistics" href="<%= jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fa fa-bar-chart"></i><span class="left-menu-item"><%=i18n.localize("Analytics")%> <i class="fw fw-down fw-stack-1x toggle-icon-up remove-float"></i></span></a>
 	                    	<ul class="sublevel-menu">
 	                            <li><a title="<%=i18n.localize("API Usage")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-api icon"></i><span class="name"><%=i18n.localize("API Usage")%></span></a></li>
 	                            <li><a title="<%=i18n.localize("Top Users")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=topUsers")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-api icon"></i><span class="name"><%=i18n.localize("Top Users")%></span></a></li>
@@ -36,10 +36,10 @@
 	                        </ul>
 	                    </li>
 	                  <%} else if (inputs.pagePath == "forum/forum-list" || inputs.pagePath == "forum/forum-new" || inputs.pagePath == "forum/forum-topic") { %>
-	                  	<li class="active"><a title="forum" href="<%= jagg.urlTenanted("/forum")%>"><i class="fw fw-forum icon"></i><span class="left-menu-item"><%=i18n.localize("Forum")%></span></a></li>
-	                  	<li><a title="APIs" href="<%= jagg.urlTenanted("/")%>"><i class="fw fw-api icon"></i><span class="left-menu-item "><%=i18n.localize("APIs")%></span></a></li>
-	                    <li><a title="Applications" href="<%= jagg.urlTenanted("/site/pages/applications.jag")%>" class="<%= "link-myapplications" + (user ? "" : " need-login") %>"><i class="fw fw-application icon"></i><span class="left-menu-item"><%=i18n.localize("Applications")%></span></a></li>
-	                    <li><a title="statistics" href="<%= jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-statistics icon"></i><span class="left-menu-item"><%=i18n.localize("Analytics")%> <i class="fw fw-down fw-stack-1x toggle-icon-up remove-float"></i></span></a>
+	                  	<li><a title="APIs" href="<%= jagg.urlTenanted("/")%>"><i class="fa fa-cloud"></i><span class="left-menu-item "><%=i18n.localize("APIs")%></span></a></li>
+	                    <li><a title="Applications" href="<%= jagg.urlTenanted("/site/pages/applications.jag")%>" class="<%= "link-myapplications" + (user ? "" : " need-login") %>"><i class="fa fa-cogs"></i><span class="left-menu-item"><%=i18n.localize("Applications")%></span></a></li>
+                      <li class="active"><a title="forum" href="<%= jagg.urlTenanted("/forum")%>"><i class="fa fa-users"></i><span class="left-menu-item"><%=i18n.localize("Forum")%></span></a></li>
+	                    <li><a title="statistics" href="<%= jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fa fa-bar-chart"></i><span class="left-menu-item"><%=i18n.localize("Analytics")%> <i class="fw fw-down fw-stack-1x toggle-icon-up remove-float"></i></span></a>
 	                    	<ul class="sublevel-menu">
 	                            <li><a title="<%=i18n.localize("API Usage")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-api icon"></i><span class="name"><%=i18n.localize("API Usage")%></span></a></li>
 	                            <li><a title="<%=i18n.localize("Top Users")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=topUsers")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-api icon"></i><span class="name"><%=i18n.localize("Top Users")%></span></a></li>
@@ -49,20 +49,31 @@
 	                        </ul>
 	                    </li>
 	                   <%} else { %>
-	                   	<li class="active"><a title="statistics" href="<%= jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-statistics icon"></i><span class="left-menu-item"><%=i18n.localize("Analytics")%> <i class="fw fw-up fw-stack-1x toggle-icon-up remove-float"></i></span></a>
+                     <li><a title="APIs" href="<%= jagg.urlTenanted("/")%>"><i class="fa fa-cloud"></i><span class="left-menu-item "><%=i18n.localize("APIs")%></span></a></li>
+                     <li><a title="Applications" href="<%= jagg.urlTenanted("/site/pages/applications.jag")%>" class="<%= "link-myapplications" + (user ? "" : " need-login") %>"><i class="fa fa-cogs"></i><span class="left-menu-item"><%=i18n.localize("Applications")%></span></a></li>
+                     <% if (outputs.isForumEnabled && (!outputs.tenantDomains || outputs.tenantDomains.indexOf(tenant) == -1 || tenant =="carbon.super")) { %>
+                       <li><a title="Forum" href="<%= jagg.urlTenanted("/forum")%>"><i class="fa fa-users"></i><span class="left-menu-item"><%=i18n.localize("Forum")%></span></a></li>
+                     <%} %>
+	                   	<li class="active"><a title="statistics" href="<%= jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fa fa-bar-chart"></i><span class="left-menu-item"><%=i18n.localize("Analytics")%> <i class="fw fw-up fw-stack-1x toggle-icon-up remove-float"></i></span></a>
 	                    	<ul class="sublevel-menu" style="display:block">
-	                            <li><a title="<%=i18n.localize("API Usage")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-pie-chart icon"></i><span class="name"><%=i18n.localize("API Usage")%></span></a></li>
-	                            <li><a title="<%=i18n.localize("Top Users")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=topUsers")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-api icon"></i><span class="name"><%=i18n.localize("Top Users")%></span></a></li>
-	                            <li><a title="<%=i18n.localize("Resource Usage")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=apiCallType")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-api icon"></i><span class="name"><%=i18n.localize("Resource Usage")%></span></a></li>
-	                            <li><a title="<%=i18n.localize("Faulty Invocations")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=faultCount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-api icon"></i><span class="name"><%=i18n.localize("Faulty Invocations")%></span></a></li>
-				   	                  <li><a title="<%=i18n.localize("Manage Alert Types")%>" href="<%=jagg.urlTenanted("/site/pages/manage-alert-type.jag")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-notification icon"></i><span class="name"><%=i18n.localize("Manage Alert Types")%></span></a></li>
+                              <% if (inputs.pagePath == "stats/perAppAPICount") { %>
+                                <li class="active">
+                              <%} else { %> <li> <% } %>
+                              <a title="<%=i18n.localize("API Usage")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=perAppAPICount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-pie-chart icon"></i><span class="name"><%=i18n.localize("API Usage")%></span></a></li>
+                              <% if (inputs.pagePath == "stats/topUsers") { %>
+                                <li class="active">
+                              <%} else { %> <li> <% } %><a title="<%=i18n.localize("Top Users")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=topUsers")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-api icon"></i><span class="name"><%=i18n.localize("Top Users")%></span></a></li>
+                              <% if (inputs.pagePath == "stats/apiCallType") { %>
+                                <li class="active">
+                              <%} else { %> <li> <% } %><a title="<%=i18n.localize("Resource Usage")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=apiCallType")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-api icon"></i><span class="name"><%=i18n.localize("Resource Usage")%></span></a></li>
+                              <% if (inputs.pagePath == "stats/faultCount") { %>
+                                <li class="active">
+                              <%} else { %> <li> <% } %><a title="<%=i18n.localize("Faulty Invocations")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=faultCount")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-api icon"></i><span class="name"><%=i18n.localize("Faulty Invocations")%></span></a></li>
+                              <% if (inputs.pagePath == "manage-alerts") { %>
+                                <li class="active">
+                              <%} else { %> <li> <% } %><a title="<%=i18n.localize("Manage Alert Types")%>" href="<%=jagg.urlTenanted("/site/pages/manage-alert-type.jag")%>" class="<%if(!user){%>need-login<%}%>"><i class="fw fw-notification icon"></i><span class="name"><%=i18n.localize("Manage Alert Types")%></span></a></li>
 	                        </ul>
 	                    </li>
-	                   	<li><a title="APIs" href="<%= jagg.urlTenanted("/")%>"><i class="fw fw-api icon"></i><span class="left-menu-item "><%=i18n.localize("APIs")%></span></a></li>
-	                    <li><a title="Applications" href="<%= jagg.urlTenanted("/site/pages/applications.jag")%>" class="<%= "link-myapplications" + (user ? "" : " need-login") %>"><i class="fw fw-application icon"></i><span class="left-menu-item"><%=i18n.localize("Applications")%></span></a></li>
-	                    <% if (outputs.isForumEnabled && (!outputs.tenantDomains || outputs.tenantDomains.indexOf(tenant) == -1 || tenant =="carbon.super")) { %>
-	                    	<li><a title="Forum" href="<%= jagg.urlTenanted("/forum")%>"><i class="fw fw-forum icon"></i><span class="left-menu-item"><%=i18n.localize("Forum")%></span></a></li>
-	                    <%} %>
 	                   <%} %>
                 </ul>
             </nav>
@@ -84,11 +95,11 @@
                <%=link.title%>
                </a>
                </li>
-        <%    } 
+        <%    }
            }
-        %>         
+        %>
           <li><a title="title" href="#" id="left-bar-menu-toggle" data-toggle="collapse" data-target="#secondaryMenu"
-                               aria-expanded="false"><i class="fw fw-statistics fw-2x"></i> <%=i18n.localize("Analytics")%> 
+                               aria-expanded="false"><i class="fw fw-statistics fw-2x"></i> <%=i18n.localize("Analytics")%>
                                <i class="icon fw fw-down fw-1x secondary-nav-toggle" title="<%=i18n.localize("Analytics")%>"></i>
                                </a>
           <ul class="nav nav-pills secondary-nav collapse " id="secondaryMenu" role="menu" aria-labelledby="btn-1" >
@@ -135,7 +146,7 @@
     <a class="navbar-brand" title="API Store" href="<%=jagg.urlTenanted("/site/pages/index.jag")%>">API Store</a>
   </div>
   <div id="navbar" class="collapse navbar-collapse">
-  <% if(outputs.tenantDomains==null || outputs.tenantDomains.indexOf(tenant) > -1 ){%>  
+  <% if(outputs.tenantDomains==null || outputs.tenantDomains.indexOf(tenant) > -1 ){%>
     <ul class="nav navbar-nav long-navbar">
       <% var i, link, links = outputs.links, length = links.length;
        for(i = 0; i < length; i++) {
@@ -148,7 +159,7 @@
        <%=link.title%>
        </a>
        </li>
-            <% } }%>      
+            <% } }%>
       <li class="dropdown">
         <a title="Statistics" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-line-chart"></i><%=i18n.localize(" Statistics")%><span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
@@ -165,7 +176,7 @@
             <a title="<%=i18n.localize("Faulty Invocations")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=faultCount")%>" ><%=i18n.localize("Faulty Invocations")%></a>
           </li>
         </ul>
-      </li>      
+      </li>
     </ul>
     <ul class="nav navbar-nav short-navbar">
       <% var i, link, links = outputs.links, length = links.length;
@@ -178,7 +189,7 @@
        <i class="<%=link.classIcon%>"></i>
        </a>
        </li>
-            <% } }%>      
+            <% } }%>
       <li class="dropdown">
         <a title="statistics" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-line-chart"></i><span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
@@ -195,9 +206,9 @@
             <a title="<%=i18n.localize("Faulty Invocations")%>" href="<%=jagg.urlTenanted("/site/pages/statistics.jag?stat=faultCount")%>" ><%=i18n.localize("Faulty Invocations")%></a>
           </li>
         </ul>
-      </li>      
-    </ul>        
-  <%}%>         
+      </li>
+    </ul>
+  <%}%>
   </div><!--/.nav-collapse -->
 </nav>
 <% */ }); %>

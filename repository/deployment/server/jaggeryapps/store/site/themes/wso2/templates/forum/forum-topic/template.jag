@@ -4,15 +4,15 @@
 <div class="col-lg-10 mt-5">
   <div id="forum_topic_details_page">
     <div id="forum_topic_title_bar" class="title-section"></div>
-    <div class="white-wrapper p-5" id="forum_topic_content"></div>
+    <div id="forum_topic_content"></div>
   </div>
 
 <!-- STRAT : Handlebars templates -->
 
 <script id="fourm_topic_title_template" type="text/x-handlebars-template">
 
- 
-      <h1 id="forum_topic_subject_lable" class="word-break">
+
+      <h2 id="forum_topic_subject_lable" class="word-break">
         <span>{{ replies.topic.0.subject}}</span>
         <%if(jagg.getUser()){%>
             {{#if_creator replies.topic.0.topicOwner replies.topic.0.user}}
@@ -22,8 +22,8 @@
                 </a>
             {{/if_creator}}
           <%}%>
-      </h1>
-  
+      </h2>
+
 
   <div style="display: none">
     <div class="page-header"><h2 class="word-break"><%=i18n.localize('Forum Topic')%></h2></div>
@@ -103,7 +103,7 @@
         </div>
 
         <div id="no_topic_msg" class="alert alert-info" style="display:none;">
-            <h4><i class="icon fw fw-info"></i>No replies found.</h4>
+            <p><strong> <i class="icon fw fw-info"></i>No replies found.</strong></p>
             <p>You can start adding replies below</p>
         </div>
 

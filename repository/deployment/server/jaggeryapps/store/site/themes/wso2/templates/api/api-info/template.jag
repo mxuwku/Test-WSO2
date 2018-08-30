@@ -15,7 +15,7 @@ var urlPrefix = jagg.getTenantURLPrefix("&");
     	displayOwner = api.apiOwner;
     } else if(api.bizOwner != null) {
         displayOwner = api.bizOwner;
-    } 
+    }
 
    thumbURL = api.thumbnailurl;
    if(thumbURL && thumbURL.indexOf("images/") == 0) {
@@ -61,7 +61,7 @@ var urlPrefix = jagg.getTenantURLPrefix("&");
   if(api.status == 'PROTOTYPED') {
   	labelType = 'label-warning';
   }else if(api.status == 'PUBLISHED'){
-    labelType = 'label-primary';
+    labelType = 'label-info';
   }
 
    var environments = api.serverURL.split("|");
@@ -105,7 +105,7 @@ var urlPrefix = jagg.getTenantURLPrefix("&");
   </div>
 
 <div class="row">
-    <div class="row-height white-wrapper p-5">
+    <div class="row-height">
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-2 col-md-height col-sm-middle col-lg-top">
              <div class="details-wrapper">
                 <div class="thumbnail icon">
@@ -292,10 +292,10 @@ var urlPrefix = jagg.getTenantURLPrefix("&");
             </div>
         </div>
         <% jagg.includeBlock("ui/tab", outputs.tabs); %>
-               
+
         <div class="api-info">
             <div class="row">
-                <div class="col-sm-12">                        
+                <div class="col-sm-12">
 
                     <%if (api.isAdvertiseOnly && api.redirectURL != null) {
                         	var tenantDomain = 'carbon.super';
@@ -310,17 +310,17 @@ var urlPrefix = jagg.getTenantURLPrefix("&");
                     %>
                     	<div id="store-redirect-link1" class="span4 title-section"><a class="btn btn-primary" title="<%=i18n.localize("Visit Publisher Store")%>" href="<%=path%>" target="_"><%=i18n.localize("Visit Publisher Store")%></a></div>
                     <%}%>
-          
-        
+
+
         <%} else { %>
         	<div style="padding-bottom:10px">
             	<div class="alert alert-info">
 			        <%
 			        var apiName=request.getParameter("name");
 			        %>
-            		<strong><%=i18n.localize("No API available with the name -")%><%= encode.forHtml(apiName)%> <%=i18n.localize("or the user is not authorized to view the API.")%></strong>
+            	<p>	<strong><%=i18n.localize("No API available with the name -")%><%= encode.forHtml(apiName)%> <%=i18n.localize("or the user is not authorized to view the API.")%></strong></p>
             	</div>
-        	</div>  
+        	</div>
         <% } %>
         </div>
          <%if(api != null) {%>
@@ -339,7 +339,7 @@ var enjoyhint_instance_api_info = null;
 var enjoyhint_instance_login_apistore = null;
 
 $(window).load(function(){
-	
+
     $(".setbgcolor").generateBgcolor({
         definite:true
     });

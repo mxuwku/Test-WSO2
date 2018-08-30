@@ -21,9 +21,10 @@ if(request.getParameter("type") == "prototyped"){
 %>
 
 <form action="<%=jagg.getMappedUrl("/site/pages/list-apis.jag")%>?<%= param %>" id="search_apis">
-  <div class="col-xs-10 col-sm-12 col-md-6 col-lg-5 well searchBgFix">
+  <div class="col-xs-10 col-sm-12 col-md-6 col-lg-5">
   <%= param %>
-    <div class="input-group input-wrap search-wrap">
+
+    <div class="form-group input-group input-wrap search-wrap">
       <span class="input-group-btn">
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="<%=i18n.localize("Category")%>"><%= type %> <span class="caret"></span></button>
           <ul class="dropdown-menu">
@@ -35,13 +36,13 @@ if(request.getParameter("type") == "prototyped"){
       <input type="text" class="form-control appm-content-search" title="apim_search" <%if(query!=null){%> value="<%= encode.forHtml(query)%>" <%}%> name="query" id="query" placeholder="<%=i18n.localize("Search")%>...">
       <div class="input-group-btn">
         <button class="btn btn-default wrap-input-right" id="searchAPI" type="submit" title="<%=i18n.localize("Search")%>">Submit
-      <span></span>
+          <span></span>
           <i class="fw fw-search" aria-hidden="true"></i>
-        </button> 
+        </button>
       </div>
-      <div class="input-group-btn btn-default">
+      <div class="input-group-addon btn-info" style="border-left:0;border-right:0;">
         <a class="help_popup" title="<%=i18n.localize("Search Options")%>" rel="popover" data-popover-content="#apiSearchTips" data-placement="bottom">
-          <span style="font-size:14px;">
+          <span style="font-size:14px;color:#fff;">
             <i class="fa fa-info-circle" title="<%=i18n.localize("Search Options")%>"></i>
           </span>
         </a>
@@ -60,7 +61,7 @@ if(request.getParameter("type") == "prototyped"){
         </div>
       <%if(tenant != null){ %>
         <input type="hidden" class="span5" name="tenant" value="<%= encode.forHtmlAttribute(tenant) %>" />
-        <%}%> 
+        <%}%>
     </div><!-- /input-group -->
   </div>
 </form>
@@ -87,7 +88,7 @@ if(request.getParameter("type") == "prototyped"){
         </div>
         <%if(tenant != null){ %>
         <input type="hidden" class="span5" name="tenant" value="<%= tenant %>" />
-        <%}%>        
+        <%}%>
     </form>
   </div>
   <div class="col-md-6 api-search "><a href="#" title="<%=i18n.localize("Search Options")%>" class="help-text" data-placement="bottom" rel="popover" data-popover-content="#apiSearchHelp"><i class="fa fa-question-circle"></i> <%=i18n.localize("Search Options")%></a>

@@ -198,7 +198,7 @@ function checkOnKeyPress(e) {
         <label for="" class="col-sm-3 control-label">Using</label>
             <div class="col-sm-9">
             <div class="input-group">
-              <select id="key_type" class="form-control keytype">
+              <select id="key_type" class="keytype">
                       <option value="production">Production</option>
                       <option value="sandbox">Sandbox</option>
               </select>
@@ -247,18 +247,18 @@ function checkOnKeyPress(e) {
     -->
     <% }else if(jagg.getUser() != null){ %>
         <div class="alert alert-info remove-margin-top">
-            <h4><i class="icon fw fw-info"></i>Notice </h4>
+            <p><strong><i class="icon fa fa-exclamation-circle"></i>Notice </strong></p>
             <p><%=i18n.localize("Please subscribe to the API to generate an access token.")%>&nbsp;<%=i18n.localize("If you already have an access token, please provide it below.")%></p>
         </div>
     <% }else{ %>
         <div class="alert alert-info remove-margin-top">
-            <h4><i class="icon fw fw-info"></i>Notice</h4>
+            <p><strong><i class="icon fa fa-exclamation-circle"></i>Notice</strong></p>
             <p><%=i18n.localize("You require an access token to try the API. Please login and subscribe to the API to generate an access token.")%> &nbsp; <%=i18n.localize("If you already have an access token, please provide it below.")%></p>
         </div>
     <% } %>
         <div class="alert alert-warning hide notoken">
         <button type="button" class="close" data-dismiss="alert"><i class="fw fw-cancel"></i></button>
-        <strong><%=i18n.localize("Warning!")%> </strong>
+        <p><strong><%=i18n.localize("Warning!")%> </strong></p>
             <%=i18n.localize("The selected application does not have an access token for the selected environment. Please go to the subscription page and generate an access token first.")%>
         </div>
 

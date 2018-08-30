@@ -1,18 +1,18 @@
 <% jagg.template("api/api-listing-all", function(inputs, outputs, jagg) { %>
 
 <%
-          var tenant=request_tenant;          
+          var tenant=request_tenant;
           var urlPrefix = jagg.getTenantURLPrefix("&");
 if (outputs.error) { %>
           <div class="alert alert-info">
-            <strong><%=encode.forHtml(outputs.message)%></strong>
+            <p><strong><%=encode.forHtml(outputs.message)%></strong></p>
           </div>
 <% }else {
 
           var i, api, path, thumbURL, apis = outputs.apis,totalLength=outputs.totalLength, isRatingActivated=outputs.isRatingActivated ;
                         if(apis!=null) {
 	                        length = totalLength;
-	
+
 	                        var itemsPerPage = 12; //reduce this number to preview the pagination
 	                        var page = 1;
 	                        var numberOfPages = parseInt(length / itemsPerPage);
@@ -44,7 +44,10 @@ if(length==0){
 
 var reqUrl = request.getRequestURI();
  %>
- 
+
+    <div class="col-xs-12">
+
+
  <!-- Recently Added APIs -->
  <% if (request.getParameter('tag') == null && request.getParameter('query') == null && totalLength > 10 && request.getParameter('page') == null) { %>
 	<%jagg.includeBlock("api/recently-added",null);%>
@@ -62,7 +65,7 @@ var reqUrl = request.getRequestURI();
              	if( tag.split(site.tagGroupKey).length == 2 ){
                  	tagDisplayName = tag.split(site.tagGroupKey)[0];
       %>
-             		<h1><%=i18n.localize("APIs")%> - <%= encode.forHtml(tagDisplayName)%></h1>
+             		<h2><%=i18n.localize("APIs")%> - <%= encode.forHtml(tagDisplayName)%></h2>
 		             <ul class="breadcrumb">
 		                 <li><a href="<%=jagg.getAbsoluteUrl("/site/pages/list-apis.jag")%><%=urlPrefix%>" title="<%=i18n.localize("List APIs")%>"><%=i18n.localize("APIs groups")%></a> <span class="divider">/</span></li>
 		                 <li class="active"><%= encode.forHtml(tagDisplayName)%></li>
@@ -70,14 +73,14 @@ var reqUrl = request.getRequestURI();
        <%
             	}else{
 	               %>
-	               <h1 class="panel-heading">APIs - ( <%= encode.forHtml(tag) %> )</h1>
+	               <h2 class="panel-heading">APIs - ( <%= encode.forHtml(tag) %> )</h2>
 	               <%
             	}
              } else{
          %>
-    			<h1>APIs</h1>
+    			<h2>APIs</h2>
    			 <% } %>
-    <div class="row">
+  </div>
         <%
         var query=    encode.forUriComponent(request.getParameter('query'));
         if(query == 'null')query = null;
@@ -131,12 +134,12 @@ var reqUrl = request.getRequestURI();
                                     	<% var docUrl = "docName=" + encode.forUriComponent(api.docName) + "&name=" + encode.forUriComponent(api.name) + "&version=" + encode.forUriComponent(api.version) + "&provider=" + encode.forUriComponent(api.provider) + urlPrefix; %>
                                     	<p><a href="<%=docViewMappedUrl%>?<%=docUrl%>" target="_blank" title="<%=i18n.localize("View Content")%>"><%=i18n.localize("View Content")%></a></p>
                                     <% } %>
-               					
+
                				</div>
                			</div>
                			<div class="col-sm-4">
                						<div class="col-sm-6">
-               							 <div class="white-wrapper add-margin-bottom-4x">
+               							 <div class="add-margin-bottom-4x">
                							 		 <div class="thumbnail icon">
 				                                	<% if(thumbURL == null) { %>
 				                                		<div class="square-element setbgcolor">
@@ -147,7 +150,7 @@ var reqUrl = request.getRequestURI();
 															<div style="display: none">
 																<a href="" class="api-name" title="<%=i18n.localize("API Name")%>"><%=api.name%></a>
 															</div>
-														</div> 
+														</div>
 				                                    <% } else { %>
 				                                    	<div class="square-element">
 				                                    		<img class="" src="<%=thumbURL%>" alt="<%=i18n.localize("API Thumbnail")%>">
@@ -157,11 +160,11 @@ var reqUrl = request.getRequestURI();
 				                                    	</div>
 				                                    <% } %>
 				                                     <a href="<%=path%>" title="<%=i18n.localize("Browse APIs")%>">
-					                                    <div class="after">                                       
+					                                    <div class="after">
 					                                    <span class="fw-stack fw-lg">
 					                                    <i class="fw fw-circle-outline fw-stack-2x"></i>
 					                                    <i class="fw fw-view fw-stack-1x"></i>
-					                                    </span>          
+					                                    </span>
 					                                    </div>
 					                                   </a>
 				                                </div>
@@ -209,7 +212,7 @@ var reqUrl = request.getRequestURI();
 											<div style="display: none">
 												<a href="" class="api-name" title="<%=i18n.localize("API Name")%>"><%=api.name%></a>
 											</div>
-										</div> 
+										</div>
                                     <% } else { %>
                                     	<div class="square-element">
                                     		<img class="" src="<%=thumbURL%>" alt="<%=i18n.localize("API Thumbnail")%>">
@@ -219,11 +222,11 @@ var reqUrl = request.getRequestURI();
                                     	</div>
                                     <% } %>
                                      <a href="<%=path%>" title="<%=i18n.localize("Browse APIs")%>">
-	                                    <div class="after">                                       
+	                                    <div class="after">
 	                                    <span class="fw-stack fw-lg">
 	                                    <i class="fw fw-circle-outline fw-stack-2x"></i>
 	                                    <i class="fw fw-view fw-stack-1x"></i>
-	                                    </span>          
+	                                    </span>
 	                                    </div>
 	                                   </a>
                                 </div>
@@ -248,10 +251,10 @@ var reqUrl = request.getRequestURI();
                 <%}%>
                 <% } %>
 
-            
-            
+
+
             <!-- Pagination Start -->
-            
+
             <%  if(numberOfPages > 1) { %>
                 <div class="col-sm-12">
                 <ul class="pagination ">
@@ -358,11 +361,11 @@ var reqUrl = request.getRequestURI();
             <% if(totalLength == 0) {
                          if (request.getParameter("query") == null) {  %>
                          	<div class="alert alert-info">
-						    	<h4><i class="icon fw fw-info"></i><%=i18n.localize("No APIs published yet")%></h4>
+						    <p>	<strong><i class="icon fa fa-exclamation-circle"></i><%=i18n.localize("No APIs published yet")%></strong></p>
 						    </div>
 			            <%   } else {    %>
 			            	<div class="alert alert-info">
-						    	<h4><i class="icon fw fw-info"></i><%=i18n.localize("No matching results")%></h4>
+						    <p>	<strong><i class="icon fa fa-exclamation-circle"></i><%=i18n.localize("No matching results")%></strong></p>
 						    </div>
 			            <%
 			                         }
@@ -370,12 +373,12 @@ var reqUrl = request.getRequestURI();
                       }
 
                     %>
-        </div>
+
         </div>
     </div>
-    
+
 <style>
-	
+
     .api-count-display{
         color:#747474;
         font-size:15px;
@@ -390,7 +393,7 @@ var reqUrl = request.getRequestURI();
 
 <script>
 $(window).load(function(){
-	
+
     $(".setbgcolor").generateBgcolor({
         definite:true
     });

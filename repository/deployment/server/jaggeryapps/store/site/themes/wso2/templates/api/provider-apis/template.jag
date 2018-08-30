@@ -6,7 +6,7 @@
 
 %>
 <%if(outputs.apiOwner!=null && outputs.apis && outputs.apis.length > 0){%>
-  <h1><span><%=i18n.localize("More APIs from")%>  '<%= owner %>'</span></h1>
+  <h2><span><%=i18n.localize("More APIs from")%>  '<%= owner %>'</span></h2>
 
 
 
@@ -39,7 +39,7 @@
               <div style="display: none">
               <a href="" title="<%=i18n.localize("Name")%>" class="api-name"><%=api.name%></a>
               </div>
-            </div> 
+            </div>
         <% } else { %>
         <div class="square-element">
           <img class="" src="<%=thumbURL%>" alt="<%=i18n.localize("API Thumbnail")%>">
@@ -63,7 +63,7 @@
 
     <%  }} %>
 
-    
+
 
 
 <%}%>
