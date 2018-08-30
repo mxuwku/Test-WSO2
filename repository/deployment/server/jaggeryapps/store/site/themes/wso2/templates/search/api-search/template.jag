@@ -42,7 +42,7 @@ if(request.getParameter("type") == "prototyped"){
       </div>
       <div class="input-group-addon btn-info" style="border-left:0;border-right:0;">
         <a class="help_popup" title="<%=i18n.localize("Search Options")%>" rel="popover" data-popover-content="#apiSearchTips" data-placement="bottom">
-          <span style="font-size:14px;color:#fff;">
+          <span style="font-size:1.8rem;color:#fff;">
             <i class="fa fa-info-circle" title="<%=i18n.localize("Search Options")%>"></i>
           </span>
         </a>
