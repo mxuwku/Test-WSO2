@@ -95,7 +95,7 @@
                         </a>
 				</div> -->
 				<!-- Actions Bar -->
-				<div id="navbar" class="collapse navbar-collapse" style="border:none;">
+				<div id="navbar" class="collapse navbar-collapse" style="border:none; margin-right: 15px;">
                     <!--<ul class="nav navbar-nav">-->
                     	<% if(reqUrl.indexOf(listUrl)>=0 ||reqUrl.indexOf(listMappedUrl)>=0||reqUrl.equals(jagg.getAbsoluteUrl("/"))){ %>
 	                        <%if(isCreatePermitted) {%>
