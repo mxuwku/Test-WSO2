@@ -4,8 +4,8 @@
             <p>WSO2 API Manager | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank" title="<%=i18n.localize('WSO2 copyright')%>"><i class="icon fw fw-wso2" title="<%=i18n.localize('WSO2 copyright')%>"></i> Inc</a>.</p>
         </div>
     </footer> -->
-       <c-corporate-footer>
-        <p>Scania API Manager 2.1.0 | &copy; <script>document.write(new Date().getFullYear());</script> 
+       <c-corporate-footer style="z-index:100;">
+        <p>Scania API Manager 2.1.0 | &copy; <script>document.write(new Date().getFullYear());</script>
         <a title="ScaniaOne" href="http://scaniaone.com" target="_blank"><i class="icon fw fw-wso2"></i></a>.
         </p>
     </c-corporate-footer>
