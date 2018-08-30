@@ -7,7 +7,7 @@ i18n.init(request,localeResourcesBasePath);%>
            <div class="modal-dialog" >
              <div class="panel panel-warning modal-content" >
                    <div class="panel-heading modal-header">
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
                      <h3 class="panel-title modal-title">Modal title</h3>
                    </div>
                    <div class="panel-body modal-body">

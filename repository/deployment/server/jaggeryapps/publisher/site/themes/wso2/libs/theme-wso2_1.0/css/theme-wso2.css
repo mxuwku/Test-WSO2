@@ -9514,10 +9514,10 @@ a.list-group-item:hover {
   text-indent: 10px;
 }
 
-.accordion .panel-heading div .no-description,
+/*.accordion .panel-heading div .no-description,
 .collapse .panel-heading div .no-description {
   padding-top: 20px;
-}
+}*/
 
 .accordion .panel-heading div .description,
 .collapse .panel-heading div .description {

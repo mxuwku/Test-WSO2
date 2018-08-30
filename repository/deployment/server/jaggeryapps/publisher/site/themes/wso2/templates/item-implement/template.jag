@@ -100,7 +100,8 @@
         </div>
 										<h4 class="panel-title">
 				                                <div class="heading"><%=i18n.localize("Managed API")%></div>
-				                                <div class="description truncate"> <%=i18n.localize("Provide the production and sandbox endpoints of the API to be managed.")%> </div>
+				                                <p class="panel-heading-subtextFix"> <%=i18n.localize("Provide the production and sandbox endpoints of the API to be managed.")%> 
+                                        </p>
 				                            <div class="clearfix"></div>
 										</h4>
 									</div>
@@ -726,11 +727,11 @@
                               </div>
 												<h4 class="panel-title">
                               <div class="heading">Prototyped API</div>
-                              <div class="description truncate" title="<%=i18n.localize("Use the inbuilt JavaScript engine to prototype the API or provide an endpoint to a prototype API. The inbuilt JavaScript engine does not have support to prototype SOAP APIs")%>">
+                              <p class="panel-heading-subtextFix" title="<%=i18n.localize("Use the inbuilt JavaScript engine to prototype the API or provide an endpoint to a prototype API. The inbuilt JavaScript engine does not have support to prototype SOAP APIs")%>">
                                 <%=i18n.localize("Use the inbuilt JavaScript engine to prototype the API or provide an endpoint to a prototype API. The inbuilt JavaScript engine does not have support to prototype SOAP APIs")%>
-                              </div>
+                              </p>
+                        </h4>
                               <div class="clearfix"></div>
-												</h4>
 											</div>
 							            <div id="accordion1-collapse2" class="panel-collapse collapse <% if( apiStatus=="PROTOTYPED" ){%> in <%}%>" role="tabpanel" aria-labelledby="headingTwo">
 								            <div class="panel-body">
@@ -1273,7 +1274,7 @@
 	<div id="corsFormElements">
 		<div class="form-group">
 			<label class="control-label col-sm-3" for="corsConfigurationManaged"><p><%=i18n.localize("Access Control Allow ")%><strong><%=i18n.localize("Origins")%></strong></p></label>
-			<div class="headerContainer tagContainer col-sm-6">
+			<div class="headerContainer tagContainer col-sm-9">
 				<label class="checkbox">
 					<input type="checkbox" class="allowAll" name="allowAll"  {{#if allowAll }}checked="checked" {{/if}} />
 					<span class="helper"></span>
@@ -1290,7 +1291,7 @@
 			<label class="control-label col-sm-3" for="corsConfigurationManaged">
 				<p><%=i18n.localize("Access Control Allow ")%><strong><%=i18n.localize("Headers")%></strong></p>
 			</label>
-			<div class="headerContainer tagContainer col-sm-6">
+			<div class="headerContainer tagContainer col-sm-9">
 				<input type="text" class="tagsinput form-control"  id="allowHeadersManaged" name="accessControlAllowHeaders" value="{{ accessControlAllowHeaders }}" data-role="tagsinput"/>
 			</div>
 		</div>
@@ -1298,7 +1299,7 @@
 			<label class="control-label col-sm-3" for="corsConfigurationManaged">
 				<p><%=i18n.localize("Access Control Allow ")%><strong><%=i18n.localize("Methods")%></strong></p>
 			</label>
-			<div class="headerContainer tagContainer col-sm-6">
+			<div class="headerContainer tagContainer col-sm-9">
 				<input type="text"  class="tagsinput form-control"  id="allowMethodsManaged" name="accessControlAllowMethods" value="{{ accessControlAllowMethods }}" data-role="tagsinput"/>
 			</div>
 		</div>

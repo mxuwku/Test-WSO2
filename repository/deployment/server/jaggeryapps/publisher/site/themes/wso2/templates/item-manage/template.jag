@@ -645,11 +645,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent=".accordion" href="#accordion1-collapse1" aria-controls="accordion1-collapse1">
                         <h4 class="panel-title">
-                            <div>
+                          <div class="status" style="display: inline-block;">
+                                <i class="fw fw-down"></i>
+                            </div>
+                            <div style="display: inline-block;">
                                 <div class="heading no-description"><%=i18n.localize("Gateway Environments")%></div>
-                                <div class="status">
-                                    <i class="fw fw-down"></i>
-                                </div>
                             </div>
                             <div class="clearfix"></div>
                         </h4>
@@ -741,12 +741,12 @@
           <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent=".accordion" href="#accordion1-collapse2" aria-controls="accordion1-collapse2">
                         <h4 class="panel-title">
-                            <div>
-                                <div class="heading no-description"><%=i18n.localize("Business Information")%></div>
-                                <div class="status">
-                                    <i class="fw fw-down"></i>
-                                </div>
-                            </div>
+                          <div class="status" style="display: inline-block;">
+                            <i class="fw fw-down"></i>
+                          </div>
+                          <div style="display: inline-block;">
+                            <div class="heading no-description"><%=i18n.localize("Business Information")%></div>
+                          </div>
                             <div class="clearfix"></div>
                         </h4>
 
@@ -833,7 +833,7 @@
                                      <%}%>
                                 <%}%>
 
-                                <input type="reset" class="btn btn-default" value="<%=i18n.localize("Cancel")%>" onclick="javascript:window.location.href='./'" />
+                                <input type="reset" class="btn btn-default ml-5" value="<%=i18n.localize("Cancel")%>" onclick="javascript:window.location.href='./'" />
                                 <label id="gateway_error" class="bg-warning hide" style="display: block;padding:
                                 10px; border-radius: 5px;margin-top:10px;"><%=i18n
                                 .localize("Some of the gateway environments are not selected.")%></label>

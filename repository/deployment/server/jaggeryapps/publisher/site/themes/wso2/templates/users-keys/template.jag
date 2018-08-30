@@ -12,8 +12,6 @@
 			}
 		</script>
         <div id="userKey">
-		<div id="col-sm-12 panel panel-primary">
-        <div class="panel-body">
 			<div class="page-header">
 				<h2><%=i18n.localize("Manage Subscriptions")%></h2>
 			</div>
@@ -201,9 +199,7 @@
                         </tbody>
                     </table>
                 <% jagg.includeBlock("paginator", {currentPage:currentPage,numberOfPages:numberOfPages}); %>
-        
-        </div>
-    </div>
+
 </div>
 
 <%});%>

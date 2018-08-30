@@ -131,7 +131,6 @@ section {
 
 </style>
 <c-corporate-header site-name="API Publisher" site-url="/publisher/">
-    <nav-item location="/store/">API Store</nav-item>
   </c-corporate-header>
 <section class="content steps s-1">
       <!-- Login -->

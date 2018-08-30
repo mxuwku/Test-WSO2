@@ -328,3 +328,13 @@ font-weight: normal
   top:0;
   padding-top: 30px;
 }
+
+.panel-heading-subtextFix {
+    display: inline-block;
+    max-width: 1200px;
+    letter-spacing: 0.03rem;
+    font-size: 1.8rem !important;
+    line-height: 1.15;
+    font-weight: normal;
+    padding-bottom: 0px;
+}
