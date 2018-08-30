@@ -5,7 +5,7 @@ var statsEnabled = isDataPublishingEnabled();
 
     currentLocation=window.location.pathname;
     jagg.post("/site/blocks/stats/perAppAPICount/ajax/stats.jag", { action:"getFirstAccessTime",currentLocation:currentLocation  },
-        function (json) {            
+        function (json) {
 
             if (!json.error) {
 
@@ -144,7 +144,7 @@ var drawGraphAPIUsage = function(from,to){
                         }
                      }
                     }else{
-                        $('#apiUsage').html($('<div id="noData" class="alert alert-info"><h4><i class="icon fw fw-info"></i>No Data Available.</h4></div>'));
+                        $('#apiUsage').html($('<div id="noData" class="alert alert-info"><p><strong><i class="icon fa fa-exclamation-circle"></i>No Data Available.</strong></p></div>'));
                     }
                 } else {
                     if (json.message == "AuthenticateError") {
@@ -194,7 +194,7 @@ function isDataPublishingEnabled(){
     jagg.post("/site/blocks/stats/perAppAPICount/ajax/stats.jag", { action: "isDataPublishingEnabled"},
         function (json) {
             if (!json.error) {
-                statsEnabled = json.usage;                
+                statsEnabled = json.usage;
                 return statsEnabled;
             } else {
                 if (json.message == "AuthenticateError") {
@@ -203,7 +203,7 @@ function isDataPublishingEnabled(){
                     jagg.message({content: json.message, type: "error"});
                 }
             }
-        }, "json");        
+        }, "json");
 }
 
 

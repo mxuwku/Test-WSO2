@@ -328,7 +328,6 @@ font-weight: normal
   top:0;
   padding-top: 30px;
 }
-
 .panel-heading-subtextFix {
     display: inline-block;
     max-width: 1200px;
@@ -338,3 +337,15 @@ font-weight: normal
     font-weight: normal;
     padding-bottom: 0px;
 }
+
+.sidebar-nav{
+	position: absolute;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 0;
+	height: 100%;
+	padding-bottom: 43px;
+}
+
+
+c-main-content {position: relative;}

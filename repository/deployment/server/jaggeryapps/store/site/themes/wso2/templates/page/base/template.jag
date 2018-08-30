@@ -77,7 +77,7 @@
 <!--  Added by Jesper -->
 <%jagg.includeBlock("menu/header", {"pagePath":outputs.pagePath,"tenant":tenant});%>
 
-<c-main-content>
+<c-main-content class="light">
   <section>
 <style>
   .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
@@ -103,7 +103,7 @@ if(data.footer) {
 %>
     <!-- footer -->
     <c-corporate-footer>
-        <p>Scania API Manager 2.1.0 | &copy; <script>document.write(new Date().getFullYear());</script> 
+        <p>Scania API Manager 2.1.0 | &copy; <script>document.write(new Date().getFullYear());</script>
         <a title="ScaniaOne" href="http://scaniaone.com" target="_blank"><i class="icon fw fw-wso2"></i></a>.
         </p>
     </c-corporate-footer>

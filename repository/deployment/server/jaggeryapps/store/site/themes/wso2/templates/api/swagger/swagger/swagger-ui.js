@@ -4,7 +4,7 @@
  * @link http://swagger.io
  * @license Apache-2.0
  */
-(function(){/* jshint ignore:start */ 
+(function(){/* jshint ignore:start */
  {(function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
 templates['apikey_auth'] = template({"1":function(container,depth0,helpers,partials,data) {
@@ -661,7 +661,7 @@ templates['resource'] = template({"1":function(container,depth0,helpers,partials
     + ((stack1 = (helpers.sanitize || (depth0 && depth0.sanitize) || helpers.helperMissing).call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.url : depth0),{"name":"sanitize","hash":{},"data":data})) != null ? stack1 : "")
     + "' data-sw-translate>Raw</a>\n    </li>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, options, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, buffer = 
+    var stack1, helper, options, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, buffer =
   "<div class='heading'>\n  <h2>\n    <a href='#!/"
     + ((stack1 = (helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.id : depth0),{"name":"sanitize","hash":{},"data":data})) != null ? stack1 : "")
     + "' class=\"toggleEndpointList\" data-id=\""
@@ -773,7 +773,7 @@ templates['status_code'] = template({"1":function(container,depth0,helpers,parti
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.headers : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "    </tbody>\n  </table>\n</td>";
 },"useData":true});
-})();} 
+})();}
  /* jshint ignore:end */
 'use strict';
 
@@ -3144,35 +3144,35 @@ Handlebars.registerHelper('escape', function (value) {
 
 
 Handlebars.registerHelper('renderDefaultSecurity', function (security) {
-    var response = '';    
+    var response = '';
     if(security){
         if(security instanceof Array){
-            // Hack to get the scope list working seems to be a bug in swagger UI            
-            if(window.SwaggerUi.scope_list === undefined){                
+            // Hack to get the scope list working seems to be a bug in swagger UI
+            if(window.SwaggerUi.scope_list === undefined){
                 window.SwaggerUi.scope_list = jQuery.extend({}, this.parent.securityDefinitions.default.scopes);
             }
 
             for(var i=0 ; i < security.length ; i++){
-                if(security[i]['default'] !== undefined){                                     
-                     response = '<div class="alert alert-warning remove-margin"><h4 class="remove-padding" style="color: #f0ad4e;"><i class="fa fa-exclamation-circle"></i> Required Scopes</h4>';
-                     response = response + '<table class="headers">'+              
+                if(security[i]['default'] !== undefined){
+                     response = '<div class="alert alert-warning remove-margin"><p class="remove-padding" style="color: #f0ad4e;"><strong><i class="fa fa-exclamation-circle"></i> Required Scopes</strong></p>';
+                     response = response + '<table class="headers">'+
                                '<thead>'+
                                   '<tr>'+
                                     '<th style="width: 100px; max-width: 100px" data-sw-translate="">Key</th>'+
                                     '<th style="width: 830px; max-width: 830px" data-sw-translate="">Name</th>'+
                                   '</tr>'+
                                 '</thead>'+
-                                '<tbody>';                   
+                                '<tbody>';
                      for(var j=0;j < security[i]['default'].length; j++){
                         var scope_key = security[i]['default'][j];
                         response = response + '<tr><td><strong>'+Handlebars.Utils.escapeExpression(scope_key)+'</strong></td>';
                         response = response + '<td>'+ Handlebars.Utils.escapeExpression(window.SwaggerUi.scope_list[scope_key]) +'</td></tr>';
                      }
                      response = response + '</tbody></table></div>';
-                }                    
+                }
             }
-        }        
-    }    
+        }
+    }
     return response;
 });
 
@@ -3794,7 +3794,7 @@ SwaggerClient.prototype.buildFromSpec = function (response) {
   }
 
   // get paths, create functions for each operationId
-  
+
   // Bind help to 'client.apis'
   self.apis.help = _.bind(self.help, self);
 
